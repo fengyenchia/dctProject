@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+<title>音虫互動投影展場配置示意</title>
+<desc>依新版展場圖整理的非施工比例平面示意。預估十一點五公尺乘五公尺，上方與左側為L形投影，右側接待與後台，中央投影設備，回收座在左下出口旁。紅外線參考點位置待原型確認。</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#56687d" stroke-width="1.5"/></marker>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0,8 L8,0" stroke="#dbe5f1" stroke-width="2"/></pattern>
+</defs>
+<rect width="1400" height="920" fill="#fafbfd"/>
+<g font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" fill="#233448">
+<text x="70" y="50" font-size="28" font-weight="700">音虫互動投影｜展場配置示意</text>
+<text x="70" y="84" font-size="18" fill="#526477">2026-10-30　預估 11.5 × 5 公尺｜依新版圖整理，非等比例施工圖</text>
+<path d="M90,130 H1230" stroke="#56687d" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="610" y="120" font-size="20">11.5 m</text>
+<rect x="80" y="160" width="1160" height="500" fill="#f0f3f7" stroke="#8595b7" stroke-width="12"/>
+<path d="M105,185 H1035 M105,185 V580" fill="none" stroke="#265fe7" stroke-width="10"/>
+<rect x="120" y="200" width="900" height="44" fill="url(#hatch)"/>
+<text x="460" y="230" font-size="22" fill="#265fe7" font-weight="700">A 牆｜長牆投影</text>
+<text transform="translate(143 500) rotate(-90)" font-size="22" fill="#265fe7" font-weight="700">B 牆｜側牆投影</text>
+<text x="375" y="290" font-size="16" fill="#526477">參考點安裝範圍待覆蓋測試，圖中不指定位置</text>
+<path d="M1295,170 V650" stroke="#56687d" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="1310" y="420" font-size="20">5 m</text>
+<rect x="1060" y="174" width="160" height="265" rx="5" fill="#e1e8f4" stroke="#8595b7" stroke-width="3"/>
+<rect x="1100" y="210" width="80" height="155" rx="5" fill="#d9bc8b"/>
+<rect x="1115" y="260" width="50" height="64" fill="#b8e4d5"/>
+<text x="1090" y="398" font-size="19" font-weight="700">後台／監控</text>
+<text x="1120" y="288" font-size="15">管理</text><text x="1120" y="310" font-size="15">主機</text>
+<path d="M1060,185 V242 M1060,300 V439" stroke="#8595b7" stroke-width="5"/>
+<text x="1000" y="274" font-size="15">後台門</text>
+<rect x="1060" y="450" width="160" height="195" rx="5" fill="#ead7b8" stroke="#b89a6d" stroke-width="2"/>
+<text x="1090" y="485" font-size="22" font-weight="700">接待區</text>
+<text x="1080" y="522" font-size="17">前導螢幕</text>
+<text x="1080" y="552" font-size="17">領取捕捉器</text>
+<text x="1080" y="582" font-size="17">充電／輪替</text>
+<path d="M1060,452 V530" stroke="#8595b7" stroke-width="5"/>
+<path d="M1160,699 V620 L1027,620 L1027,550 L975,550" stroke="#56687d" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text x="1140" y="723" font-size="20" font-weight="700">入口</text>
+<rect x="525" y="355" width="65" height="115" fill="#d8c6a5" stroke="#aa9676"/>
+<rect x="537" y="370" width="41" height="62" fill="#fff2a8" stroke="#aa9676"/>
+<text x="545" y="410" font-size="20">P2</text>
+<rect x="525" y="470" width="190" height="65" fill="#d8c6a5" stroke="#aa9676"/>
+<rect x="625" y="482" width="65" height="37" fill="#fff2a8" stroke="#aa9676"/>
+<rect x="536" y="482" width="75" height="37" fill="#b8e4d5"/>
+<text x="641" y="508" font-size="20">P1</text>
+<text x="542" y="506" font-size="16">主機位</text>
+<text x="478" y="567" font-size="16" fill="#526477">設備位置暫依原圖保留</text>
+<text x="478" y="591" font-size="16" fill="#526477">架設高度、光路與主機數量待確認</text>
+<text x="740" y="369" font-size="23" font-weight="700">自由探索／捕捉</text>
+<text x="740" y="402" font-size="18">轉向兩面牆，自動切換定位</text>
+<text x="740" y="430" font-size="17" fill="#526477">最近距離先測 0.5／1／1.5 m</text>
+<rect x="275" y="548" width="140" height="85" rx="18" fill="#f5cec3" stroke="#cd8c79" stroke-width="3"/>
+<text x="301" y="583" font-size="21" font-weight="700">回收座</text>
+<text x="290" y="612" font-size="16">接點／感應到站</text>
+<path d="M870,482 Q880,625 430,615" stroke="#97a8bd" stroke-width="2.5" stroke-dasharray="8 7" fill="none" marker-end="url(#arrow)"/>
+<path d="M273,605 H208 V702" stroke="#56687d" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M145,660 H245 M1090,660 H1190" stroke="#fafbfd" stroke-width="15"/>
+<text x="175" y="727" font-size="20" font-weight="700">出口</text>
+<rect x="70" y="762" width="1250" height="123" rx="10" fill="#eaf0f7"/>
+<text x="92" y="794" font-size="18" font-weight="700">配置與驗證重點</text>
+<text x="92" y="825" font-size="17">• 兩台主投影；中央設備可能遮擋，需依正式機型與牆高確認光路。</text>
+<text x="92" y="851" font-size="17">• 紅外線參考點與自動識別尚待驗證；回收投影是否增設設備待場勘；回收座充電另行設計。</text>
+</g>
+</svg>
