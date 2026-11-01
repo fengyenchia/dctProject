@@ -1,101 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1740" viewBox="0 0 2100 1740">
-<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#60738b" /></marker></defs>
-<rect width="2100" height="1740" fill="#f7f9fc" />
-<text x="65" y="65" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="36" fill="#24334b" text-anchor="start">05  成果保存與線上紀念品</text>
-<text x="65" y="105" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">本機先保存，背景上傳；重置不刪除成果及同步工作</text>
-<polyline points="400,230 530,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="830,230 960,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1260,230 1390,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1540,287 1540,413" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1690,470 1770,470 1770,110 1110,110 1110,173" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6" />
-<polyline points="1390,230 1320,230 1320,470 1260,470" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="250,653 250,470 530,470" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1690,230 1800,230 1800,600 250,600 250,653" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="250,767 250,953" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1690,230 1750,230 1750,560 1110,560 1110,653" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1260,710 1390,710" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1690,710 1790,710" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1940,767 1940,860 1110,860 1110,767" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6" />
-<polyline points="1540,767 1540,953" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="400,1010 530,1010" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="680,1067 680,1250 960,1250" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1540,1067 1540,1250 1260,1250" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1110,1307 1110,1360 1540,1360 1540,1443" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<polyline points="1110,1307 1110,1360 680,1360 680,1443" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" />
-<rect x="100" y="173" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="250" y="239" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 成果快照</text>
-<rect x="530" y="173" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="680" y="223" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Gateway 建立 result_id</text>
-<text x="680" y="255" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">／唯讀 token</text>
-<rect x="960" y="173" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2" />
-<text x="1110" y="223" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">SQLite 交易：成果／旋</text>
-<text x="1110" y="255" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">律配方／outbox</text>
-<polygon points="1540,160 1700,230 1540,300 1380,230" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="1540" y="239" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">本機交易寫入成功？</text>
-<rect x="1390" y="413" width="300" height="114" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2" />
-<text x="1540" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">暫停正常重置／重試保存</text>
-<rect x="960" y="413" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="1110" y="463" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">RESULT_SAVED 回覆 Un</text>
-<text x="1110" y="495" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">ity</text>
-<rect x="530" y="413" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="680" y="463" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">結尾／QR 交付完成</text>
-<text x="680" y="495" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">之後重置／下一場</text>
-<rect x="100" y="653" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="250" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">交付本場成果 QR</text>
-<rect x="960" y="653" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="1110" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Gateway 同步工作</text>
-<polygon points="1540,640 1700,710 1540,780 1380,710" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="1540" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">雲端上傳成功？</text>
-<rect x="1790" y="653" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="1940" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">保留 outbox／稍後重試</text>
-<rect x="1390" y="953" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2" />
-<text x="1540" y="1019" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">雲端成果／版本化音軌</text>
-<rect x="530" y="953" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2" />
-<text x="680" y="1019" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Next.js 唯讀成果頁</text>
-<rect x="100" y="953" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2" />
-<text x="250" y="1019" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">手機掃碼／離場重開</text>
-<polygon points="1110,1180 1270,1250 1110,1320 950,1250" fill="#e8f1fd" stroke="#7099c9" stroke-width="2" />
-<text x="1110" y="1259" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">雲端已有該成果？</text>
-<rect x="530" y="1443" width="300" height="114" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2" />
-<text x="680" y="1493" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">尚未就緒或無效／稍後重</text>
-<text x="680" y="1525" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">試</text>
-<rect x="1390" y="1443" width="300" height="114" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2" />
-<text x="1540" y="1509" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">感謝信／摘要／旋律播放</text>
-<rect x="420.0" y="197.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="465.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成果快照</text>
-<rect x="850.0" y="197.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="895.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">同一交易</text>
-<rect x="1545.0" y="317.0" width="54.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1572.0" y="338.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">失敗</text>
-<rect x="1413.0" y="77.0" width="54.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1440.0" y="98.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">重試</text>
-<rect x="1325.0" y="317.0" width="54.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1352.0" y="338.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成功</text>
-<rect x="841.0" y="437.0" width="108.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="895.0" y="458.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">不等待外網</text>
-<rect x="998.0" y="567.0" width="54.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1025.0" y="588.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成功</text>
-<rect x="255.0" y="827.0" width="144.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="327.0" y="848.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">掃碼／保存連結</text>
-<rect x="1385.0" y="527.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1430.0" y="548.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">背景同步</text>
-<rect x="1268.0" y="677.0" width="114.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1325.0" y="698.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">HTTPS 上傳</text>
-<rect x="1713.0" y="677.0" width="54.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1740.0" y="698.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">失敗</text>
-<rect x="1480.0" y="827.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1525.0" y="848.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">復線重試</text>
-<rect x="1545.0" y="827.0" width="54.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1572.0" y="848.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成功</text>
-<rect x="428.5" y="977.0" width="73.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="465.0" y="998.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">HTTPS</text>
-<rect x="775.0" y="1217.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="820.0" y="1238.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">讀取結果</text>
-<rect x="1355.0" y="1217.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1400.0" y="1238.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">雲端成果</text>
-<rect x="1364.0" y="1217.0" width="72.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="1370" y="1348" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">已就緒</text>
-<rect x="775.0" y="1217.0" width="90.0" height="28" rx="5" fill="#f7f9fc" />
-<text x="820" y="1348" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">尚未就緒</text>
-<text x="65" y="1705" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#758299" text-anchor="start">技術資料／事件流程｜依專案開發規格繪製｜生成參數與原型效能見討論清單</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="2190" viewBox="0 0 2160 2190">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#60738b" /></marker></defs>
+<rect x="0" y="0" width="2160" height="2190" rx="0" fill="#edf1f7" />
+<text x="65" y="65" font-family="Microsoft JhengHei, sans-serif" font-size="36" fill="#24334b" text-anchor="start">05  成果保存與線上紀念品</text>
+<text x="65" y="103" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#536b87" text-anchor="start">由左上開始；本機保存、現場交付與背景上傳分開閱讀。</text>
+<rect x="40" y="130" width="2080" height="500" rx="14" fill="#ffffff" />
+<text x="70" y="172" font-family="Microsoft JhengHei, sans-serif" font-size="27" fill="#315879" text-anchor="start">① 本機保存</text>
+<rect x="40" y="660" width="2080" height="550" rx="14" fill="#ffffff" />
+<text x="70" y="702" font-family="Microsoft JhengHei, sans-serif" font-size="27" fill="#315879" text-anchor="start">② QR 交付與背景上傳</text>
+<rect x="40" y="1240" width="2080" height="890" rx="14" fill="#ffffff" />
+<text x="70" y="1282" font-family="Microsoft JhengHei, sans-serif" font-size="27" fill="#315879" text-anchor="start">③ 離場開啟成果</text>
+<polyline points="380,270 500,270" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="800,270 920,270" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="1220,270 1340,270" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="1640,270 1760,270" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1680.0" y="236.0" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="1700.0" y="258.0" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">否</text>
+<polyline points="1910,210 1910,185 1070,185 1070,210" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="10 6" stroke-linejoin="miter" />
+<rect x="1440.0" y="150" width="100.0" height="30" rx="4" fill="#ffffff" />
+<text x="1490" y="172" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">重試保存</text>
+<polyline points="1490,330 1490,470" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1470.0" y="366.0" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="1490.0" y="388.0" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">是</text>
+<polyline points="1490,340 1490,410 1260,410 1260,640 650,640 650,750" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="940.0" y="606" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="960" y="628" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">是</text>
+<polyline points="650,870 650,1050" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="500,810 380,810" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="390.0" y="776.0" width="100.0" height="30" rx="4" fill="#ffffff" />
+<text x="440.0" y="798.0" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">交付完成</text>
+<polyline points="1490,340 1490,380 1300,380 1300,700 1070,700 1070,750" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1130.0" y="666" width="100.0" height="30" rx="4" fill="#ffffff" />
+<text x="1180" y="688" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">背景同步</text>
+<polyline points="1220,810 1340,810" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="1640,810 1760,810" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1680.0" y="776.0" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="1700.0" y="798.0" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">否</text>
+<polyline points="1910,870 1910,945 1070,945 1070,870" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="10 6" stroke-linejoin="miter" />
+<rect x="1440.0" y="910" width="100.0" height="30" rx="4" fill="#ffffff" />
+<text x="1490" y="932" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">稍後重試</text>
+<polyline points="1490,870 1490,1050" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1470.0" y="926.0" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="1490.0" y="948.0" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">是</text>
+<polyline points="650,1170 650,1350" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="650,1470 650,1710 920,1710" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<polyline points="1490,1170 1490,1710 1220,1710" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1500.0" y="1428" width="120.0" height="30" rx="4" fill="#ffffff" />
+<text x="1560" y="1450" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">成果／音軌</text>
+<polyline points="1070,1770 1070,1860 1490,1860 1490,1950" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="1330.0" y="1826" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="1350" y="1848" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">是</text>
+<polyline points="1070,1770 1070,1820 650,1820 650,1950" fill="none" stroke="#60738b" stroke-width="2.5" marker-end="url(#arrow)" stroke-linejoin="miter" />
+<rect x="810.0" y="1786" width="40.0" height="30" rx="4" fill="#ffffff" />
+<text x="830" y="1808" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#536b87" text-anchor="middle">否</text>
+<rect x="80" y="210" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="230" y="279.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 成果快照</text>
+<rect x="500" y="210" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="650" y="262.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway 建立成果編號</text>
+<text x="650" y="295.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">及唯讀連結代碼</text>
+<rect x="920" y="210" width="300" height="120" rx="14" fill="#e4f1ff" stroke="#7099c9" stroke-width="2" />
+<text x="1070" y="262.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SQLite：保存成果</text>
+<text x="1070" y="295.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">旋律配方／待上傳佇列</text>
+<polygon points="1340,270 1490,200 1640,270 1490,340" fill="#eef5ff" stroke="#7099c9" stroke-width="2" />
+<text x="1490" y="279.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機保存成功？</text>
+<rect x="1760" y="210" width="300" height="120" rx="14" fill="#fff0ec" stroke="#ce8a80" stroke-width="2" />
+<text x="1910" y="262.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">暫停正常重置</text>
+<text x="1910" y="295.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重試保存</text>
+<rect x="1340" y="470" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="1490" y="522.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">RESULT_SAVED</text>
+<text x="1490" y="555.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">回覆 Unity</text>
+<rect x="80" y="750" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="230" y="802.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">結尾與 QR 交付完成</text>
+<text x="230" y="835.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">之後重置／下一場</text>
+<rect x="500" y="750" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="650" y="819.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">交付本場成果 QR</text>
+<rect x="920" y="750" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="1070" y="819.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway 背景同步</text>
+<polygon points="1340,810 1490,740 1640,810 1490,880" fill="#eef5ff" stroke="#7099c9" stroke-width="2" />
+<text x="1490" y="819.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端上傳成功？</text>
+<rect x="1760" y="750" width="300" height="120" rx="14" fill="#fff0ec" stroke="#ce8a80" stroke-width="2" />
+<text x="1910" y="802.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保留待上傳佇列</text>
+<text x="1910" y="835.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">稍後重試</text>
+<rect x="1340" y="1050" width="300" height="120" rx="14" fill="#eee8fb" stroke="#9c87cb" stroke-width="2" />
+<text x="1490" y="1102.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端成果</text>
+<text x="1490" y="1135.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">版本化音軌</text>
+<rect x="500" y="1050" width="300" height="120" rx="14" fill="#f1f6fc" stroke="#7099c9" stroke-width="2" />
+<text x="650" y="1119.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">手機掃碼／離場重開</text>
+<rect x="500" y="1350" width="300" height="120" rx="14" fill="#eee8fb" stroke="#9c87cb" stroke-width="2" />
+<text x="650" y="1419.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Next.js 唯讀成果頁</text>
+<polygon points="920,1710 1070,1640 1220,1710 1070,1780" fill="#eef5ff" stroke="#7099c9" stroke-width="2" />
+<text x="1070" y="1719.0" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端已有該成果？</text>
+<rect x="500" y="1950" width="300" height="120" rx="14" fill="#fff0ec" stroke="#ce8a80" stroke-width="2" />
+<text x="650" y="2002.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">尚未就緒或連結無效</text>
+<text x="650" y="2035.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">稍後重試</text>
+<rect x="1340" y="1950" width="300" height="120" rx="14" fill="#e6f4e9" stroke="#69a977" stroke-width="2" />
+<text x="1490" y="2002.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">感謝信／收集摘要</text>
+<text x="1490" y="2035.5" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">個人旋律播放</text>
+<text x="65" y="2160" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#536b87" text-anchor="start">技術資料／事件流程｜本機保存成功且完成結尾與成果 QR 交付後，才重置。</text>
 </svg>
