@@ -46,10 +46,11 @@
 <rect x="1390" y="653" width="300" height="114" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
 <text x="1540" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">拒絕結算／回傳原因</text>
 <rect x="960" y="943" width="300" height="114" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
-<text x="1110" y="1009" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">標記已回收／固定收集清單</text>
+<text x="1110" y="993" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">標記已回收／固定清單</text>
+<text x="1110" y="1025" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">登錄種類與群落數量</text>
 <rect x="530" y="1203" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="680" y="1253" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">兩面主投影：回收／轉化</text>
-<text x="680" y="1285" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">／城市修復</text>
+<text x="680" y="1253" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">噪音能量轉化為物品</text>
+<text x="680" y="1285" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">→ 修復城市（雙牆投影）</text>
 <rect x="1390" y="1203" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1540" y="1269" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 交付成果快照</text>
 <rect x="395.0" y="197.0" width="140.0" height="28" rx="5" fill="#f7f9fc"/>

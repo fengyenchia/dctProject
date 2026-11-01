@@ -10,8 +10,8 @@ flowchart LR
   recycleRequest["Gateway 轉送 RECYCLE_REQUEST"]
   validateAuthorization{"本場已感應且尚未回收？"}
   rejectRequest["拒絕結算／回傳原因"]
-  commitRecycle["標記已回收／固定收集清單"]
-  repairDisplay["兩面主投影：回收／轉化／城市修復"]
+  commitRecycle["標記已回收／登錄種類與群落數量"]
+  repairDisplay["能量轉化為物品 → 修復城市（雙牆投影）"]
   resultSnapshot["Unity 交付成果快照"]
   tagRead --> seatReport --> deviceMap --> checkPresence
   checkPresence -->|"否"| rejectRead
