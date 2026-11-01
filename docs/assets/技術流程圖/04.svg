@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1530" viewBox="0 0 2000 1530">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#60738b"/></marker></defs>
+<rect width="2000" height="1530" fill="#f7f9fc"/>
+<text x="65" y="65" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="36" fill="#24334b" text-anchor="start">04  NFC 回收與確認</text>
+<text x="65" y="105" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">一次感應取得本場資格，移開後仍可按捕捉器按鈕確認</text>
+<polyline points="400,230 530,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="830,230 960,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1260,230 1390,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1540,287 1540,413" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1690,230 1770,230 1770,360 1110,360 1110,413" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="960,470 830,470" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="530,470 250,470 250,653" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="400,710 530,710" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="830,710 960,710" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1260,710 1390,710" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1110,767 1110,943" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="960,1000 680,1000 680,1203" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1260,1000 1540,1000 1540,1203" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="100" y="173" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="250" y="223" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">回收座讀取捕捉器 NFC </text>
+<text x="250" y="255" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">標籤</text>
+<rect x="530" y="173" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="680" y="223" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">座端 ESP32 回報讀取事</text>
+<text x="680" y="255" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">件</text>
+<rect x="960" y="173" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="223" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Gateway 確認本場</text>
+<text x="1110" y="255" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">捕捉器標籤</text>
+<polygon points="1540,160 1700,230 1540,300 1380,230" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1540" y="223" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">本場裝置／可回收階段有</text>
+<text x="1540" y="255" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">效？</text>
+<rect x="1390" y="413" width="300" height="114" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
+<text x="1540" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">不開放回收確認</text>
+<rect x="960" y="413" width="300" height="114" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1110" y="463" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 記錄本場已感應</text>
+<text x="1110" y="495" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle"></text>
+<rect x="530" y="413" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="680" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">LCD 顯示可確認回收</text>
+<rect x="100" y="653" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="250" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">捕捉器確認按鈕</text>
+<rect x="530" y="653" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="680" y="703" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Gateway 轉送 RECYCLE</text>
+<text x="680" y="735" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">_REQUEST</text>
+<polygon points="1110,640 1270,710 1110,780 950,710" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="703" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">本場已感應</text>
+<text x="1110" y="735" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">且尚未回收？</text>
+<rect x="1390" y="653" width="300" height="114" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
+<text x="1540" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">拒絕結算／回傳原因</text>
+<rect x="960" y="943" width="300" height="114" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1110" y="1009" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">標記已回收／固定收集清單</text>
+<rect x="530" y="1203" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="680" y="1253" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">兩面主投影：回收／轉化</text>
+<text x="680" y="1285" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">／城市修復</text>
+<rect x="1390" y="1203" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1540" y="1269" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 交付成果快照</text>
+<rect x="395.0" y="197.0" width="140.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="465.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">UID／讀取事件</text>
+<rect x="806.5" y="197.0" width="177.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="895.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">Wi-Fi／WebSocket</text>
+<rect x="1280.0" y="197.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1325.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本場資料</text>
+<rect x="1545.0" y="317.0" width="36.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1563.0" y="338.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">否</text>
+<rect x="1422.0" y="327.0" width="36.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1440.0" y="348.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">是</text>
+<rect x="786.0" y="437.0" width="218.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="895.0" y="458.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">RECYCLE_AUTHORIZED</text>
+<rect x="327.0" y="437.0" width="126.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="390.0" y="458.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">可移開再確認</text>
+<rect x="420.0" y="677.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="465.0" y="698.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">確認要求</text>
+<rect x="804.0" y="677.0" width="182.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="895.0" y="698.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">RECYCLE_REQUEST</text>
+<rect x="1298.0" y="677.0" width="54.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1325.0" y="698.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">無效</text>
+<rect x="1115.0" y="822.0" width="126.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1178.0" y="843.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">有效且未結算</text>
+<rect x="793.0" y="967.0" width="54.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="820.0" y="988.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">演出</text>
+<rect x="1355.0" y="967.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1400.0" y="988.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">保存資料</text>
+<text x="65" y="1495" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#758299" text-anchor="start">技術資料／事件流程｜依專案開發規格繪製｜生成參數與原型效能見討論清單</text>
+</svg>

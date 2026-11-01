@@ -1,0 +1,36 @@
+flowchart LR
+  subgraph devices ["現場設備"]
+    irLight["各點紅外線燈"]
+    catcher["捕捉器 ESP32-S3／LCD"]
+    recycleSeat["NFC 回收座 ESP32"]
+    audioInput["麥克風／音訊介面"]
+  end
+  subgraph localHost ["展場電腦"]
+    gatewayApp["本機串接服務 Gateway"]
+    unityApp["Unity 遊戲狀態"]
+    localDb[("SQLite／成果 outbox")]
+  end
+  subgraph cloudHost ["雲端成果"]
+    resultApi["Next.js 成果 API"]
+    resultDb[("PostgreSQL／音軌資源")]
+    resultWeb["Next.js 紀念品頁"]
+  end
+  lightBoard["固定燈控板"]
+  outputs["兩面主投影／現場音響"]
+  resultPhone["觀眾手機"]
+  irLight -->|"光點／亮暗編碼"| catcher
+  catcher <-->|"Wi-Fi／WebSocket"| gatewayApp
+  recycleSeat <-->|"Wi-Fi／WebSocket"| gatewayApp
+  gatewayApp <-->|"本機 WebSocket"| unityApp
+  gatewayApp <-->|"USB／串口"| lightBoard
+  lightBoard -->|"驅動／編碼輸出"| irLight
+  audioInput -->|"觀眾聲音"| unityApp
+  unityApp -->|"遊戲影像／音效"| outputs
+  gatewayApp -->|"成果與同步工作"| localDb
+  gatewayApp -->|"HTTPS 成果上傳"| resultApi
+  resultApi -->|"寫入結果"| resultDb
+  resultWeb -->|"讀取結果／音軌"| resultDb
+  resultPhone <-->|"HTTPS 唯讀成果"| resultWeb
+  style localHost fill:#C2E5FF,stroke:#3DADFF
+  style cloudHost fill:#DCCCFF,stroke:#874FFF
+  style devices fill:#C6FAF6,stroke:#5AD8CC

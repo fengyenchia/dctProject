@@ -1,0 +1,27 @@
+flowchart LR
+  tagRead["回收座讀取捕捉器 NFC 標籤"]
+  seatReport["座端 ESP32 回報讀取事件"]
+  deviceMap["Gateway 確認本場捕捉器標籤"]
+  checkPresence{"本場裝置／可回收階段有效？"}
+  rejectRead["不開放回收確認"]
+  issueAuthorization["Unity 記錄本場已感應"]
+  authorizationUi["LCD 顯示可確認回收"]
+  confirmButton["捕捉器確認按鈕"]
+  recycleRequest["Gateway 轉送 RECYCLE_REQUEST"]
+  validateAuthorization{"本場已感應且尚未回收？"}
+  rejectRequest["拒絕結算／回傳原因"]
+  commitRecycle["標記已回收／固定收集清單"]
+  repairDisplay["兩面主投影：回收／轉化／城市修復"]
+  resultSnapshot["Unity 交付成果快照"]
+  tagRead --> seatReport --> deviceMap --> checkPresence
+  checkPresence -->|"否"| rejectRead
+  checkPresence -->|"是"| issueAuthorization --> authorizationUi
+  authorizationUi -->|"移開後資格仍保留"| confirmButton
+  confirmButton --> recycleRequest --> validateAuthorization
+  validateAuthorization -->|"否"| rejectRequest
+  validateAuthorization -->|"是：尚未結算"| commitRecycle
+  commitRecycle --> repairDisplay
+  commitRecycle --> resultSnapshot
+  style issueAuthorization fill:#C2E5FF,stroke:#3DADFF
+  style commitRecycle fill:#CDF4D3,stroke:#66D575
+  style rejectRequest fill:#FFCDC2,stroke:#FF7556

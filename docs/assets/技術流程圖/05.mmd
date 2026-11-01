@@ -1,0 +1,35 @@
+flowchart LR
+  snapshot["Unity 成果快照"]
+  gatewaySave["Gateway 建立 result_id／唯讀 token"]
+  sqliteSave[("SQLite 交易：成果／旋律配方／outbox")]
+  saveOk{"本機交易寫入成功？"}
+  holdSession["暫停正常重置／重試保存"]
+  confirmSaved["RESULT_SAVED 回覆 Unity"]
+  resetExhibit["結尾／QR 交付完成後重置"]
+  handoffQr["交付本場成果 QR"]
+  syncQueue["Gateway 同步工作"]
+  uploadOk{"雲端上傳成功？"}
+  retryLater["保留 outbox／稍後重試"]
+  cloudStore[("雲端成果／版本化音軌")]
+  nextResult["Next.js 唯讀成果頁"]
+  phoneOpen["手機掃碼／離場重開"]
+  available{"雲端已有該成果？"}
+  pendingPage["尚未就緒或無效／稍後重試"]
+  souvenir["感謝信／摘要／旋律播放"]
+  snapshot --> gatewaySave --> sqliteSave --> saveOk
+  saveOk -->|"否"| holdSession
+  holdSession -.-> sqliteSave
+  saveOk -->|"是"| confirmSaved
+  saveOk -->|"是"| handoffQr --> phoneOpen
+  handoffQr --> resetExhibit
+  saveOk -->|"是"| syncQueue --> uploadOk
+  uploadOk -->|"否"| retryLater
+  retryLater -.-> syncQueue
+  uploadOk -->|"是"| cloudStore
+  phoneOpen --> nextResult --> available
+  cloudStore -->|"結果與音軌"| available
+  available -->|"是"| souvenir
+  available -->|"否"| pendingPage
+  style sqliteSave fill:#C2E5FF,stroke:#3DADFF
+  style cloudStore fill:#DCCCFF,stroke:#874FFF
+  style souvenir fill:#CDF4D3,stroke:#66D575

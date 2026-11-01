@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1660" viewBox="0 0 2200 1660">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#60738b"/></marker></defs>
+<rect width="2200" height="1660" fill="#f7f9fc"/>
+<text x="65" y="65" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="36" fill="#24334b" text-anchor="start">02  自動捕捉判定</text>
+<text x="65" y="105" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">相機辨識 → 持續對準 → Unity 判定 → 裝置回饋</text>
+<polyline points="400,230 530,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="830,230 960,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1260,230 1390,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1540,287 1540,413" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1690,470 1810,470" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="2110,470 2120,470 2120,1130 680,1130 680,1057" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1390,470 1260,470" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="960,470 830,470" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="680,527 680,740 960,740" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1110,527 1110,683" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1110,797 1110,943" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="960,1000 830,1000" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="530,1000 470,1000 470,230 530,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<polyline points="1260,1000 1390,1000" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1540,1057 1540,1193" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1540,1307 1540,1423" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1690,1000 1960,1000 1960,1193" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="100" y="173" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="250" y="239" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">固定點紅外線編碼</text>
+<rect x="530" y="173" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="680" y="239" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">PAJ7025R3 光點取樣</text>
+<rect x="960" y="173" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="239" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">ESP32 解碼與中心偏移</text>
+<rect x="1390" y="173" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1540" y="239" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Gateway 轉送觀測</text>
+<polygon points="1540,400 1700,470 1540,540 1380,470" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1540" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">場次／群落／瞄準有效？</text>
+<rect x="1810" y="413" width="300" height="114" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
+<text x="1960" y="463" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 取消嘗試／進度歸</text>
+<text x="1960" y="495" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">零</text>
+<polygon points="1110,400 1270,470 1110,540 950,470" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">同一群落持續對準？</text>
+<rect x="530" y="413" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="680" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">建立新嘗試／從零開始</text>
+<rect x="960" y="683" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="749" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 累積有效對準時間</text>
+<polygon points="1110,930 1270,1000 1110,1070 950,1000" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="1009" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">達設定捕捉時間？</text>
+<rect x="530" y="943" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="680" y="993" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">CAPTURE_PROGRESS </text>
+<text x="680" y="1025" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">回傳裝置</text>
+<rect x="1390" y="943" width="300" height="114" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1540" y="1009" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">整群收走／停燈／SAN 扣一次</text>
+<rect x="1390" y="1193" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1540" y="1243" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">CAPTURE_RESULT 回傳</text>
+<text x="1540" y="1275" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">裝置</text>
+<rect x="1390" y="1423" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1540" y="1489" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">LCD／震動等成功回饋</text>
+<rect x="1810" y="1193" width="300" height="114" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
+<text x="1960" y="1259" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">觸發捕捉器噪音事件</text>
+<rect x="438.0" y="197.0" width="54.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="465.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">光點</text>
+<rect x="873.0" y="197.0" width="44.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="895.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">SPI</text>
+<rect x="1220.515625" y="197.0" width="208.96875" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1325.0" y="218.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">POINT_OBSERVATION</text>
+<rect x="1732.0" y="437.0" width="36.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1750.0" y="458.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">否</text>
+<rect x="1355.0" y="1097.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1400.0" y="1118.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">歸零回覆</text>
+<rect x="1307.0" y="437.0" width="36.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1325.0" y="458.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">是</text>
+<rect x="832.0" y="437.0" width="126.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="895.0" y="458.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">首次／換目標</text>
+<rect x="1115.0" y="572.0" width="36.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1133.0" y="593.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">是</text>
+<rect x="850.0" y="967.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="895.0" y="988.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">未達時長</text>
+<rect x="475.0" y="582.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="520.0" y="603.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">持續取樣</text>
+<rect x="1253.0" y="967.0" width="144.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1325.0" y="988.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">達時長且仍有效</text>
+<rect x="1545.0" y="1092.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1590.0" y="1113.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">確認結果</text>
+<rect x="1545.0" y="1332.0" width="132.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1611.0" y="1353.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">Gateway 回傳</text>
+<rect x="1780.0" y="967.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1825.0" y="988.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成功事件</text>
+<text x="65" y="1625" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#758299" text-anchor="start">技術資料／事件流程｜依專案開發規格繪製｜生成參數與原型效能見討論清單</text>
+</svg>

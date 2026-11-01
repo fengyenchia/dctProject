@@ -1,0 +1,32 @@
+flowchart LR
+  irSample["固定點紅外線編碼"]
+  sensorRead["PAJ7025R3 光點取樣"]
+  decodePoint["ESP32 解碼與中心偏移"]
+  observation["Gateway 轉送觀測"]
+  validateTarget{"場次／群落／瞄準有效？"}
+  resetAttempt["Unity 取消嘗試／進度歸零"]
+  sameTarget{"同一群落持續對準？"}
+  newAttempt["建立新嘗試／從零開始"]
+  progress["Unity 累積有效對準時間"]
+  durationReached{"達設定捕捉時間？"}
+  feedback["CAPTURE_PROGRESS 回傳裝置"]
+  commitCapture["整群收走／停燈／SAN 扣一次"]
+  captureResult["CAPTURE_RESULT 回傳裝置"]
+  deviceOutput["LCD／震動等成功回饋"]
+  noiseEvent["觸發捕捉器噪音事件"]
+  irSample --> sensorRead --> decodePoint --> observation --> validateTarget
+  validateTarget -->|"否：移開或資料無效"| resetAttempt
+  resetAttempt --> feedback
+  validateTarget -->|"是"| sameTarget
+  sameTarget -->|"否：首次或換目標"| newAttempt
+  newAttempt --> progress
+  sameTarget -->|"是"| progress
+  progress --> durationReached
+  durationReached -->|"否"| feedback
+  feedback -.->|"繼續取樣"| sensorRead
+  durationReached -->|"是：群落仍有效"| commitCapture
+  commitCapture --> captureResult --> deviceOutput
+  commitCapture --> noiseEvent
+  style resetAttempt fill:#FFCDC2,stroke:#FF7556
+  style commitCapture fill:#CDF4D3,stroke:#66D575
+  style noiseEvent fill:#FFE0C2,stroke:#FF9E42

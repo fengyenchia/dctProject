@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1780" height="1450" viewBox="0 0 1780 1450">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#60738b"/></marker></defs>
+<rect width="1780" height="1450" fill="#f7f9fc"/>
+<text x="65" y="65" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="36" fill="#24334b" text-anchor="start">01  系統資料串接</text>
+<text x="65" y="105" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">現場設備／展場電腦／雲端成果的資料邊界</text>
+<polyline points="260,317 260,503" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="410,560 550,560" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<polyline points="410,850 470,850 470,650 700,650 700,617" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<polyline points="850,560 960,560" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<polyline points="700,503 700,317" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<polyline points="550,260 410,260" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1110,317 1110,503" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1260,560 1360,560" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="700,617 700,793" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="850,560 900,560 900,1040 700,1040 700,1113" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="850,1170 960,1170" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1360,1170 1260,1170" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1510,907 1510,1113" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect x="110" y="203" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260" y="269" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">各點紅外線燈</text>
+<rect x="110" y="503" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260" y="569" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">捕捉器 ESP32-S3／LCD</text>
+<rect x="110" y="793" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260" y="859" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">NFC 回收座 ESP32</text>
+<rect x="960" y="203" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1110" y="269" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">麥克風／音訊介面</text>
+<rect x="550" y="503" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="700" y="569" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">本機串接服務 Gateway</text>
+<rect x="960" y="503" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1110" y="569" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 遊戲狀態</text>
+<rect x="550" y="793" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2"/>
+<text x="700" y="859" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">SQLite／成果 outbox</text>
+<rect x="550" y="1113" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2"/>
+<text x="700" y="1179" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Next.js 成果 API</text>
+<rect x="960" y="1113" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2"/>
+<text x="1110" y="1179" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">PostgreSQL／音軌資源</text>
+<rect x="1360" y="1113" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2"/>
+<text x="1510" y="1179" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Next.js 紀念品頁</text>
+<rect x="550" y="203" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="700" y="269" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">固定燈控板</text>
+<rect x="1360" y="503" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1510" y="569" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">兩面主投影／現場音響</text>
+<rect x="1360" y="793" width="300" height="114" rx="15" fill="#f0eaff" stroke="#9a83c6" stroke-width="2"/>
+<text x="1510" y="859" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">觀眾手機</text>
+<rect x="265.0" y="377.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="310.0" y="398.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">光點編碼</text>
+<rect x="391.5" y="527.0" width="177.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="480.0" y="548.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">Wi-Fi／WebSocket</text>
+<rect x="496.5" y="617.0" width="177.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="585.0" y="638.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">Wi-Fi／WebSocket</text>
+<rect x="827.5" y="527.0" width="155.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="905.0" y="548.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本機 WebSocket</text>
+<rect x="705.0" y="377.0" width="106.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="758.0" y="398.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">USB／串口</text>
+<rect x="435.0" y="227.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="480.0" y="248.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">驅動輸出</text>
+<rect x="1115.0" y="377.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1160.0" y="398.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">觀眾聲音</text>
+<rect x="1256.0" y="527.0" width="108.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1310.0" y="548.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">影像／音效</text>
+<rect x="705.0" y="672.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="750.0" y="693.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">保存成果</text>
+<rect x="905.0" y="767.0" width="73.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="941.5" y="788.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">HTTPS</text>
+<rect x="860.0" y="1137.0" width="90.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="905.0" y="1158.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">寫入結果</text>
+<rect x="1238.0" y="1137.0" width="144.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1310.0" y="1158.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">讀取結果／音軌</text>
+<rect x="1515.0" y="977.0" width="73.0" height="28" rx="5" fill="#f7f9fc"/>
+<text x="1551.5" y="998.0" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">HTTPS</text>
+<text x="65" y="1415" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#758299" text-anchor="start">技術資料／事件流程｜依專案開發規格繪製｜生成參數與原型效能見討論清單</text>
+</svg>

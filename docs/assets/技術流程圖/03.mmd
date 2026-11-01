@@ -1,0 +1,28 @@
+flowchart LR
+  audienceVoice["觀眾聲音"]
+  microphone["麥克風／音訊介面"]
+  analyzeVoice["Unity 分析音量與持續時間"]
+  disturbEvent["觀眾聲音擾動事件"]
+  localMovement["既有音虫局部快速亂動"]
+  captureSuccess["Unity 確認成功捕捉"]
+  captureCommit["整群收走／停燈／SAN 扣一次"]
+  resultReturn["Gateway 回傳成功結果"]
+  catcherFeedback["捕捉器 LCD／震動"]
+  captureNoise["Unity 捕捉噪音事件"]
+  speakerPlay["現場音響播放捕捉器噪音"]
+  birthControl["Unity 新音虫生成控制"]
+  newGroup["依規則生成新群落"]
+  projection["兩面主投影更新音虫"]
+  lightControl["燈控板啟用該點紅外線發射燈"]
+  audienceVoice --> microphone --> analyzeVoice --> disturbEvent --> localMovement --> projection
+  captureSuccess --> captureCommit
+  captureCommit --> resultReturn --> catcherFeedback
+  captureCommit --> captureNoise
+  captureNoise -->|"播放"| speakerPlay
+  captureNoise -->|"促成誕生"| birthControl
+  birthControl --> newGroup
+  newGroup --> projection
+  newGroup --> lightControl
+  style audienceVoice fill:#C6FAF6,stroke:#5AD8CC
+  style captureNoise fill:#FFE0C2,stroke:#FF9E42
+  style newGroup fill:#CDF4D3,stroke:#66D575
