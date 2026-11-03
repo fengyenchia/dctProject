@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="2200" viewBox="0 0 1480 2200">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64798b"/></marker></defs>
+<rect width="1480" height="2200" fill="#fafbfd"/>
+<g font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+<text x="48" y="62" font-size="32" font-weight="700" fill="#263d50">05　成果保存、發布與離場交付</text>
+<text x="48" y="104" font-size="20" fill="#536a7e">左上開始｜左側交付與重置；右側背景上傳，斷網保留佇列</text>
+<path d="M250.0,274 L250.0,360" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M250.0,464 L250.0,550" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M430,615.0 L900,612.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="665.0" y="603.5" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">否</text>
+<path d="M1080,560 L1080,310 L250,310 L250,360" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="1080.0" y="425.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">重試</text>
+<path d="M250.0,680 L250.0,780" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="250.0" y="720.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">是</text>
+<path d="M430,832.0 L900,832.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="665.0" y="822.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">背景同步</text>
+<path d="M250.0,884 L250.0,1010" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M250.0,1114 L250.0,1250" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M70,1062 L35,1062 L35,1992 L70,1992" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M1080.0,884 L1080.0,1010" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M1080.0,1140 L1080.0,1250" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="1080.0" y="1185.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">是</text>
+<path d="M1260,1075 L1320,1075 L1320,1512 L1260,1512" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="1290.0" y="1065.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">否</text>
+<path d="M1080,1460 L1080,1400 L1420,1400 L1420,832 L1260,832" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="1080.0" y="1420.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">重試</text>
+<path d="M250.0,1354 L250.0,1460" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M900,1302 L650,1302 L650,1420 L250,1420 L250,1460" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="775.0" y="1292.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">讀取成果</text>
+<path d="M250.0,1590 L250.0,1710" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="250.0" y="1640.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">是</text>
+<path d="M430,1525 L700,1525 L700,1762 L900,1762" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="565.0" y="1515.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">否</text>
+<rect x="70" y="170" width="360" height="104" rx="16" fill="#e5f4f1" stroke="#4c9c8b" stroke-width="2"/>
+<text x="250.0" y="215.0" text-anchor="middle" font-size="23" fill="#263d50">Unity 固定成果快照</text>
+<text x="250.0" y="245.0" text-anchor="middle" font-size="23" fill="#263d50">RESULT_READY</text>
+<rect x="70" y="360" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="250.0" y="405.0" text-anchor="middle" font-size="23" fill="#263d50">Gateway 建立 result_id／token</text>
+<text x="250.0" y="435.0" text-anchor="middle" font-size="23" fill="#263d50">SQLite 成果＋outbox 同筆交易</text>
+<polygon points="250.0,550 430,615.0 250.0,680 70,615.0" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="250.0" y="623.0" text-anchor="middle" font-size="23" fill="#263d50">本機保存成功？</text>
+<rect x="900" y="560" width="360" height="104" rx="16" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="1080.0" y="620.0" text-anchor="middle" font-size="23" fill="#263d50">重試保存／暫停正常重置</text>
+<rect x="70" y="780" width="360" height="104" rx="16" fill="#e8f4e9" stroke="#6ca576" stroke-width="2"/>
+<text x="250.0" y="825.0" text-anchor="middle" font-size="23" fill="#263d50">RESULT_SAVED</text>
+<text x="250.0" y="855.0" text-anchor="middle" font-size="23" fill="#263d50">回覆 Unity</text>
+<rect x="900" y="780" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="1080.0" y="825.0" text-anchor="middle" font-size="23" fill="#263d50">outbox 認證上傳</text>
+<text x="1080.0" y="855.0" text-anchor="middle" font-size="23" fill="#263d50">同 result_id 重試不重複</text>
+<rect x="70" y="1010" width="360" height="104" rx="16" fill="#e8f4e9" stroke="#6ca576" stroke-width="2"/>
+<text x="250.0" y="1055.0" text-anchor="middle" font-size="23" fill="#263d50">完成結尾／取下頭戴</text>
+<text x="250.0" y="1085.0" text-anchor="middle" font-size="23" fill="#263d50">交付本場成果 QR</text>
+<polygon points="1080.0,1010 1260,1075.0 1080.0,1140 900,1075.0" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="1080.0" y="1083.0" text-anchor="middle" font-size="23" fill="#263d50">上傳成功？</text>
+<rect x="70" y="1250" width="360" height="104" rx="16" fill="#e5f4f1" stroke="#4c9c8b" stroke-width="2"/>
+<text x="250.0" y="1295.0" text-anchor="middle" font-size="23" fill="#263d50">手機掃碼或離場重開</text>
+<text x="250.0" y="1325.0" text-anchor="middle" font-size="23" fill="#263d50">Next.js 成果頁</text>
+<rect x="900" y="1250" width="360" height="104" rx="16" fill="#f0eafa" stroke="#9a7ab9" stroke-width="2"/>
+<text x="1080.0" y="1295.0" text-anchor="middle" font-size="23" fill="#263d50">雲端保存同一成果</text>
+<text x="1080.0" y="1325.0" text-anchor="middle" font-size="23" fill="#263d50">與版本化音軌</text>
+<polygon points="250.0,1460 430,1525.0 250.0,1590 70,1525.0" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="250.0" y="1533.0" text-anchor="middle" font-size="23" fill="#263d50">該成果已發布？</text>
+<rect x="900" y="1460" width="360" height="104" rx="16" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="1080.0" y="1505.0" text-anchor="middle" font-size="23" fill="#263d50">保留 outbox</text>
+<text x="1080.0" y="1535.0" text-anchor="middle" font-size="23" fill="#263d50">復線補傳</text>
+<rect x="70" y="1710" width="360" height="104" rx="16" fill="#f0eafa" stroke="#9a7ab9" stroke-width="2"/>
+<text x="250.0" y="1755.0" text-anchor="middle" font-size="23" fill="#263d50">感謝信／收集摘要</text>
+<text x="250.0" y="1785.0" text-anchor="middle" font-size="23" fill="#263d50">個人旋律播放</text>
+<rect x="900" y="1710" width="360" height="104" rx="16" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="1080.0" y="1755.0" text-anchor="middle" font-size="23" fill="#263d50">成果尚未就緒或連結無效</text>
+<text x="1080.0" y="1785.0" text-anchor="middle" font-size="23" fill="#263d50">提示稍後重試</text>
+<rect x="70" y="1940" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="250.0" y="1985.0" text-anchor="middle" font-size="23" fill="#263d50">保存＋結尾＋QR 交付完成</text>
+<text x="250.0" y="2015.0" text-anchor="middle" font-size="23" fill="#263d50">重置遊戲／保留成果及佇列</text>
+<text x="48" y="2130" font-size="20" fill="#536a7e">成果 QR 需在頭戴外可交付；網路中斷時連結保持相同，發布後可重開。</text>
+<text x="48" y="2159" font-size="20" fill="#536a7e">不同種類對應預製聲部；保存配方與音軌版本，確保離場旋律一致。</text>
+</g>
+</svg>

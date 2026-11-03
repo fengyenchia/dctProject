@@ -1,0 +1,33 @@
+flowchart TD
+  snapshot["Unity 固定成果快照<br/>RESULT_READY"]
+  save["Gateway 建立 result_id／token<br/>SQLite 成果＋outbox 同筆交易"]
+  saved{"本機保存成功？"}
+  retry["重試保存／暫停正常重置"]
+  ack["RESULT_SAVED<br/>回覆 Unity"]
+  upload["outbox 認證上傳<br/>同 result_id 重試不重複"]
+  handoff["完成結尾／取下頭戴<br/>交付本場成果 QR"]
+  uploaded{"上傳成功？"}
+  phone["手機掃碼或離場重開<br/>Next.js 成果頁"]
+  cloud["雲端保存同一成果<br/>與版本化音軌"]
+  available{"該成果已發布？"}
+  retryUpload["保留 outbox<br/>復線補傳"]
+  web["感謝信／收集摘要<br/>個人旋律播放"]
+  pending["成果尚未就緒或連結無效<br/>提示稍後重試"]
+  reset["保存＋結尾＋QR 交付完成<br/>重置遊戲／保留成果及佇列"]
+  snapshot --> save
+  save --> saved
+  saved -->|"否"| retry
+  retry -.->|"重試"| save
+  saved -->|"是"| ack
+  ack -->|"背景同步"| upload
+  ack --> handoff
+  handoff --> phone
+  handoff --> reset
+  upload --> uploaded
+  uploaded -->|"是"| cloud
+  uploaded -->|"否"| retryUpload
+  retryUpload -.->|"重試"| upload
+  phone --> available
+  cloud -->|"讀取成果"| available
+  available -->|"是"| web
+  available -->|"否"| pending

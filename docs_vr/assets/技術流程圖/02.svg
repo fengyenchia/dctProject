@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1230" height="1690" viewBox="0 0 1230 1690">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64798b"/></marker></defs>
+<rect width="1230" height="1690" fill="#fafbfd"/>
+<g font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+<text x="48" y="62" font-size="32" font-weight="700" fill="#263d50">02　瞄準與自動捕捉判定</text>
+<text x="48" y="104" font-size="20" fill="#536a7e">左上開始｜移開、換目標、遮擋或失去追蹤，進度歸零</text>
+<path d="M250.0,274 L250.0,340" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M250.0,444 L250.0,510" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M430,575.0 L730,572.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="580.0" y="563.5" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">否</text>
+<path d="M910,520 L910,300 L250,300 L250,340" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="910.0" y="400.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">重試</text>
+<path d="M250.0,640 L250.0,720" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="250.0" y="670.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">是</text>
+<path d="M250.0,824 L250.0,900" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M430,965.0 L730,962.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="580.0" y="953.5" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">尚未達時長</text>
+<path d="M1090,962 L1150,962 L1150,280 L250,280 L250,340" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="1120.0" y="952.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">繼續觀測</text>
+<path d="M250.0,1030 L250.0,1110" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="250.0" y="1060.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">是</text>
+<path d="M250.0,1214 L250.0,1300" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M430,1162 L600,1162 L600,1352 L730,1352" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="515.0" y="1152.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">同一捕捉紀錄</text>
+<rect x="70" y="170" width="360" height="104" rx="16" fill="#e5f4f1" stroke="#4c9c8b" stroke-width="2"/>
+<text x="250.0" y="215.0" text-anchor="middle" font-size="23" fill="#263d50">OpenXR 手部姿態</text>
+<text x="250.0" y="245.0" text-anchor="middle" font-size="23" fill="#263d50">虛擬捕捉器前向</text>
+<rect x="70" y="340" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="250.0" y="385.0" text-anchor="middle" font-size="23" fill="#263d50">Unity 射線檢查</text>
+<text x="250.0" y="415.0" text-anchor="middle" font-size="23" fill="#263d50">最近群落／環境遮擋</text>
+<polygon points="250.0,510 430,575.0 250.0,640 70,575.0" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="250.0" y="583.0" text-anchor="middle" font-size="23" fill="#263d50">探索中且命中有效群落？</text>
+<rect x="730" y="520" width="360" height="104" rx="16" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="910.0" y="565.0" text-anchor="middle" font-size="23" fill="#263d50">進度歸零</text>
+<text x="910.0" y="595.0" text-anchor="middle" font-size="23" fill="#263d50">等待重新對準</text>
+<rect x="70" y="720" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="250.0" y="765.0" text-anchor="middle" font-size="23" fill="#263d50">同一群落持續對準</text>
+<text x="250.0" y="795.0" text-anchor="middle" font-size="23" fill="#263d50">累積有效時間</text>
+<polygon points="250.0,900 430,965.0 250.0,1030 70,965.0" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="250.0" y="973.0" text-anchor="middle" font-size="23" fill="#263d50">達捕捉時間且目標仍有效？</text>
+<rect x="730" y="910" width="360" height="104" rx="16" fill="#eef4fa" stroke="#7b95ae" stroke-width="2"/>
+<text x="910.0" y="955.0" text-anchor="middle" font-size="23" fill="#263d50">虛擬 LCD 顯示進度</text>
+<text x="910.0" y="985.0" text-anchor="middle" font-size="23" fill="#263d50">持續取樣</text>
+<rect x="70" y="1110" width="360" height="104" rx="16" fill="#e8f4e9" stroke="#6ca576" stroke-width="2"/>
+<text x="250.0" y="1155.0" text-anchor="middle" font-size="23" fill="#263d50">標記已捕捉／整群消失</text>
+<text x="250.0" y="1185.0" text-anchor="middle" font-size="23" fill="#263d50">收集一次／SAN 扣一次</text>
+<rect x="70" y="1300" width="360" height="104" rx="16" fill="#e8f4e9" stroke="#6ca576" stroke-width="2"/>
+<text x="250.0" y="1345.0" text-anchor="middle" font-size="23" fill="#263d50">更新虛擬 LCD</text>
+<text x="250.0" y="1375.0" text-anchor="middle" font-size="23" fill="#263d50">控制器震動</text>
+<rect x="730" y="1300" width="360" height="104" rx="16" fill="#fff0e0" stroke="#c99655" stroke-width="2"/>
+<text x="910.0" y="1345.0" text-anchor="middle" font-size="23" fill="#263d50">CAPTURE_NOISE</text>
+<text x="910.0" y="1375.0" text-anchor="middle" font-size="23" fill="#263d50">接圖 03 的噪音／誕生</text>
+<text x="48" y="1620" font-size="20" fill="#536a7e">換群落時從零開始；成功結算一次後，舊群落不可再次捕捉。</text>
+<text x="48" y="1649" font-size="20" fill="#536a7e">捕捉對應群落範圍，不逐隻追蹤群內小個體。</text>
+</g>
+</svg>

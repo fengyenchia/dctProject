@@ -1,0 +1,20 @@
+flowchart TD
+  xr["VR 頭戴／控制器<br/>姿態、搖桿、按鍵"]
+  runtime["PCVR 執行環境<br/>OpenXR 輸入"]
+  mic["頭戴麥克風<br/>觀眾音量與持續時間"]
+  unity["Unity 遊戲狀態<br/>捕捉／SAN／回收"]
+  output["頭戴畫面／空間音效<br/>控制器震動"]
+  service["本機串接服務 Gateway<br/>管理、保存與上傳"]
+  admin["工作人員管理頁<br/>開始／暫停／重置"]
+  db["SQLite 本機成果<br/>待上傳佇列 outbox"]
+  cloud["雲端 Next.js API<br/>成果資料庫／音軌"]
+  phone["離場手機成果頁<br/>感謝信／摘要／旋律"]
+  xr --> runtime
+  runtime --> unity
+  mic --> unity
+  unity --> output
+  unity <-->|"指令／成果／保存確認"| service
+  admin -->|"管理指令"| service
+  service --> db
+  service -->|"HTTPS"| cloud
+  cloud -->|"成果／音軌"| phone

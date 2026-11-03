@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1110" viewBox="0 0 1400 1110">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64798b"/></marker></defs>
+<rect width="1400" height="1110" fill="#fafbfd"/>
+<g font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif">
+<text x="48" y="62" font-size="32" font-weight="700" fill="#263d50">01　系統資料串接</text>
+<text x="48" y="104" font-size="20" fill="#536a7e">左上開始｜即時互動留在 Unity；成果才經本機服務上傳</text>
+<path d="M420,232.0 L530,232.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M710.0,284 L710.0,390" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M420,442.0 L530,442.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M890,442.0 L1000,442.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M710.0,494 L710.0,600" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="710.0" y="537.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">指令／成果／保存確認</text>
+<path d="M420,652.0 L530,652.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="475.0" y="642.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">管理指令</text>
+<path d="M890,652.0 L1000,652.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M710.0,704 L710.0,810" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="710.0" y="747.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">HTTPS</text>
+<path d="M890,862.0 L1000,862.0" fill="none" stroke="#64798b" stroke-width="2.4" marker-end="url(#arrow)"/>
+<text x="945.0" y="852.0" text-anchor="middle" font-size="19" fill="#4c6478" stroke="#fafbfd" stroke-width="7" paint-order="stroke">成果／音軌</text>
+<rect x="60" y="180" width="360" height="104" rx="16" fill="#e5f4f1" stroke="#4c9c8b" stroke-width="2"/>
+<text x="240.0" y="225.0" text-anchor="middle" font-size="23" fill="#263d50">VR 頭戴／控制器</text>
+<text x="240.0" y="255.0" text-anchor="middle" font-size="23" fill="#263d50">姿態、搖桿、按鍵</text>
+<rect x="530" y="180" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="710.0" y="225.0" text-anchor="middle" font-size="23" fill="#263d50">PCVR 執行環境</text>
+<text x="710.0" y="255.0" text-anchor="middle" font-size="23" fill="#263d50">OpenXR 輸入</text>
+<rect x="60" y="390" width="360" height="104" rx="16" fill="#e5f4f1" stroke="#4c9c8b" stroke-width="2"/>
+<text x="240.0" y="435.0" text-anchor="middle" font-size="23" fill="#263d50">頭戴麥克風</text>
+<text x="240.0" y="465.0" text-anchor="middle" font-size="23" fill="#263d50">觀眾音量與持續時間</text>
+<rect x="530" y="390" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="710.0" y="435.0" text-anchor="middle" font-size="23" fill="#263d50">Unity 遊戲狀態</text>
+<text x="710.0" y="465.0" text-anchor="middle" font-size="23" fill="#263d50">捕捉／SAN／回收</text>
+<rect x="1000" y="390" width="360" height="104" rx="16" fill="#e8f4e9" stroke="#6ca576" stroke-width="2"/>
+<text x="1180.0" y="435.0" text-anchor="middle" font-size="23" fill="#263d50">頭戴畫面／空間音效</text>
+<text x="1180.0" y="465.0" text-anchor="middle" font-size="23" fill="#263d50">控制器震動</text>
+<rect x="530" y="600" width="360" height="104" rx="16" fill="#eaf0ff" stroke="#6887c6" stroke-width="2"/>
+<text x="710.0" y="645.0" text-anchor="middle" font-size="23" fill="#263d50">本機串接服務 Gateway</text>
+<text x="710.0" y="675.0" text-anchor="middle" font-size="23" fill="#263d50">管理、保存與上傳</text>
+<rect x="60" y="600" width="360" height="104" rx="16" fill="#eef4fa" stroke="#7b95ae" stroke-width="2"/>
+<text x="240.0" y="645.0" text-anchor="middle" font-size="23" fill="#263d50">工作人員管理頁</text>
+<text x="240.0" y="675.0" text-anchor="middle" font-size="23" fill="#263d50">開始／暫停／重置</text>
+<rect x="1000" y="600" width="360" height="104" rx="16" fill="#eef4fa" stroke="#7b95ae" stroke-width="2"/>
+<text x="1180.0" y="645.0" text-anchor="middle" font-size="23" fill="#263d50">SQLite 本機成果</text>
+<text x="1180.0" y="675.0" text-anchor="middle" font-size="23" fill="#263d50">待上傳佇列 outbox</text>
+<rect x="530" y="810" width="360" height="104" rx="16" fill="#f0eafa" stroke="#9a7ab9" stroke-width="2"/>
+<text x="710.0" y="855.0" text-anchor="middle" font-size="23" fill="#263d50">雲端 Next.js API</text>
+<text x="710.0" y="885.0" text-anchor="middle" font-size="23" fill="#263d50">成果資料庫／音軌</text>
+<rect x="1000" y="810" width="360" height="104" rx="16" fill="#f0eafa" stroke="#9a7ab9" stroke-width="2"/>
+<text x="1180.0" y="855.0" text-anchor="middle" font-size="23" fill="#263d50">離場手機成果頁</text>
+<text x="1180.0" y="885.0" text-anchor="middle" font-size="23" fill="#263d50">感謝信／摘要／旋律</text>
+<text x="48" y="1040" font-size="20" fill="#536a7e">VR 影像連線由設備執行環境處理；Gateway 的 WebSocket 不傳頭戴影像。</text>
+<text x="48" y="1069" font-size="20" fill="#536a7e">同機 Unity ↔ Gateway 使用本機通訊；外網中斷不停止捕捉。</text>
+</g>
+</svg>
