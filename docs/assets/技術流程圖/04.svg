@@ -2,7 +2,7 @@
 <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#60738b"/></marker></defs>
 <rect width="2000" height="1530" fill="#f7f9fc"/>
 <text x="65" y="65" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="36" fill="#24334b" text-anchor="start">04  NFC 回收與確認</text>
-<text x="65" y="105" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">一次感應取得本場資格，移開後仍可按捕捉器按鈕確認</text>
+<text x="65" y="105" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">一次感應取得本場資格，螢幕出現觸控按鈕，移開後仍可確認</text>
 <polyline points="400,230 530,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
 <polyline points="830,230 960,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
 <polyline points="1260,230 1390,230" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
@@ -34,9 +34,10 @@
 <text x="1110" y="463" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Unity 記錄本場已感應</text>
 <text x="1110" y="495" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle"></text>
 <rect x="530" y="413" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="680" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">LCD 顯示可確認回收</text>
+<text x="680" y="479" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">螢幕顯示「確認回收」</text>
 <rect x="100" y="653" width="300" height="114" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
-<text x="250" y="719" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">捕捉器確認按鈕</text>
+<text x="250" y="703" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">點按螢幕「確認回收」</text>
+<text x="250" y="735" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">送出後顯示處理中</text>
 <rect x="530" y="653" width="300" height="114" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="680" y="703" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">Gateway 轉送 RECYCLE</text>
 <text x="680" y="735" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">_REQUEST</text>

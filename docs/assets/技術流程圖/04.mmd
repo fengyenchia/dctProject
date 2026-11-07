@@ -5,8 +5,8 @@ flowchart LR
   checkPresence{"本場裝置／可回收階段有效？"}
   rejectRead["不開放回收確認"]
   issueAuthorization["Unity 記錄本場已感應"]
-  authorizationUi["LCD 顯示可確認回收"]
-  confirmButton["捕捉器確認按鈕"]
+  authorizationUi["螢幕顯示「確認回收」"]
+  confirmButton["點按螢幕「確認回收」<br/>送出後顯示處理中"]
   recycleRequest["Gateway 轉送 RECYCLE_REQUEST"]
   validateAuthorization{"本場已感應且尚未回收？"}
   rejectRequest["拒絕結算／回傳原因"]
