@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(exhibit_aec LANGUAGES CXX)
+find_path(SPEEX_INCLUDE speex/speex_echo.h REQUIRED)
+find_library(SPEEX_LIBRARY NAMES speexdsp libspeexdsp REQUIRED)
+add_library(exhibit_aec SHARED exhibit_aec.cpp)
+target_compile_features(exhibit_aec PRIVATE cxx_std_17)
+target_include_directories(exhibit_aec PRIVATE ${SPEEX_INCLUDE})
+target_link_libraries(exhibit_aec PRIVATE ${SPEEX_LIBRARY})

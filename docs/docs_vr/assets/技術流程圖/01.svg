@@ -54,8 +54,8 @@
 <text x="760" y="1145" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本機保存後列印</text>
 <polyline points="1420,780.0 1460,780 1460,630 1760,630 1760.0,580" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
 <polygon points="1760.00,580.00 1764.67,591.05 1755.33,591.05" fill="#60738b"/>
-<rect x="1559.0" y="615" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
-<text x="1630" y="630" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">前導／成果資料</text>
+<rect x="1568.0" y="615" width="124.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1630" y="630" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">前導播放控制</text>
 <polyline points="920,520.0 960,520 960,400 1980,400 1980,660 1760,660 1760.0,720" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
 <polygon points="1760.00,720.00 1755.33,708.95 1764.67,708.95" fill="#60738b"/>
 <rect x="1429.0" y="385" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
@@ -70,6 +70,10 @@
 <polygon points="1600.00,1570.00 1588.95,1574.67 1588.95,1565.33" fill="#60738b"/>
 <rect x="1466.0" y="1525" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
 <text x="1510" y="1540" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">示範結束</text>
+<polyline points="920,1280.0 1600,1280.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1600.00,1280.00 1588.95,1284.67 1588.95,1275.33" fill="#60738b"/>
+<rect x="1209.0" y="1265" width="102.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1260" y="1280" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">掃紙票 QR</text>
 <rect x="100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3／Touch Plus</text>
 <text x="260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">頭手追蹤與控制器輸入</text>
@@ -117,10 +121,10 @@
 <text x="260.0" y="1055.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">單次觸發／停聲與冷卻</text>
 <rect x="600" y="1220" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="760.0" y="1265.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">USB 感熱印表機</text>
-<text x="760.0" y="1295.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">聲音收藏票／自動裁切</text>
+<text x="760.0" y="1295.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">收藏票：圖／清單／成果 QR</text>
 <rect x="1600" y="460" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="1760.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">觀眾螢幕 ×1</text>
-<text x="1760.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">前導影片／成果 QR</text>
+<text x="1760.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">播放前導影片</text>
 <rect x="100" y="1510" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="1555.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">前導／配戴後校驗通過</text>
 <text x="260.0" y="1585.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 建立 session_id</text>

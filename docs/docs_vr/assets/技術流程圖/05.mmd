@@ -8,18 +8,18 @@ flowchart TD
   pcOk{"電腦交易成功？"}
   pcRetry["Unity 保留待交付成果／恢復本機串接後重送"]
   ack["RESULT_SAVED 回覆 Unity／電腦已保存，非雲端發布"]
-  handoff["結尾／取下頭戴／觀眾螢幕交付成果 QR"]
+  handoff["完成結尾／取下頭戴／準備收藏票交付"]
   upload["Gateway 背景 HTTPS 上傳／同 result_id 重試"]
   cloudOk{"雲端上傳成功？"}
   cloud["Neon：成果／聲部配方／Vercel：成果頁／預製音軌"]
   queue["保留電腦 outbox／復線後重試"]
-  phone["手機掃碼／離場重開／Vercel／Next.js 成果頁"]
+  phone["掃紙票 QR／離場重開／Next.js 線上紀念品"]
   web["感謝信／摘要／旋律／未就緒則提示重試"]
-  reset["保存＋結尾＋QR 交付後／重置遊戲，保留成果"]
+  reset["保存＋結尾＋交票完成／重置遊戲，保留成果"]
   ticketImage["Gateway 保存收藏票票面／5變體組合圖＋聲音清單／同一成果 QR"]
   ticketUsb["Windows 列印佇列 → USB／感熱印表機送紙／裁切"]
   ticketOk{"出紙是否正常？／設備回報／人員確認"}
-  ticketTake["出口交付聲音收藏票／每場預設一張"]
+  ticketTake["出口交付聲音收藏票／每場一張／含成果 QR"]
   ticketRetry["保留工作／管理端補印／同一票面與 QR，不重算成果"]
   snapshot --> unityStore
   unityStore --> localOk
@@ -33,8 +33,6 @@ flowchart TD
   pcOk -->|"是"| ack
   ack --> handoff
   ack --> upload
-  handoff --> reset
-  handoff --> phone
   upload --> cloudOk
   cloudOk -->|"是"| cloud
   cloudOk -->|"否"| queue
@@ -47,6 +45,8 @@ flowchart TD
   ticketOk -->|"是"| ticketTake
   ticketOk -->|"否"| ticketRetry
   ticketRetry -.->|"人工確認後補印"| ticketUsb
+  ticketTake -->|"交票完成"| reset
+  ticketTake -->|"掃紙票 QR"| phone
   style snapshot fill:#e8f1fd,stroke:#7099c9
   style unityStore fill:#e8f1fd,stroke:#7099c9
   style localOk fill:#e8f1fd,stroke:#7099c9

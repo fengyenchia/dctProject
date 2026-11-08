@@ -34,10 +34,6 @@
 <polygon points="420.00,1300.00 431.05,1295.33 431.05,1304.67" fill="#60738b"/>
 <polyline points="760.0,1360 760.0,1500" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
 <polygon points="760.00,1500.00 755.33,1488.95 764.67,1488.95" fill="#60738b"/>
-<polyline points="260.0,1360 260.0,1760" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
-<polygon points="260.00,1760.00 255.33,1748.95 264.67,1748.95" fill="#60738b"/>
-<polyline points="420,1300.0 500,1300 500,1820 600,1820.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
-<polygon points="600.00,1820.00 588.95,1824.67 588.95,1815.33" fill="#60738b"/>
 <polyline points="920,1560.0 1090,1560.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
 <polygon points="1090.00,1560.00 1078.95,1564.67 1078.95,1555.33" fill="#60738b"/>
 <polyline points="1430,1560.0 1600,1560.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
@@ -76,6 +72,14 @@
 <polygon points="760.00,2300.00 764.67,2311.05 755.33,2311.05" fill="#60738b"/>
 <rect x="709.0" y="2395" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
 <text x="780" y="2410" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">人工確認後補印</text>
+<polyline points="1760.0,2300 1760.0,2440" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1760.00,2440.00 1755.33,2428.95 1764.67,2428.95" fill="#60738b"/>
+<rect x="1716.0" y="2339.0" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1760.0" y="2354.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">交票完成</text>
+<polyline points="1760.0,2180 1760,2070 510,2070 510,1820 600,1820.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="600.00,1820.00 588.95,1824.67 588.95,1815.33" fill="#60738b"/>
+<rect x="1219.0" y="2055" width="102.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1270" y="2070" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">掃紙票 QR</text>
 <rect x="100" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="230.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 固定成果</text>
 <text x="260.0" y="260.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">result_id／token／配方</text>
@@ -103,8 +107,8 @@
 <text x="760.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">RESULT_SAVED 回覆 Unity</text>
 <text x="760.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">電腦已保存，非雲端發布</text>
 <rect x="100" y="1240" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="260.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">結尾／取下頭戴</text>
-<text x="260.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">觀眾螢幕交付成果 QR</text>
+<text x="260.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">完成結尾／取下頭戴</text>
+<text x="260.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">準備收藏票交付</text>
 <rect x="600" y="1500" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="760.0" y="1545.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway 背景 HTTPS 上傳</text>
 <text x="760.0" y="1575.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">同 result_id 重試</text>
@@ -117,14 +121,14 @@
 <text x="1260.0" y="1805.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保留電腦 outbox</text>
 <text x="1260.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">復線後重試</text>
 <rect x="600" y="1760" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
-<text x="760.0" y="1805.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">手機掃碼／離場重開</text>
-<text x="760.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel／Next.js 成果頁</text>
+<text x="760.0" y="1805.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">掃紙票 QR／離場重開</text>
+<text x="760.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Next.js 線上紀念品</text>
 <rect x="1600" y="1760" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
 <text x="1760.0" y="1805.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">感謝信／摘要／旋律</text>
 <text x="1760.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未就緒則提示重試</text>
-<rect x="100" y="1760" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
-<text x="260.0" y="1805.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保存＋結尾＋QR 交付後</text>
-<text x="260.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重置遊戲，保留成果</text>
+<rect x="1600" y="2440" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1760.0" y="2485.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保存＋結尾＋交票完成</text>
+<text x="1760.0" y="2515.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重置遊戲，保留成果</text>
 <rect x="100" y="2180" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="2210.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway 保存收藏票票面</text>
 <text x="260.0" y="2240.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">5變體組合圖＋聲音清單</text>
@@ -137,11 +141,11 @@
 <text x="1260.0" y="2255.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">設備回報／人員確認</text>
 <rect x="1600" y="2180" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
 <text x="1760.0" y="2225.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">出口交付聲音收藏票</text>
-<text x="1760.0" y="2255.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">每場預設一張</text>
+<text x="1760.0" y="2255.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">每場一張／含成果 QR</text>
 <rect x="1100" y="2440" width="320" height="120" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
 <text x="1260.0" y="2485.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保留工作／管理端補印</text>
 <text x="1260.0" y="2515.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">同一票面與 QR，不重算成果</text>
 <text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">05  本機保存、成果補傳與聲音收藏票</text>
-<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">保存確認後交付成果 QR、背景補傳與 USB 紙票；列印異常保留工作並由管理端補印。</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">本機保存後印製含成果 QR 的收藏票；交票後重置，成果背景補傳；列印異常由管理端補印。</text>
 <text x="65" y="2698" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">VR 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
 </svg>

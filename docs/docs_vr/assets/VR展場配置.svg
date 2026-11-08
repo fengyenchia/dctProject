@@ -46,12 +46,12 @@
 <text x="1440" y="175" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="middle">所有互動在同一城市場景完成</text>
 <rect x="90" y="920" width="240" height="130" rx="12" fill="#ffffff" stroke="#7099c9" stroke-width="3"/>
 <text x="210" y="956" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">觀眾螢幕 ×1</text>
-<text x="210" y="1005" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="19" fill="#66758b" text-anchor="middle">前導影片／成果 QR</text>
+<text x="210" y="1005" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="19" fill="#66758b" text-anchor="middle">播放前導影片</text>
 <rect x="355" y="920" width="240" height="130" rx="12" fill="#ffffff" stroke="#7099c9" stroke-width="3"/>
 <text x="475" y="956" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">工作人員螢幕 ×1</text>
 <text x="475" y="1005" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#66758b" text-anchor="middle">Unity 監看／管理／除錯</text>
 <text x="650" y="938" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="23" fill="#24334b" text-anchor="start">同一台 PC：雙螢幕延伸顯示、遊戲與成果服務</text>
-<text x="650" y="976" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">出口：USB 感熱印表機，列印每場一張聲音收藏票</text>
+<text x="650" y="976" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">出口：USB 列印聲音收藏票；成果 QR 僅印在紙票上</text>
 <text x="650" y="1012" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">Quest 3：畫面／內建喇叭與麥克風／追蹤；控制器：瞄準／UI／震動</text>
 <text x="65" y="1090" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">Mask 隨場景落點移動；捕捉只在有效對準音虫時累積，移開保留進度與外觀。</text>
 <text x="65" y="1140" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="19" fill="#66758b" text-anchor="start">活動圈 Ø3m＋外圍 0.5m 緩衝；圓心沿場地長邊 4.5m、短邊 2.5m，布展前核對淨空與線材。</text>

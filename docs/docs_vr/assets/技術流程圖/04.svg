@@ -67,14 +67,15 @@
 <text x="760.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">RECYCLE_REQUEST</text>
 <text x="760.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 檢查</text>
 <polygon points="1260.0,708 1430,780.0 1260.0,852 1090,780.0" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="1260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">已到站、可回收</text>
-<text x="1260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">且尚未結算？</text>
+<text x="1260.0" y="750.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Return／已到站</text>
+<text x="1260.0" y="780.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">追蹤有效／圓內</text>
+<text x="1260.0" y="810.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">尚未結算？</text>
 <rect x="1600" y="720" width="320" height="120" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
 <text x="1760.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">拒絕結算／回傳原因</text>
 <text x="1760.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重送不重複回收</text>
 <rect x="1100" y="1000" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
-<text x="1260.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">先標記已回收、固定清單</text>
-<text x="1260.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">登錄變體與群落次數</text>
+<text x="1260.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">已回收／固定收藏清單</text>
+<text x="1260.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">剩餘群落與聲源退場</text>
 <rect x="600" y="1000" width="320" height="120" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
 <text x="760.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">噪音能量</text>
 <text x="760.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">轉化為物品</text>

@@ -13,8 +13,8 @@ flowchart TD
   phone["離場手機成果頁／感謝信／摘要／旋律"]
   aec["本機 AEC 回音消除／抑制自身播放聲"]
   voiceGate["VAD／音量／時長／單次觸發／停聲與冷卻"]
-  ticketPrinter["USB 感熱印表機／聲音收藏票／自動裁切"]
-  visitorDisplay["觀眾螢幕 ×1／前導影片／成果 QR"]
+  ticketPrinter["USB 感熱印表機／收藏票：圖／清單／成果 QR"]
+  visitorDisplay["觀眾螢幕 ×1／播放前導影片"]
   sessionEntry["前導／配戴後校驗通過／Unity 建立 session_id"]
   vrIntro["Intro：VR 短版開場／約 15 秒／身分與任務"]
   vrTutorial["Tutorial：觀看操作示範／字幕／動畫，不計正式數據"]
@@ -35,11 +35,12 @@ flowchart TD
   unity -->|"播放混音參考"| aec
   voiceGate -->|"有效發聲"| unity
   sqlite -->|"本機保存後列印"| ticketPrinter
-  gateway -->|"前導／成果資料"| visitorDisplay
+  gateway -->|"前導播放控制"| visitorDisplay
   unity -->|"遊戲監看／錯誤"| admin
   sessionEntry --> vrIntro
   vrIntro -->|"播放完成"| vrTutorial
   vrTutorial -->|"示範結束"| exploreActive
+  ticketPrinter -->|"掃紙票 QR"| phone
   style quest fill:#e5f5f1,stroke:#459489
   style xr fill:#e8f1fd,stroke:#7099c9
   style room fill:#e5f5f1,stroke:#459489

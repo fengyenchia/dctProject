@@ -8,9 +8,9 @@ flowchart TD
   screen["虛擬螢幕顯示／「確認回收」／SAN 顯示 0"]
   click["控制器選取虛擬按鈕／送出後顯示處理中"]
   request["RECYCLE_REQUEST／Unity 檢查"]
-  check{"已到站、可回收／且尚未結算？"}
+  check{"Return／已到站／追蹤有效／圓內／尚未結算？"}
   reject["拒絕結算／回傳原因／重送不重複回收"]
-  commit["先標記已回收、固定清單／登錄變體與群落次數"]
+  commit["已回收／固定收藏清單／剩餘群落與聲源退場"]
   convert["噪音能量／轉化為物品"]
   repair["虛擬回收站／城市修復／身體不需移出圓圈"]
   result["結尾／固定成果快照／接圖 05 保存與交付"]

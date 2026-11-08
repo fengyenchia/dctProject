@@ -1,0 +1,27 @@
+# Unity generated files
+/unity-vr/[Ll]ibrary/
+/unity-vr/[Tt]emp/
+/unity-vr/[Oo]bj/
+/unity-vr/[Ll]ogs/
+/unity-vr/UserSettings/
+/unity-vr/Builds/
+
+# Node dependencies, build output and local stores
+**/node_modules/
+**/.next/
+**/.pnpm-store/
+/web/out/
+/gateway/dist/
+/gateway/data/
+**/*.tsbuildinfo
+
+# Local environment values; keep examples
+**/.env*
+!**/.env.example
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Native audio plugin build output
+/native-aec/build/
