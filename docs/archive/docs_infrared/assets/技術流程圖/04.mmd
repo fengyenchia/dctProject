@@ -1,0 +1,45 @@
+flowchart TD
+  returning["SAN 歸零＝任務完成／Return：停止探索與群落啟用"]
+  near["捕捉器標籤靠近／回收座 NFC 讀取器"]
+  zone["回收座控制板 → Gateway／讀取標籤身分"]
+  valid{"Return／本場捕捉器／與 NFC 標籤相符？"}
+  deny["不開放授權／顯示到站提示"]
+  auth["記錄 nfc_confirmed／可移開，資格保留"]
+  screen["捕捉器觸控 LCD 顯示／「確認回收」／SAN 顯示 0"]
+  click["觀眾觸控確認／送出後顯示處理中"]
+  request["RECYCLE_REQUEST／Unity 檢查"]
+  check{"已到站、可回收／且尚未結算？"}
+  reject["拒絕結算／回傳原因／重送不重複回收"]
+  commit["先標記已回收、固定清單／登錄變體與群落次數"]
+  convert["噪音能量／轉化為物品"]
+  repair["兩面主投影演出／回收物品／城市修復"]
+  result["結尾／固定成果快照／接圖 05 保存與交付"]
+  returning --> near
+  near --> zone
+  zone --> valid
+  valid -->|"否"| deny
+  valid -->|"是"| auth
+  auth --> screen
+  screen -->|"可移開再確認"| click
+  click --> request
+  request --> check
+  check -->|"否"| reject
+  check -->|"是"| commit
+  commit --> convert
+  convert --> repair
+  repair --> result
+  style returning fill:#e8f1fd,stroke:#7099c9
+  style near fill:#e8f1fd,stroke:#7099c9
+  style zone fill:#e8f1fd,stroke:#7099c9
+  style valid fill:#e8f1fd,stroke:#7099c9
+  style deny fill:#fdeceb,stroke:#c58b86
+  style auth fill:#e8f1fd,stroke:#7099c9
+  style screen fill:#eee7fb,stroke:#9a7ac7
+  style click fill:#e5f5f1,stroke:#459489
+  style request fill:#e8f1fd,stroke:#7099c9
+  style check fill:#e8f1fd,stroke:#7099c9
+  style reject fill:#fdeceb,stroke:#c58b86
+  style commit fill:#e7f4e9,stroke:#69a977
+  style convert fill:#fff0df,stroke:#cc9154
+  style repair fill:#eee7fb,stroke:#9a7ac7
+  style result fill:#e8f1fd,stroke:#7099c9

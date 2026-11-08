@@ -1,0 +1,52 @@
+flowchart TD
+  pose["控制器姿態／虛擬捕捉器前端"]
+  surfaceRay["Unity 已對位表面射線／落點與法線"]
+  surfaceValid{"探索／追蹤／對位有效／命中已配置表面？"}
+  mask["Mask 隨落點移動／不需要命中音虫"]
+  hideMask["無落點／對位失效／UI／收起光罩"]
+  targetRay["同方向檢查群落／距離／遮擋／狀態"]
+  valid{"Active／姿態／對位有效／未被 UI 接管、SAN 允許／命中可捕捉群落？"}
+  pause["沒命中群落：暫停捕捉／保留進度、外觀與音量"]
+  load["載入目前群落進度／新群落從 0 開始"]
+  progress["累積有效對準時間／顯現基準＝捕捉進度／目標聲音隨進度變小"]
+  ui["群落進度／虛擬螢幕／使用同一份 Unity 資料"]
+  time{"同群累積達 3 秒／群落仍有效？"}
+  update["CAPTURE_PROGRESS／等待新鮮瞄準資料"]
+  commit["整群收走／停該群聲音／記錄一次／SAN 扣 20"]
+  feedback["UI／震動；SAN 0 進入回收／捕捉器不發聲"]
+  ended["群落移除／回收結算／本場結束／重置"]
+  clear["清該群進度與顯現基準／新群落不繼承"]
+  pose --> surfaceRay
+  surfaceRay --> surfaceValid
+  surfaceValid -->|"是"| mask
+  surfaceValid -->|"否"| hideMask
+  pose --> targetRay
+  targetRay --> valid
+  valid -->|"是"| load
+  valid -->|"否"| pause
+  pause -.-> targetRay
+  load --> progress
+  progress -->|"同步"| ui
+  progress --> time
+  time -->|"未達標"| update
+  update -.->|"持續觀測"| targetRay
+  time -->|"達標"| commit
+  commit --> feedback
+  ended --> clear
+  style pose fill:#e5f5f1,stroke:#459489
+  style surfaceRay fill:#e8f1fd,stroke:#7099c9
+  style surfaceValid fill:#e8f1fd,stroke:#7099c9
+  style mask fill:#e7f4e9,stroke:#69a977
+  style hideMask fill:#fdeceb,stroke:#c58b86
+  style targetRay fill:#e8f1fd,stroke:#7099c9
+  style valid fill:#e8f1fd,stroke:#7099c9
+  style pause fill:#fff0df,stroke:#cc9154
+  style load fill:#e8f1fd,stroke:#7099c9
+  style progress fill:#e8f1fd,stroke:#7099c9
+  style ui fill:#e8f1fd,stroke:#7099c9
+  style time fill:#e8f1fd,stroke:#7099c9
+  style update fill:#e8f1fd,stroke:#7099c9
+  style commit fill:#e7f4e9,stroke:#69a977
+  style feedback fill:#e5f5f1,stroke:#459489
+  style ended fill:#e8f1fd,stroke:#7099c9
+  style clear fill:#e8f1fd,stroke:#7099c9

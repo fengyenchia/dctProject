@@ -1,0 +1,43 @@
+flowchart TD
+  irLight["音虫固定點紅外線燈／各點獨立閃爍編碼"]
+  catcher["PAJ7025R3＋ESP32-S3／觸控 LCD／震動／電池"]
+  gateway["本機串接服務／Gateway"]
+  unity["Unity／唯一遊戲狀態"]
+  lampBoard["點燈控制板／依群落存在狀態啟停"]
+  recycle["NFC 回收座／讀捕捉器被動標籤"]
+  outputs["兩面主投影／場內聲音／回收與城市修復"]
+  mic["現場麥克風／音量／持續時間 → Unity"]
+  sqlite["SQLite 成果／列印工作／雲端 outbox"]
+  admin["本機管理頁／單一場次／狀態監看"]
+  qr["現場成果 QR／保存後交付"]
+  cloud["Vercel：成果頁／API／Neon：PostgreSQL／預製音軌／美術素材"]
+  phone["離場手機成果頁／感謝信／摘要／旋律"]
+  ticketPrinter["USB 感熱印表機／聲音收藏票／自動裁切"]
+  irLight -->|"紅外線"| catcher
+  catcher <-->|"觀測／UI 及震動"| gateway
+  gateway <-->|"本機事件"| unity
+  gateway -->|"點燈狀態"| lampBoard
+  lampBoard --> irLight
+  recycle -->|"到站"| gateway
+  unity --> outputs
+  mic -->|"觀眾發聲"| unity
+  gateway --> sqlite
+  gateway <--> admin
+  sqlite -->|"背景 HTTPS"| cloud
+  sqlite -->|"成果網址"| qr
+  cloud -->|"唯讀成果"| phone
+  sqlite -->|"本機保存後列印"| ticketPrinter
+  style irLight fill:#e5f5f1,stroke:#459489
+  style catcher fill:#e5f5f1,stroke:#459489
+  style gateway fill:#e8f1fd,stroke:#7099c9
+  style unity fill:#e8f1fd,stroke:#7099c9
+  style lampBoard fill:#e5f5f1,stroke:#459489
+  style recycle fill:#e5f5f1,stroke:#459489
+  style outputs fill:#e8f1fd,stroke:#7099c9
+  style mic fill:#e5f5f1,stroke:#459489
+  style sqlite fill:#e8f1fd,stroke:#7099c9
+  style admin fill:#e8f1fd,stroke:#7099c9
+  style qr fill:#e8f1fd,stroke:#7099c9
+  style cloud fill:#eee7fb,stroke:#9a7ac7
+  style phone fill:#eee7fb,stroke:#9a7ac7
+  style ticketPrinter fill:#e5f5f1,stroke:#459489

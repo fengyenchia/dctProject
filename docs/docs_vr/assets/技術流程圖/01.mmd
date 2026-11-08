@@ -1,0 +1,62 @@
+flowchart TD
+  quest["Quest 3／Touch Plus／頭手追蹤與控制器輸入"]
+  xr["Quest Link／OpenXR／PC 輸入與平台整合"]
+  room["單一場景／圓形活動區／身體轉身與移動 1:1"]
+  mic["Quest 3 內建麥克風／經 Link 送入電腦"]
+  unity["Unity 6.3 LTS／VR／6000.3.19f1／Windows／唯一遊戲狀態"]
+  output["Quest 3 VR 畫面／內建喇叭／控制器震動"]
+  localPending["Unity 執行端暫存／固定成果／待交付"]
+  gateway["電腦本機串接服務／Gateway"]
+  admin["工作人員螢幕 ×1／管理／Unity 監看／除錯與錯誤紀錄"]
+  sqlite["SQLite 成果／列印工作／雲端 outbox"]
+  cloud["Vercel：成果頁／API／Neon：PostgreSQL／預製音軌／美術素材"]
+  phone["離場手機成果頁／感謝信／摘要／旋律"]
+  aec["本機 AEC 回音消除／抑制自身播放聲"]
+  voiceGate["VAD／音量／時長／單次觸發／停聲與冷卻"]
+  ticketPrinter["USB 感熱印表機／聲音收藏票／自動裁切"]
+  visitorDisplay["觀眾螢幕 ×1／前導影片／成果 QR"]
+  sessionEntry["前導／配戴後校驗通過／Unity 建立 session_id"]
+  vrIntro["Intro：VR 短版開場／約 15 秒／身分與任務"]
+  vrTutorial["Tutorial：觀看操作示範／字幕／動畫，不計正式數據"]
+  exploreActive["Active：正式探索／SAN 100／空收藏／SAN 歸零才進回收"]
+  quest <--> xr
+  xr --> unity
+  room --> unity
+  unity --> output
+  unity --> localPending
+  localPending <-->|"成果／保存確認"| gateway
+  unity <-->|"本機事件／管理"| gateway
+  gateway <-->|"管理"| admin
+  gateway --> sqlite
+  gateway -->|"HTTPS"| cloud
+  cloud -->|"唯讀成果"| phone
+  mic --> aec
+  aec --> voiceGate
+  unity -->|"播放混音參考"| aec
+  voiceGate -->|"有效發聲"| unity
+  sqlite -->|"本機保存後列印"| ticketPrinter
+  gateway -->|"前導／成果資料"| visitorDisplay
+  unity -->|"遊戲監看／錯誤"| admin
+  sessionEntry --> vrIntro
+  vrIntro -->|"播放完成"| vrTutorial
+  vrTutorial -->|"示範結束"| exploreActive
+  style quest fill:#e5f5f1,stroke:#459489
+  style xr fill:#e8f1fd,stroke:#7099c9
+  style room fill:#e5f5f1,stroke:#459489
+  style mic fill:#e5f5f1,stroke:#459489
+  style unity fill:#e8f1fd,stroke:#7099c9
+  style output fill:#e5f5f1,stroke:#459489
+  style localPending fill:#e8f1fd,stroke:#7099c9
+  style gateway fill:#e8f1fd,stroke:#7099c9
+  style admin fill:#e5f5f1,stroke:#459489
+  style sqlite fill:#e8f1fd,stroke:#7099c9
+  style cloud fill:#eee7fb,stroke:#9a7ac7
+  style phone fill:#eee7fb,stroke:#9a7ac7
+  style aec fill:#e8f1fd,stroke:#7099c9
+  style voiceGate fill:#e8f1fd,stroke:#7099c9
+  style ticketPrinter fill:#e5f5f1,stroke:#459489
+  style visitorDisplay fill:#e5f5f1,stroke:#459489
+  style sessionEntry fill:#e8f1fd,stroke:#7099c9
+  style vrIntro fill:#e8f1fd,stroke:#7099c9
+  style vrTutorial fill:#e8f1fd,stroke:#7099c9
+  style exploreActive fill:#e7f4e9,stroke:#69a977

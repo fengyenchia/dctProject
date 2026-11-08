@@ -1,0 +1,1914 @@
+[
+  {
+    "id": "01",
+    "title": "01  紅外線捕捉器與電腦資料串接",
+    "subtitle": "光點辨識交給捕捉器；Unity 統一判定，場內通訊不經雲端；線上紀念品在背景上傳。 循聲與操作搭配動畫；發聲只用字幕。",
+    "caption": [
+      [
+        "從哪裡讀",
+        "左上紅外線光點 → 相機辨識閃爍編碼與中心偏移 → Gateway → Unity 判定。"
+      ],
+      [
+        "現場回應",
+        "Unity 回傳 LCD／震動與點燈控制；現場麥克風的音量分析觸發既有音虫顯現。"
+      ],
+      [
+        "回收",
+        "NFC 只確認本場捕捉器到站；觀眾仍須在觸控螢幕確認回收。"
+      ],
+      [
+        "教學",
+        "循聲、對準捕捉及回收採字幕搭配動畫；發聲只用字幕。"
+      ],
+      [
+        "成果",
+        "先本機保存，再上傳線上紀念品；網際網路中斷不阻塞捕捉。"
+      ],
+      [
+        "收藏票",
+        "電腦透過 USB 感熱印表機輸出；5 個變體組合圖＋名稱／來源聲音清單＋同一成果 QR。<br>每場一張，不另加控制板；印表機優先借用。"
+      ],
+      [
+        "線上原型",
+        "Vercel Hobby 提供網站／API，Neon Free 保存成果；預製素材版本化部署。<br>SQLite、管理與即時互動留在本機。"
+      ]
+    ],
+    "size": [
+      2350,
+      1550
+    ],
+    "nodes": [
+      {
+        "id": "irLight",
+        "pos": [
+          100,
+          200
+        ],
+        "text": "音虫固定點紅外線燈\n各點獨立閃爍編碼",
+        "role": "device"
+      },
+      {
+        "id": "catcher",
+        "pos": [
+          600,
+          200
+        ],
+        "text": "PAJ7025R3＋ESP32-S3\n觸控 LCD／震動／電池",
+        "role": "device"
+      },
+      {
+        "id": "gateway",
+        "pos": [
+          1100,
+          200
+        ],
+        "text": "本機串接服務\nGateway",
+        "role": "normal"
+      },
+      {
+        "id": "unity",
+        "pos": [
+          1600,
+          200
+        ],
+        "text": "Unity\n唯一遊戲狀態",
+        "role": "normal"
+      },
+      {
+        "id": "lampBoard",
+        "pos": [
+          100,
+          520
+        ],
+        "text": "點燈控制板\n依群落存在狀態啟停",
+        "role": "device"
+      },
+      {
+        "id": "recycle",
+        "pos": [
+          600,
+          520
+        ],
+        "text": "NFC 回收座\n讀捕捉器被動標籤",
+        "role": "device"
+      },
+      {
+        "id": "outputs",
+        "pos": [
+          1100,
+          520
+        ],
+        "text": "兩面主投影／場內聲音\n回收與城市修復",
+        "role": "normal"
+      },
+      {
+        "id": "mic",
+        "pos": [
+          1600,
+          520
+        ],
+        "text": "現場麥克風\n音量／持續時間 → Unity",
+        "role": "device"
+      },
+      {
+        "id": "sqlite",
+        "pos": [
+          1100,
+          840
+        ],
+        "text": "SQLite 成果／列印工作\n雲端 outbox",
+        "role": "normal"
+      },
+      {
+        "id": "admin",
+        "pos": [
+          1600,
+          840
+        ],
+        "text": "本機管理頁\n單一場次／狀態監看",
+        "role": "normal"
+      },
+      {
+        "id": "qr",
+        "pos": [
+          600,
+          1160
+        ],
+        "text": "現場成果 QR\n保存後交付",
+        "role": "normal"
+      },
+      {
+        "id": "cloud",
+        "pos": [
+          1100,
+          1160
+        ],
+        "text": "Vercel：成果頁／API\nNeon：PostgreSQL\n預製音軌／美術素材",
+        "role": "cloud"
+      },
+      {
+        "id": "phone",
+        "pos": [
+          1600,
+          1160
+        ],
+        "text": "離場手機成果頁\n感謝信／摘要／旋律",
+        "role": "cloud"
+      },
+      {
+        "id": "ticketPrinter",
+        "pos": [
+          100,
+          1160
+        ],
+        "text": "USB 感熱印表機\n聲音收藏票／自動裁切",
+        "role": "device"
+      }
+    ],
+    "edges": [
+      {
+        "from": "irLight",
+        "to": "catcher",
+        "start": "R",
+        "end": "L",
+        "label": "紅外線"
+      },
+      {
+        "from": "catcher",
+        "to": "gateway",
+        "start": "R",
+        "end": "L",
+        "both": true,
+        "label": "觀測／UI 及震動"
+      },
+      {
+        "from": "gateway",
+        "to": "unity",
+        "start": "R",
+        "end": "L",
+        "both": true,
+        "label": "本機事件"
+      },
+      {
+        "from": "gateway",
+        "to": "lampBoard",
+        "start": "B",
+        "end": "T",
+        "via": [
+          [
+            1260,
+            400
+          ],
+          [
+            260,
+            400
+          ]
+        ],
+        "label": "點燈狀態",
+        "label_pos": [
+          780,
+          400
+        ]
+      },
+      {
+        "from": "lampBoard",
+        "to": "irLight",
+        "start": "L",
+        "end": "L",
+        "via": [
+          [
+            55,
+            580
+          ],
+          [
+            55,
+            260
+          ]
+        ]
+      },
+      {
+        "from": "recycle",
+        "to": "gateway",
+        "start": "R",
+        "end": "B",
+        "via": [
+          [
+            1020,
+            580
+          ],
+          [
+            1020,
+            370
+          ],
+          [
+            1260,
+            370
+          ]
+        ],
+        "label": "到站",
+        "label_pos": [
+          1020,
+          460
+        ]
+      },
+      {
+        "from": "unity",
+        "to": "outputs",
+        "start": "B",
+        "end": "T",
+        "via": [
+          [
+            1760,
+            440
+          ],
+          [
+            1260,
+            440
+          ]
+        ]
+      },
+      {
+        "from": "mic",
+        "to": "unity",
+        "start": "R",
+        "end": "R",
+        "via": [
+          [
+            2050,
+            580
+          ],
+          [
+            2050,
+            260
+          ]
+        ],
+        "label": "觀眾發聲",
+        "label_pos": [
+          2050,
+          420
+        ]
+      },
+      {
+        "from": "gateway",
+        "to": "sqlite",
+        "start": "B",
+        "end": "T",
+        "via": [
+          [
+            1260,
+            350
+          ],
+          [
+            1450,
+            350
+          ],
+          [
+            1450,
+            770
+          ],
+          [
+            1260,
+            770
+          ]
+        ]
+      },
+      {
+        "from": "gateway",
+        "to": "admin",
+        "start": "R",
+        "end": "T",
+        "via": [
+          [
+            1510,
+            260
+          ],
+          [
+            1510,
+            770
+          ],
+          [
+            1760,
+            770
+          ]
+        ],
+        "both": true
+      },
+      {
+        "from": "sqlite",
+        "to": "cloud",
+        "start": "B",
+        "end": "T",
+        "label": "背景 HTTPS"
+      },
+      {
+        "from": "sqlite",
+        "to": "qr",
+        "start": "L",
+        "end": "T",
+        "via": [
+          [
+            1000,
+            900
+          ],
+          [
+            1000,
+            1080
+          ],
+          [
+            760,
+            1080
+          ]
+        ],
+        "label": "成果網址",
+        "label_pos": [
+          900,
+          1080
+        ]
+      },
+      {
+        "from": "cloud",
+        "to": "phone",
+        "start": "R",
+        "end": "L",
+        "label": "唯讀成果"
+      },
+      {
+        "from": "sqlite",
+        "to": "ticketPrinter",
+        "start": "L",
+        "end": "T",
+        "via": [
+          [
+            260,
+            900
+          ]
+        ],
+        "label": "本機保存後列印",
+        "label_pos": [
+          520,
+          900
+        ]
+      }
+    ],
+    "version": "v1.41",
+    "intro": [
+      [
+        "資料路徑",
+        "捕捉器／回收座 → Gateway → Unity；Unity 控制燈、投影與聲音。成果另行背景上傳。"
+      ],
+      [
+        "收集規則",
+        "3 類 × 3 變體，共 9 個均納入隨機池；任選 5 個不同變體，類型可重複。每個變體對應一個來源聲音及聲部。"
+      ],
+      [
+        "操作教學",
+        "循聲與其他操作用字幕搭配動畫；發聲步驟僅用字幕。"
+      ],
+      [
+        "聲音配置",
+        "全場同時最多存在 3 群，隱藏中也計入；抓 1 群補 1 群，SAN 歸零停止。"
+      ]
+    ]
+  },
+  {
+    "id": "02",
+    "title": "02  瞄準、捕捉與顯現程度保留",
+    "subtitle": "辨識固定點後才顯示該點光罩；移開收起，捕捉進度與顯現程度保留。 捕捉進度提高時，該群聲音逐漸降低。",
+    "size": [
+      2150,
+      1750
+    ],
+    "nodes": [
+      {
+        "id": "pose",
+        "pos": [
+          100,
+          200
+        ],
+        "text": "PAJ7025R3 光點取樣\nESP32 解碼與中心偏移",
+        "role": "device"
+      },
+      {
+        "id": "ray",
+        "pos": [
+          600,
+          200
+        ],
+        "text": "Gateway 傳點位觀測\nUnity 檢查群落與版本",
+        "role": "normal"
+      },
+      {
+        "id": "valid",
+        "pos": [
+          1090,
+          188
+        ],
+        "text": "本場／群落／SAN 有效\n樣本新鮮且對準？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "pause",
+        "pos": [
+          1600,
+          200
+        ],
+        "text": "移開／失效，暫停累積\n保留進度、外觀與音量",
+        "role": "cancel"
+      },
+      {
+        "id": "load",
+        "pos": [
+          1100,
+          460
+        ],
+        "text": "載入同群進度與顯現基準\n新群落起始為 0",
+        "role": "normal"
+      },
+      {
+        "id": "hide",
+        "pos": [
+          1600,
+          460
+        ],
+        "text": "收起 Mask\n保留進度對應外觀與聲音",
+        "role": "cancel"
+      },
+      {
+        "id": "show",
+        "pos": [
+          1100,
+          720
+        ],
+        "text": "固定點顯示 Mask\n載入進度對應的顯現程度",
+        "role": "cloud"
+      },
+      {
+        "id": "paused",
+        "pos": [
+          1600,
+          720
+        ],
+        "text": "LCD 顯示暫停\n等待有效瞄準",
+        "role": "normal"
+      },
+      {
+        "id": "progress",
+        "pos": [
+          1100,
+          980
+        ],
+        "text": "累積有效對準時間\n顯現基準＝捕捉進度\n目標聲音隨進度變小",
+        "role": "normal",
+        "size": [
+          360,
+          140
+        ]
+      },
+      {
+        "id": "visual",
+        "pos": [
+          600,
+          980
+        ],
+        "text": "投影 Mask／LCD 共用進度\n顯現基準＝捕捉進度",
+        "role": "cloud"
+      },
+      {
+        "id": "time",
+        "pos": [
+          1090,
+          1228
+        ],
+        "text": "累積達標且\n群落仍有效？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "update",
+        "pos": [
+          600,
+          1240
+        ],
+        "text": "CAPTURE_PROGRESS\n繼續觀測",
+        "role": "normal"
+      },
+      {
+        "id": "commit",
+        "pos": [
+          1100,
+          1480
+        ],
+        "text": "整群收走／停聲音與該點燈\n記錄一次／SAN 扣 20",
+        "role": "success"
+      },
+      {
+        "id": "feedback",
+        "pos": [
+          1600,
+          1480
+        ],
+        "text": "UI／震動；SAN 0 進入回收\n捕捉器不發聲",
+        "role": "device"
+      },
+      {
+        "id": "ended",
+        "pos": [
+          100,
+          1480
+        ],
+        "text": "群落移除\n或本場結束／重置",
+        "role": "normal"
+      },
+      {
+        "id": "clear",
+        "pos": [
+          600,
+          1480
+        ],
+        "text": "清除對應群落進度\n新群落不繼承",
+        "role": "normal"
+      }
+    ],
+    "edges": [
+      {
+        "from": "pose",
+        "to": "ray",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "ray",
+        "to": "valid",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "valid",
+        "to": "pause",
+        "start": "R",
+        "end": "L",
+        "label": "否"
+      },
+      {
+        "from": "valid",
+        "to": "load",
+        "start": "B",
+        "end": "T",
+        "label": "是"
+      },
+      {
+        "from": "pause",
+        "to": "hide",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "hide",
+        "to": "paused",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "paused",
+        "to": "ray",
+        "start": "B",
+        "end": "T",
+        "label_pos": [
+          1570,
+          900
+        ],
+        "dashed": true,
+        "label": "重新對準",
+        "via": [
+          [
+            1760,
+            900
+          ],
+          [
+            1000,
+            900
+          ],
+          [
+            1000,
+            150
+          ],
+          [
+            760,
+            150
+          ]
+        ]
+      },
+      {
+        "from": "load",
+        "to": "show",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "show",
+        "to": "progress",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "progress",
+        "to": "visual",
+        "start": "L",
+        "end": "R",
+        "label": "同步"
+      },
+      {
+        "from": "progress",
+        "to": "time",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "time",
+        "to": "update",
+        "start": "L",
+        "end": "R",
+        "label": "未達標"
+      },
+      {
+        "from": "update",
+        "to": "ray",
+        "start": "L",
+        "end": "L",
+        "label_pos": [
+          500,
+          800
+        ],
+        "dashed": true,
+        "label": "持續取樣",
+        "via": [
+          [
+            500,
+            1300
+          ],
+          [
+            500,
+            260
+          ]
+        ]
+      },
+      {
+        "from": "time",
+        "to": "commit",
+        "start": "B",
+        "end": "T",
+        "label": "達標"
+      },
+      {
+        "from": "commit",
+        "to": "feedback",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "ended",
+        "to": "clear",
+        "start": "R",
+        "end": "L"
+      }
+    ],
+    "caption": [
+      [
+        "從哪裡讀",
+        "左上光點觀測 → 驗證群落、階段、SAN 與輸入 → 載入同群進度。<br>只辨認固定點與對準程度，不取得完整位置／方向。"
+      ],
+      [
+        "有效對準",
+        "固定點顯示 Mask 並累積進度；顯現基準與進度線性相等，例如 30% 進度保留 30% 外觀。"
+      ],
+      [
+        "移開／失效",
+        "暫停累積並收起 Mask；保留原群進度與外觀，再對準同群接續。新群進度從 0 開始。"
+      ],
+      [
+        "捕捉完成",
+        "整群移除、停群聲音與點位燈；收集／SAN 各結算一次，更新 UI／震動。捕捉器不發聲，結算 SAN 後大於 0 才補 1 群。"
+      ],
+      [
+        "發聲效果",
+        "短暫顯現與捕捉進度分開，合成方式見圖 03。"
+      ],
+      [
+        "成功與後續",
+        "整群移除、停該群聲音，收集／SAN 各結算一次並震動。SAN > 0 隨機補 1 群；歸零停止並進 Return。"
+      ],
+      [
+        "音量回饋",
+        "只降低目前被捕捉群落的聲音；係數為 1－捕捉進度。移開後保留，再對準接續；成功停聲，新群以自己的原始音量開始。"
+      ]
+    ]
+  },
+  {
+    "id": "03",
+    "title": "03  發聲顯現、進度外觀與捕捉後補充",
+    "subtitle": "左：有效發聲；中：進度驅動外觀與音量；右：捕捉後先扣 SAN，再決定是否隨機補出。",
+    "caption": [
+      [
+        "左側：發聲",
+        "目前搜尋區的音量／持續時間與單次觸發控制 → VOICE_REVEAL。通過本場條件後，一段發聲只觸發一次。"
+      ],
+      [
+        "再接受發聲",
+        "確認有效停聲且冷卻完成才重新就緒；缺資料不算停聲，持續聲音／回音不刷新顯現。"
+      ],
+      [
+        "中間：外觀合成",
+        "發聲效果以 3 秒由 0 淡入至 1，立即以 1 秒淡出至 0；與 0～1 線性捕捉進度取較高值。<br>無進度回隱藏，有進度保留基準。"
+      ],
+      [
+        "變體去重",
+        "初始化／群落補充均排除本場已出現變體；捕捉／移除不清集合，暫停／重連保留，本場結束／重置才清除。"
+      ],
+      [
+        "右側：補充",
+        "開場最多 3 群。成功捕捉先移除該群及扣 SAN；SAN > 0 才從本場未出現變體補 1 群，歸零則進回收。"
+      ],
+      [
+        "隨機與去重",
+        "位置從有效空位選取；紅外線版限已裝燈點位。新群身分／進度獨立，同次捕捉重送不重複補出。"
+      ],
+      [
+        "中間：聲音輸出",
+        "同群捕捉進度同時驅動外觀與音量；顯現基準＝進度，聲音增益＝1－進度。音量與進度一起保留，發聲效果不重設音量。"
+      ]
+    ],
+    "size": [
+      2200,
+      1700
+    ],
+    "nodes": [
+      {
+        "id": "voice",
+        "pos": [
+          100,
+          200
+        ],
+        "text": "觀眾發聲",
+        "role": "device"
+      },
+      {
+        "id": "mic",
+        "pos": [
+          100,
+          370
+        ],
+        "text": "現場麥克風 → Unity\n音量／持續時間分析",
+        "role": "device"
+      },
+      {
+        "id": "voiceFx",
+        "pos": [
+          100,
+          760
+        ],
+        "text": "發聲效果：3 秒淡入\n接著 1 秒淡出\n與捕捉進度分開",
+        "role": "normal",
+        "size": [
+          320,
+          140
+        ]
+      },
+      {
+        "id": "aim",
+        "pos": [
+          800,
+          200
+        ],
+        "text": "有效對準既有群落",
+        "role": "normal"
+      },
+      {
+        "id": "saved",
+        "pos": [
+          800,
+          450
+        ],
+        "text": "累積並保存同群進度\n移開暫停、重對準接續",
+        "role": "normal"
+      },
+      {
+        "id": "baseline",
+        "pos": [
+          800,
+          700
+        ],
+        "text": "持續顯現基準＝捕捉進度\n聲音增益＝1－捕捉進度\n移開保留，重對準接續",
+        "role": "normal",
+        "size": [
+          360,
+          140
+        ]
+      },
+      {
+        "id": "story",
+        "pos": [
+          1500,
+          200
+        ],
+        "text": "開場／成功捕捉後\n先結算 SAN 與群落數",
+        "role": "warning",
+        "size": [
+          360,
+          120
+        ]
+      },
+      {
+        "id": "validStory",
+        "pos": [
+          1500,
+          450
+        ],
+        "text": "GROUP_SPAWN\nActive／SAN > 0／少於 3 群\n空位／未出現變體／去重",
+        "role": "normal",
+        "size": [
+          360,
+          120
+        ]
+      },
+      {
+        "id": "newGroup",
+        "pos": [
+          1500,
+          700
+        ],
+        "text": "隨機生成：開場 3／補 1\n新身分、進度 0、隱藏\n啟用對應紅外線燈",
+        "role": "success",
+        "size": [
+          360,
+          140
+        ]
+      },
+      {
+        "id": "newAudio",
+        "pos": [
+          1500,
+          1000
+        ],
+        "text": "播放新群聲音\n全場同時最多 3 群\n捕捉器仍不發聲",
+        "role": "success",
+        "size": [
+          360,
+          120
+        ]
+      },
+      {
+        "id": "combine",
+        "pos": [
+          800,
+          1000
+        ],
+        "text": "最終顯現程度取較高值\n發聲效果／捕捉進度基準",
+        "role": "normal"
+      },
+      {
+        "id": "appearance",
+        "pos": [
+          700,
+          1290
+        ],
+        "text": "無進度：純發聲效果淡出後隱藏\n有進度：保留進度對應顯現程度\nMask 只隨有效對準顯示",
+        "role": "success",
+        "size": [
+          520,
+          150
+        ]
+      },
+      {
+        "id": "voiceGate",
+        "pos": [
+          100,
+          550
+        ],
+        "size": [
+          320,
+          120
+        ],
+        "text": "音量／持續時間達標\n單次觸發／停聲與冷卻",
+        "role": "normal"
+      },
+      {
+        "id": "captureAudio",
+        "pos": [
+          1500,
+          1280
+        ],
+        "size": [
+          360,
+          140
+        ],
+        "role": "normal",
+        "text": "Unity 更新該群聲源音量\n原始音量 × (1－進度)\n移開保留，成功後停聲"
+      }
+    ],
+    "edges": [
+      {
+        "from": "voice",
+        "to": "mic",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "aim",
+        "to": "saved",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "saved",
+        "to": "baseline",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "voiceFx",
+        "to": "combine",
+        "start": "B",
+        "end": "T",
+        "via": [
+          [
+            260,
+            930
+          ],
+          [
+            960,
+            930
+          ]
+        ]
+      },
+      {
+        "from": "baseline",
+        "to": "combine",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "combine",
+        "to": "appearance",
+        "start": "B",
+        "end": "T",
+        "via": [
+          [
+            960,
+            1200
+          ],
+          [
+            960,
+            1200
+          ]
+        ]
+      },
+      {
+        "from": "story",
+        "to": "validStory",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "validStory",
+        "to": "newGroup",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "newGroup",
+        "to": "newAudio",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "mic",
+        "to": "voiceGate",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "voiceGate",
+        "to": "voiceFx",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "baseline",
+        "to": "captureAudio",
+        "start": "R",
+        "end": "L",
+        "via": [
+          [
+            1300,
+            770
+          ],
+          [
+            1300,
+            1350
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "title": "04  NFC 到站與觸控確認回收",
+    "subtitle": "先以 NFC 確認本場捕捉器，再在 LCD 確認回收；到站感應不自動結算。",
+    "size": [
+      2150,
+      1500
+    ],
+    "nodes": [
+      {
+        "id": "returning",
+        "pos": [
+          100,
+          200
+        ],
+        "text": "SAN 歸零＝任務完成\nReturn：停止探索與群落啟用",
+        "role": "normal"
+      },
+      {
+        "id": "near",
+        "pos": [
+          600,
+          200
+        ],
+        "text": "捕捉器標籤靠近\n回收座 NFC 讀取器",
+        "role": "normal"
+      },
+      {
+        "id": "zone",
+        "pos": [
+          1100,
+          200
+        ],
+        "text": "回收座控制板 → Gateway\n讀取標籤身分",
+        "role": "normal"
+      },
+      {
+        "id": "valid",
+        "pos": [
+          1590,
+          188
+        ],
+        "text": "Return／本場捕捉器\n與 NFC 標籤相符？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "deny",
+        "pos": [
+          1600,
+          460
+        ],
+        "text": "不開放授權\n顯示到站提示",
+        "role": "cancel"
+      },
+      {
+        "id": "auth",
+        "pos": [
+          1100,
+          460
+        ],
+        "text": "記錄 nfc_confirmed\n可移開，資格保留",
+        "role": "normal"
+      },
+      {
+        "id": "screen",
+        "pos": [
+          600,
+          460
+        ],
+        "text": "捕捉器觸控 LCD 顯示\n「確認回收」\nSAN 顯示 0",
+        "role": "cloud"
+      },
+      {
+        "id": "click",
+        "pos": [
+          100,
+          720
+        ],
+        "text": "觀眾觸控確認\n送出後顯示處理中",
+        "role": "device"
+      },
+      {
+        "id": "request",
+        "pos": [
+          600,
+          720
+        ],
+        "text": "RECYCLE_REQUEST\nUnity 檢查",
+        "role": "normal"
+      },
+      {
+        "id": "check",
+        "pos": [
+          1090,
+          708
+        ],
+        "text": "已到站、可回收\n且尚未結算？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "reject",
+        "pos": [
+          1600,
+          720
+        ],
+        "text": "拒絕結算／回傳原因\n重送不重複回收",
+        "role": "cancel"
+      },
+      {
+        "id": "commit",
+        "pos": [
+          1100,
+          1000
+        ],
+        "text": "先標記已回收、固定清單\n登錄變體與群落次數",
+        "role": "success"
+      },
+      {
+        "id": "convert",
+        "pos": [
+          600,
+          1000
+        ],
+        "text": "噪音能量\n轉化為物品",
+        "role": "warning"
+      },
+      {
+        "id": "repair",
+        "pos": [
+          100,
+          1000
+        ],
+        "text": "兩面主投影演出\n回收物品／城市修復",
+        "role": "cloud"
+      },
+      {
+        "id": "result",
+        "pos": [
+          100,
+          1260
+        ],
+        "text": "結尾／固定成果快照\n接圖 05 保存與交付",
+        "role": "normal"
+      }
+    ],
+    "edges": [
+      {
+        "from": "returning",
+        "to": "near",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "near",
+        "to": "zone",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "zone",
+        "to": "valid",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "valid",
+        "to": "deny",
+        "start": "R",
+        "end": "T",
+        "label": "否",
+        "via": [
+          [
+            2000,
+            260
+          ],
+          [
+            2000,
+            410
+          ],
+          [
+            1760,
+            410
+          ]
+        ],
+        "label_pos": [
+          2000,
+          350
+        ]
+      },
+      {
+        "from": "valid",
+        "to": "auth",
+        "start": "B",
+        "end": "T",
+        "label_pos": [
+          1500,
+          375
+        ],
+        "label": "是",
+        "via": [
+          [
+            1760,
+            390
+          ],
+          [
+            1260,
+            390
+          ]
+        ]
+      },
+      {
+        "from": "auth",
+        "to": "screen",
+        "start": "L",
+        "end": "R"
+      },
+      {
+        "from": "screen",
+        "to": "click",
+        "start": "L",
+        "end": "T",
+        "label_pos": [
+          390,
+          505
+        ],
+        "label": "可移開再確認",
+        "via": [
+          [
+            500,
+            520
+          ],
+          [
+            260,
+            520
+          ]
+        ]
+      },
+      {
+        "from": "click",
+        "to": "request",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "request",
+        "to": "check",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "check",
+        "to": "reject",
+        "start": "R",
+        "end": "L",
+        "label": "否"
+      },
+      {
+        "from": "check",
+        "to": "commit",
+        "start": "B",
+        "end": "T",
+        "label": "是"
+      },
+      {
+        "from": "commit",
+        "to": "convert",
+        "start": "L",
+        "end": "R"
+      },
+      {
+        "from": "convert",
+        "to": "repair",
+        "start": "L",
+        "end": "R"
+      },
+      {
+        "from": "repair",
+        "to": "result",
+        "start": "B",
+        "end": "T"
+      }
+    ],
+    "caption": [
+      [
+        "起點：Return",
+        "SAN 初始 100，每群扣 20；捕捉 5 群後歸零完成任務，停止捕捉、發聲觸發與群落啟用。"
+      ],
+      [
+        "站體位置",
+        "固定在開場面向後方，不隨觀眾轉頭移動；到站後仍須選取確認回收。"
+      ],
+      [
+        "到站",
+        "被動 NFC 標籤靠近回收座 → 讀取器／控制板 → Gateway → Unity 核對本場捕捉器。"
+      ],
+      [
+        "確認資格",
+        "記錄 nfc_confirmed 後顯示 LCD 確認；可移開再觸控，資格保留至回收／結束，換備機清除。"
+      ],
+      [
+        "結算順序",
+        "點選後顯示處理中；Unity 驗證並先標記已回收，再固定清單、登錄類型／變體／群落次數。<br>重讀／重按／重送不重複結算。"
+      ],
+      [
+        "演出",
+        "在兩面主投影呈現能量轉化物品與城市修復。"
+      ]
+    ]
+  },
+  {
+    "id": "05",
+    "title": "05  本機保存、成果補傳與聲音收藏票",
+    "subtitle": "保存確認後交付成果 QR、背景補傳與 USB 紙票；列印異常保留工作並由管理端補印。",
+    "size": [
+      2150,
+      2730
+    ],
+    "nodes": [
+      {
+        "id": "snapshot",
+        "pos": [
+          100,
+          200
+        ],
+        "text": "Unity 固定成果\nresult_id／token／配方\n本場變體不重複",
+        "role": "normal"
+      },
+      {
+        "id": "unityStore",
+        "pos": [
+          600,
+          200
+        ],
+        "text": "Unity 執行端原子暫存\n固定成果＋待交付紀錄",
+        "role": "normal"
+      },
+      {
+        "id": "localOk",
+        "pos": [
+          1090,
+          188
+        ],
+        "text": "執行端暫存成功？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "localRetry",
+        "pos": [
+          1600,
+          200
+        ],
+        "text": "保留本場／重試保存\n不正常重置",
+        "role": "cancel"
+      },
+      {
+        "id": "send",
+        "pos": [
+          1100,
+          460
+        ],
+        "text": "本機 WebSocket 傳成果\nRESULT_READY",
+        "role": "normal"
+      },
+      {
+        "id": "pcStore",
+        "pos": [
+          1100,
+          720
+        ],
+        "text": "Gateway SQLite 保存\n成果／outbox／列印工作",
+        "role": "normal"
+      },
+      {
+        "id": "pcOk",
+        "pos": [
+          1090,
+          968
+        ],
+        "text": "電腦交易成功？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "pcRetry",
+        "pos": [
+          1600,
+          980
+        ],
+        "text": "Unity 保留待交付成果\n恢復本機串接後重送",
+        "role": "cancel"
+      },
+      {
+        "id": "ack",
+        "pos": [
+          600,
+          1240
+        ],
+        "text": "RESULT_SAVED 回覆 Unity\n電腦已保存，非雲端發布",
+        "role": "normal"
+      },
+      {
+        "id": "handoff",
+        "pos": [
+          100,
+          1240
+        ],
+        "text": "結尾／現場交付\n同一成果 QR",
+        "role": "normal"
+      },
+      {
+        "id": "upload",
+        "pos": [
+          600,
+          1500
+        ],
+        "text": "Gateway 背景 HTTPS 上傳\n同 result_id 重試",
+        "role": "normal"
+      },
+      {
+        "id": "cloudOk",
+        "pos": [
+          1090,
+          1488
+        ],
+        "text": "雲端上傳成功？",
+        "role": "normal",
+        "shape": "decision",
+        "size": [
+          340,
+          144
+        ]
+      },
+      {
+        "id": "cloud",
+        "pos": [
+          1600,
+          1500
+        ],
+        "text": "Neon：成果／聲部配方\nVercel：成果頁／預製音軌",
+        "role": "cloud"
+      },
+      {
+        "id": "queue",
+        "pos": [
+          1100,
+          1760
+        ],
+        "text": "保留電腦 outbox\n復線後重試",
+        "role": "cancel"
+      },
+      {
+        "id": "phone",
+        "pos": [
+          600,
+          1760
+        ],
+        "text": "手機掃碼／離場重開\nVercel／Next.js 成果頁",
+        "role": "cloud"
+      },
+      {
+        "id": "web",
+        "pos": [
+          1600,
+          1760
+        ],
+        "text": "感謝信／摘要／旋律\n未就緒則提示重試",
+        "role": "cloud"
+      },
+      {
+        "id": "reset",
+        "pos": [
+          100,
+          1760
+        ],
+        "text": "保存＋結尾＋QR 交付後\n重置遊戲，保留成果",
+        "role": "success"
+      },
+      {
+        "id": "ticketImage",
+        "pos": [
+          100,
+          2180
+        ],
+        "text": "Gateway 保存收藏票票面\n5變體組合圖＋聲音清單\n同一成果 QR",
+        "role": "normal"
+      },
+      {
+        "id": "ticketUsb",
+        "pos": [
+          600,
+          2180
+        ],
+        "text": "Windows 列印佇列 → USB\n感熱印表機送紙／裁切",
+        "role": "device"
+      },
+      {
+        "id": "ticketOk",
+        "pos": [
+          1090,
+          2168
+        ],
+        "size": [
+          340,
+          144
+        ],
+        "text": "出紙是否正常？\n設備回報／人員確認",
+        "role": "normal",
+        "shape": "decision"
+      },
+      {
+        "id": "ticketTake",
+        "pos": [
+          1600,
+          2180
+        ],
+        "text": "出口交付聲音收藏票\n每場預設一張",
+        "role": "success"
+      },
+      {
+        "id": "ticketRetry",
+        "pos": [
+          1100,
+          2440
+        ],
+        "text": "保留工作／管理端補印\n同一票面與 QR，不重算成果",
+        "role": "cancel"
+      }
+    ],
+    "edges": [
+      {
+        "from": "snapshot",
+        "to": "unityStore",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "unityStore",
+        "to": "localOk",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "localOk",
+        "to": "localRetry",
+        "start": "R",
+        "end": "L",
+        "label": "否"
+      },
+      {
+        "from": "localRetry",
+        "to": "unityStore",
+        "start": "T",
+        "end": "T",
+        "dashed": true,
+        "via": [
+          [
+            1760,
+            160
+          ],
+          [
+            760,
+            160
+          ]
+        ]
+      },
+      {
+        "from": "localOk",
+        "to": "send",
+        "start": "B",
+        "end": "T",
+        "label": "是"
+      },
+      {
+        "from": "send",
+        "to": "pcStore",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "pcStore",
+        "to": "pcOk",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "pcOk",
+        "to": "pcRetry",
+        "start": "R",
+        "end": "L",
+        "label": "否"
+      },
+      {
+        "from": "pcRetry",
+        "to": "send",
+        "start": "R",
+        "end": "R",
+        "dashed": true,
+        "label_pos": [
+          2020,
+          800
+        ],
+        "label": "同份重送",
+        "via": [
+          [
+            2020,
+            1040
+          ],
+          [
+            2020,
+            520
+          ]
+        ]
+      },
+      {
+        "from": "pcOk",
+        "to": "ack",
+        "start": "L",
+        "end": "T",
+        "label_pos": [
+          900,
+          1025
+        ],
+        "label": "是",
+        "via": [
+          [
+            1000,
+            1040
+          ],
+          [
+            760,
+            1040
+          ]
+        ]
+      },
+      {
+        "from": "ack",
+        "to": "handoff",
+        "start": "L",
+        "end": "R"
+      },
+      {
+        "from": "ack",
+        "to": "upload",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "handoff",
+        "to": "reset",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "handoff",
+        "to": "phone",
+        "start": "R",
+        "end": "L",
+        "via": [
+          [
+            500,
+            1300
+          ],
+          [
+            500,
+            1820
+          ]
+        ]
+      },
+      {
+        "from": "upload",
+        "to": "cloudOk",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "cloudOk",
+        "to": "cloud",
+        "start": "R",
+        "end": "L",
+        "label": "是"
+      },
+      {
+        "from": "cloudOk",
+        "to": "queue",
+        "start": "B",
+        "end": "T",
+        "label": "否"
+      },
+      {
+        "from": "queue",
+        "to": "upload",
+        "start": "L",
+        "end": "R",
+        "dashed": true,
+        "via": [
+          [
+            1000,
+            1820
+          ],
+          [
+            1000,
+            1560
+          ]
+        ]
+      },
+      {
+        "from": "cloud",
+        "to": "web",
+        "start": "B",
+        "end": "T"
+      },
+      {
+        "from": "phone",
+        "to": "web",
+        "start": "B",
+        "end": "B",
+        "label_pos": [
+          1270,
+          1950
+        ],
+        "label": "讀取成果",
+        "via": [
+          [
+            760,
+            1970
+          ],
+          [
+            1760,
+            1970
+          ]
+        ]
+      },
+      {
+        "from": "handoff",
+        "to": "ticketImage",
+        "start": "L",
+        "end": "L",
+        "via": [
+          [
+            55,
+            1300
+          ],
+          [
+            55,
+            2240
+          ]
+        ],
+        "label": "紙票輸出",
+        "label_pos": [
+          55,
+          2070
+        ]
+      },
+      {
+        "from": "ticketImage",
+        "to": "ticketUsb",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "ticketUsb",
+        "to": "ticketOk",
+        "start": "R",
+        "end": "L"
+      },
+      {
+        "from": "ticketOk",
+        "to": "ticketTake",
+        "start": "R",
+        "end": "L",
+        "label": "是"
+      },
+      {
+        "from": "ticketOk",
+        "to": "ticketRetry",
+        "start": "B",
+        "end": "T",
+        "label": "否"
+      },
+      {
+        "from": "ticketRetry",
+        "to": "ticketUsb",
+        "start": "L",
+        "end": "B",
+        "via": [
+          [
+            760,
+            2500
+          ]
+        ],
+        "dashed": true,
+        "label": "人工確認後補印",
+        "label_pos": [
+          780,
+          2410
+        ]
+      }
+    ],
+    "caption": [
+      [
+        "從哪裡讀",
+        "Unity 固定成果、<br>result_id／token／配方 → 執行端暫存 → Gateway 以 SQLite 交易保存成果、<br>outbox 與列印工作。"
+      ],
+      [
+        "本機保存",
+        "RESULT_SAVED 只代表電腦保存。結尾、本機保存與現場成果 QR 交付完成才重置；<br>成果、待同步與列印工作保留。"
+      ],
+      [
+        "背景補傳",
+        "斷網仍交相同固定連結；恢復後依同 result_id 補傳。<br>Next.js 提供感謝信／摘要／旋律，尚未就緒則提示重試。"
+      ],
+      [
+        "個人旋律",
+        "9 個變體均納入隨機池，任選 5 個且類型可重複；<br>每個已收集變體啟用一個預製聲部，保存組合／音軌版本，相同組合沿用配方。"
+      ],
+      [
+        "固定票面",
+        "本場 5 個變體的預製黑白圖像組成主圖；下方列名稱／來源聲音，底部為同一 QR。<br>保存版面版本及票面，補印一致。"
+      ],
+      [
+        "USB 列印",
+        "現場 QR 交付階段，由 Gateway → Windows 列印佇列 → USB 印表機送紙／裁切。<br>每場一張，不另加 Arduino／ESP32。"
+      ],
+      [
+        "出紙異常",
+        "缺紙、卡紙、USB 斷線或狀態不明，由管理端核對補印；不重複結算。紙票異常仍交現場螢幕 QR。"
+      ],
+      [
+        "線上原型",
+        "Vercel Hobby 提供網站／API，Neon Free 保存成果；預製素材版本化部署。<br>SQLite、管理與即時互動留在本機。"
+      ]
+    ]
+  }
+]

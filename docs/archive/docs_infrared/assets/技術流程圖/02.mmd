@@ -1,0 +1,49 @@
+flowchart TD
+  pose["PAJ7025R3 光點取樣／ESP32 解碼與中心偏移"]
+  ray["Gateway 傳點位觀測／Unity 檢查群落與版本"]
+  valid{"本場／群落／SAN 有效／樣本新鮮且對準？"}
+  pause["移開／失效，暫停累積／保留進度、外觀與音量"]
+  load["載入同群進度與顯現基準／新群落起始為 0"]
+  hide["收起 Mask／保留進度對應外觀與聲音"]
+  show["固定點顯示 Mask／載入進度對應的顯現程度"]
+  paused["LCD 顯示暫停／等待有效瞄準"]
+  progress["累積有效對準時間／顯現基準＝捕捉進度／目標聲音隨進度變小"]
+  visual["投影 Mask／LCD 共用進度／顯現基準＝捕捉進度"]
+  time{"累積達標且／群落仍有效？"}
+  update["CAPTURE_PROGRESS／繼續觀測"]
+  commit["整群收走／停聲音與該點燈／記錄一次／SAN 扣 20"]
+  feedback["UI／震動；SAN 0 進入回收／捕捉器不發聲"]
+  ended["群落移除／或本場結束／重置"]
+  clear["清除對應群落進度／新群落不繼承"]
+  pose --> ray
+  ray --> valid
+  valid -->|"否"| pause
+  valid -->|"是"| load
+  pause --> hide
+  hide --> paused
+  paused -.->|"重新對準"| ray
+  load --> show
+  show --> progress
+  progress -->|"同步"| visual
+  progress --> time
+  time -->|"未達標"| update
+  update -.->|"持續取樣"| ray
+  time -->|"達標"| commit
+  commit --> feedback
+  ended --> clear
+  style pose fill:#e5f5f1,stroke:#459489
+  style ray fill:#e8f1fd,stroke:#7099c9
+  style valid fill:#e8f1fd,stroke:#7099c9
+  style pause fill:#fdeceb,stroke:#c58b86
+  style load fill:#e8f1fd,stroke:#7099c9
+  style hide fill:#fdeceb,stroke:#c58b86
+  style show fill:#eee7fb,stroke:#9a7ac7
+  style paused fill:#e8f1fd,stroke:#7099c9
+  style progress fill:#e8f1fd,stroke:#7099c9
+  style visual fill:#eee7fb,stroke:#9a7ac7
+  style time fill:#e8f1fd,stroke:#7099c9
+  style update fill:#e8f1fd,stroke:#7099c9
+  style commit fill:#e7f4e9,stroke:#69a977
+  style feedback fill:#e5f5f1,stroke:#459489
+  style ended fill:#e8f1fd,stroke:#7099c9
+  style clear fill:#e8f1fd,stroke:#7099c9

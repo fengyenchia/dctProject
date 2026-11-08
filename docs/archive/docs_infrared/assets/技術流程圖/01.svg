@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1550" viewBox="0 0 2350 1550">
+<rect width="2350" height="1550" fill="#f7f9fc"/>
+<polyline points="420,260.0 600,260.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="600.00,260.00 588.95,264.67 588.95,255.33" fill="#60738b"/>
+<rect x="475.0" y="229.0" width="70.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="510.0" y="244.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">紅外線</text>
+<polyline points="920,260.0 1100,260.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1100.00,260.00 1088.95,264.67 1088.95,255.33" fill="#60738b"/>
+<polygon points="920.00,260.00 931.05,255.33 931.05,264.67" fill="#60738b"/>
+<rect x="936.5" y="229.0" width="147.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1010.0" y="244.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">觀測／UI 及震動</text>
+<polyline points="1420,260.0 1600,260.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1600.00,260.00 1588.95,264.67 1588.95,255.33" fill="#60738b"/>
+<polygon points="1420.00,260.00 1431.05,255.33 1431.05,264.67" fill="#60738b"/>
+<rect x="1466.0" y="229.0" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1510.0" y="244.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本機事件</text>
+<polyline points="1260.0,320 1260,400 260,400 260.0,520" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,520.00 255.33,508.95 264.67,508.95" fill="#60738b"/>
+<rect x="736.0" y="385" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="780" y="400" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">點燈狀態</text>
+<polyline points="100,580.0 55,580 55,260 100,260.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="100.00,260.00 88.95,264.67 88.95,255.33" fill="#60738b"/>
+<polyline points="920,580.0 1020,580 1020,370 1260,370 1260.0,320" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1260.00,320.00 1264.67,331.05 1255.33,331.05" fill="#60738b"/>
+<rect x="994.0" y="445" width="52.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1020" y="460" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">到站</text>
+<polyline points="1760.0,320 1760,440 1260,440 1260.0,520" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1260.00,520.00 1255.33,508.95 1264.67,508.95" fill="#60738b"/>
+<polyline points="1920,580.0 2050,580 2050,260 1920,260.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1920.00,260.00 1931.05,255.33 1931.05,264.67" fill="#60738b"/>
+<rect x="2006.0" y="405" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="2050" y="420" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">觀眾發聲</text>
+<polyline points="1260.0,320 1260,350 1450,350 1450,770 1260,770 1260.0,840" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1260.00,840.00 1255.33,828.95 1264.67,828.95" fill="#60738b"/>
+<polyline points="1420,260.0 1510,260 1510,770 1760,770 1760.0,840" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1760.00,840.00 1755.33,828.95 1764.67,828.95" fill="#60738b"/>
+<polygon points="1420.00,260.00 1431.05,255.33 1431.05,264.67" fill="#60738b"/>
+<polyline points="1260.0,960 1260.0,1160" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1260.00,1160.00 1255.33,1148.95 1264.67,1148.95" fill="#60738b"/>
+<rect x="1204.0" y="1029.0" width="112.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1260.0" y="1044.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">背景 HTTPS</text>
+<polyline points="1100,900.0 1000,900 1000,1080 760,1080 760.0,1160" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="760.00,1160.00 755.33,1148.95 764.67,1148.95" fill="#60738b"/>
+<rect x="856.0" y="1065" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="900" y="1080" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成果網址</text>
+<polyline points="1420,1220.0 1600,1220.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1600.00,1220.00 1588.95,1224.67 1588.95,1215.33" fill="#60738b"/>
+<rect x="1466.0" y="1189.0" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1510.0" y="1204.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">唯讀成果</text>
+<polyline points="1100,900.0 260,900 260.0,1160" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,1160.00 255.33,1148.95 264.67,1148.95" fill="#60738b"/>
+<rect x="449.0" y="885" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="520" y="900" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本機保存後列印</text>
+<rect x="100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">音虫固定點紅外線燈</text>
+<text x="260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">各點獨立閃爍編碼</text>
+<rect x="600" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">PAJ7025R3＋ESP32-S3</text>
+<text x="760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">觸控 LCD／震動／電池</text>
+<rect x="1100" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機串接服務</text>
+<text x="1260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway</text>
+<rect x="1600" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity</text>
+<text x="1760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">唯一遊戲狀態</text>
+<rect x="100" y="520" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="565.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">點燈控制板</text>
+<text x="260.0" y="595.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">依群落存在狀態啟停</text>
+<rect x="600" y="520" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="760.0" y="565.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">NFC 回收座</text>
+<text x="760.0" y="595.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">讀捕捉器被動標籤</text>
+<rect x="1100" y="520" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1260.0" y="565.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">兩面主投影／場內聲音</text>
+<text x="1260.0" y="595.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">回收與城市修復</text>
+<rect x="1600" y="520" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1760.0" y="565.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">現場麥克風</text>
+<text x="1760.0" y="595.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">音量／持續時間 → Unity</text>
+<rect x="1100" y="840" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1260.0" y="885.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SQLite 成果／列印工作</text>
+<text x="1260.0" y="915.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端 outbox</text>
+<rect x="1600" y="840" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1760.0" y="885.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機管理頁</text>
+<text x="1760.0" y="915.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">單一場次／狀態監看</text>
+<rect x="600" y="1160" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="760.0" y="1205.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">現場成果 QR</text>
+<text x="760.0" y="1235.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保存後交付</text>
+<rect x="1100" y="1160" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
+<text x="1260.0" y="1190.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel：成果頁／API</text>
+<text x="1260.0" y="1220.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Neon：PostgreSQL</text>
+<text x="1260.0" y="1250.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">預製音軌／美術素材</text>
+<rect x="1600" y="1160" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
+<text x="1760.0" y="1205.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">離場手機成果頁</text>
+<text x="1760.0" y="1235.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">感謝信／摘要／旋律</text>
+<rect x="100" y="1160" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="1205.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">USB 感熱印表機</text>
+<text x="260.0" y="1235.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">聲音收藏票／自動裁切</text>
+<text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">01  紅外線捕捉器與電腦資料串接</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">光點辨識交給捕捉器；Unity 統一判定，場內通訊不經雲端；線上紀念品在背景上傳。 循聲與操作搭配動畫；發聲只用字幕。</text>
+<text x="65" y="1518" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">紅外線 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="2200" viewBox="0 0 2200 2200">
+<rect width="2200" height="2200" fill="#f7f9fc"/>
+<polyline points="260.0,320 260.0,400" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,400.00 255.33,388.95 264.67,388.95" fill="#60738b"/>
+<polyline points="260.0,520 260.0,600" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,600.00 255.33,588.95 264.67,588.95" fill="#60738b"/>
+<polyline points="980.0,340 980,360 500,360 500,660 420,660.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="420.00,660.00 431.05,655.33 431.05,664.67" fill="#60738b"/>
+<rect x="656.0" y="345" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="700" y="360" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">播放參考</text>
+<polyline points="260.0,720 260.0,800" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,800.00 255.33,788.95 264.67,788.95" fill="#60738b"/>
+<polyline points="260.0,920 260.0,1000" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,1000.00 255.33,988.95 264.67,988.95" fill="#60738b"/>
+<polyline points="440,1090.0 470,1090.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="470.00,1090.00 458.95,1094.67 458.95,1085.33" fill="#60738b"/>
+<rect x="438.0" y="1050" width="34.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="455" y="1065" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">否</text>
+<polyline points="260.0,1180 260.0,1300" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,1300.00 255.33,1288.95 264.67,1288.95" fill="#60738b"/>
+<rect x="243.0" y="1209.0" width="34.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="260.0" y="1224.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">是</text>
+<polyline points="260.0,1440 260.0,1550" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,1550.00 255.33,1538.95 264.67,1538.95" fill="#60738b"/>
+<polyline points="420,1370.0 600,1370 600,1920 420,1920.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<polygon points="420.00,1920.00 431.05,1915.33 431.05,1924.67" fill="#60738b"/>
+<rect x="529.0" y="1765" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="600" y="1780" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">等待停聲／冷卻</text>
+<polyline points="100,1920.0 40,1920 40,1090 80,1090.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="8 6"/>
+<polygon points="80.00,1090.00 68.95,1094.67 68.95,1085.33" fill="#60738b"/>
+<polyline points="960.0,720 960.0,800" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="960.00,800.00 955.33,788.95 964.67,788.95" fill="#60738b"/>
+<polyline points="960.0,920 980.0,1000" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="980.00,1000.00 972.79,990.41 981.85,988.14" fill="#60738b"/>
+<polyline points="980.0,1140 960.0,1550" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="960.00,1550.00 955.87,1538.73 965.21,1539.19" fill="#60738b"/>
+<polyline points="420,1620.0 800,1620.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="800.00,1620.00 788.95,1624.67 788.95,1615.33" fill="#60738b"/>
+<polyline points="960.0,1690 960.0,1850" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="960.00,1850.00 955.33,1838.95 964.67,1838.95" fill="#60738b"/>
+<polyline points="1680.0,320 1680.0,450" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1680.00,450.00 1675.33,438.95 1684.67,438.95" fill="#60738b"/>
+<polyline points="1680.0,570 1680.0,700" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1680.00,700.00 1675.33,688.95 1684.67,688.95" fill="#60738b"/>
+<polyline points="1680.0,840 1680.0,1000" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1680.00,1000.00 1675.33,988.95 1684.67,988.95" fill="#60738b"/>
+<polyline points="1160,1070.0 1300,1070 1300,1420 1500,1420.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1500.00,1420.00 1488.95,1424.67 1488.95,1415.33" fill="#60738b"/>
+<rect x="100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="260.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">觀眾發聲</text>
+<rect x="100" y="400" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="445.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3 內建麥克風</text>
+<text x="260.0" y="475.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">經 Link 送入電腦</text>
+<rect x="100" y="600" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="260.0" y="645.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機 AEC 回音消除</text>
+<text x="260.0" y="675.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">抑制自身播放聲</text>
+<rect x="100" y="800" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="260.0" y="845.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">VAD 人聲偵測</text>
+<text x="260.0" y="875.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">音量／持續時間判斷</text>
+<polygon points="260.0,1000 440,1090.0 260.0,1180 80,1090.0" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="260.0" y="1060.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="19" fill="#24334b" text-anchor="middle">Active／圓內且追蹤有效</text>
+<text x="260.0" y="1090.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="19" fill="#24334b" text-anchor="middle">新發聲、門檻達標</text>
+<text x="260.0" y="1120.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="19" fill="#24334b" text-anchor="middle">已重新就緒／冷卻完成</text>
+<rect x="470" y="1030" width="250" height="120" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
+<text x="595.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="20" fill="#24334b" text-anchor="middle">不觸發、不延長</text>
+<text x="595.0" y="1105.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="20" fill="#24334b" text-anchor="middle">缺資料不當作停聲</text>
+<rect x="100" y="1300" width="320" height="140" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="260.0" y="1355.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">VOICE_REVEAL：一次</text>
+<text x="260.0" y="1385.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">鎖住本次發聲、開始冷卻</text>
+<rect x="100" y="1550" width="320" height="140" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="260.0" y="1590.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">發聲效果：3 秒淡入</text>
+<text x="260.0" y="1620.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">接著 1 秒淡出</text>
+<text x="260.0" y="1650.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">與捕捉進度分開</text>
+<rect x="100" y="1850" width="320" height="140" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
+<text x="260.0" y="1905.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有效停聲且冷卻完成</text>
+<text x="260.0" y="1935.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重新接受下一次發聲</text>
+<rect x="800" y="200" width="360" height="140" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="980.0" y="240.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 遊戲輸出混音</text>
+<text x="980.0" y="270.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場最多 3 群音虫聲源</text>
+<text x="980.0" y="300.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">AEC 播放參考／內建喇叭</text>
+<rect x="800" y="600" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="960.0" y="660.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有效對準既有群落</text>
+<rect x="800" y="800" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="960.0" y="845.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">累積並保存同群進度</text>
+<text x="960.0" y="875.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">移開暫停、重對準接續</text>
+<rect x="800" y="1000" width="360" height="140" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="980.0" y="1040.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">持續顯現基準＝捕捉進度</text>
+<text x="980.0" y="1070.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">聲音增益＝1－捕捉進度</text>
+<text x="980.0" y="1100.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">移開保留，重對準接續</text>
+<rect x="800" y="1550" width="320" height="140" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="960.0" y="1605.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">最終顯現程度取較高值</text>
+<text x="960.0" y="1635.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">發聲效果／捕捉進度基準</text>
+<rect x="700" y="1850" width="520" height="150" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="960.0" y="1895.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">無進度：短暫效果淡出後隱藏</text>
+<text x="960.0" y="1925.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有進度：保留對應顯現程度</text>
+<text x="960.0" y="1955.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Mask 隨有效場景落點移動</text>
+<rect x="1500" y="200" width="360" height="120" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
+<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">開場／成功捕捉後</text>
+<text x="1680.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">先結算 SAN 與群落數</text>
+<rect x="1500" y="450" width="360" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1680.0" y="480.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">GROUP_SPAWN</text>
+<text x="1680.0" y="510.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Active／SAN &gt; 0／少於 3 群</text>
+<text x="1680.0" y="540.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">空位／未出現變體／去重</text>
+<rect x="1500" y="700" width="360" height="140" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1680.0" y="755.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">隨機生成：開場 3／補 1</text>
+<text x="1680.0" y="785.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">新身分、進度 0、隱藏</text>
+<rect x="1500" y="1000" width="360" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1680.0" y="1030.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">播放新群聲音</text>
+<text x="1680.0" y="1060.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場同時最多 3 群</text>
+<text x="1680.0" y="1090.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉器仍不發聲</text>
+<rect x="1500" y="1350" width="360" height="140" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1680.0" y="1390.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 更新該群聲源音量</text>
+<text x="1680.0" y="1420.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">原始音量 × (1－進度)</text>
+<text x="1680.0" y="1450.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">移開保留，成功後停聲</text>
+<text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">03  回音消除、單次發聲與顯現合成</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">左：有效發聲；中：進度驅動外觀與音量；右：捕捉後先扣 SAN，再決定是否隨機補出。</text>
+<text x="65" y="2168" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">VR 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
+</svg>

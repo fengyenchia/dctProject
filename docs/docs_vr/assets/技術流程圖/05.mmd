@@ -1,0 +1,71 @@
+flowchart TD
+  snapshot["Unity 固定成果／result_id／token／配方／本場變體不重複"]
+  unityStore["Unity 執行端原子暫存／固定成果＋待交付紀錄"]
+  localOk{"執行端暫存成功？"}
+  localRetry["保留本場／重試保存／不正常重置"]
+  send["本機 WebSocket 傳成果／RESULT_READY"]
+  pcStore["Gateway SQLite 保存／成果／outbox／列印工作"]
+  pcOk{"電腦交易成功？"}
+  pcRetry["Unity 保留待交付成果／恢復本機串接後重送"]
+  ack["RESULT_SAVED 回覆 Unity／電腦已保存，非雲端發布"]
+  handoff["結尾／取下頭戴／觀眾螢幕交付成果 QR"]
+  upload["Gateway 背景 HTTPS 上傳／同 result_id 重試"]
+  cloudOk{"雲端上傳成功？"}
+  cloud["Neon：成果／聲部配方／Vercel：成果頁／預製音軌"]
+  queue["保留電腦 outbox／復線後重試"]
+  phone["手機掃碼／離場重開／Vercel／Next.js 成果頁"]
+  web["感謝信／摘要／旋律／未就緒則提示重試"]
+  reset["保存＋結尾＋QR 交付後／重置遊戲，保留成果"]
+  ticketImage["Gateway 保存收藏票票面／5變體組合圖＋聲音清單／同一成果 QR"]
+  ticketUsb["Windows 列印佇列 → USB／感熱印表機送紙／裁切"]
+  ticketOk{"出紙是否正常？／設備回報／人員確認"}
+  ticketTake["出口交付聲音收藏票／每場預設一張"]
+  ticketRetry["保留工作／管理端補印／同一票面與 QR，不重算成果"]
+  snapshot --> unityStore
+  unityStore --> localOk
+  localOk -->|"否"| localRetry
+  localRetry -.-> unityStore
+  localOk -->|"是"| send
+  send --> pcStore
+  pcStore --> pcOk
+  pcOk -->|"否"| pcRetry
+  pcRetry -.->|"同份重送"| send
+  pcOk -->|"是"| ack
+  ack --> handoff
+  ack --> upload
+  handoff --> reset
+  handoff --> phone
+  upload --> cloudOk
+  cloudOk -->|"是"| cloud
+  cloudOk -->|"否"| queue
+  queue -.-> upload
+  cloud --> web
+  phone -->|"讀取成果"| web
+  handoff -->|"紙票輸出"| ticketImage
+  ticketImage --> ticketUsb
+  ticketUsb --> ticketOk
+  ticketOk -->|"是"| ticketTake
+  ticketOk -->|"否"| ticketRetry
+  ticketRetry -.->|"人工確認後補印"| ticketUsb
+  style snapshot fill:#e8f1fd,stroke:#7099c9
+  style unityStore fill:#e8f1fd,stroke:#7099c9
+  style localOk fill:#e8f1fd,stroke:#7099c9
+  style localRetry fill:#fdeceb,stroke:#c58b86
+  style send fill:#e8f1fd,stroke:#7099c9
+  style pcStore fill:#e8f1fd,stroke:#7099c9
+  style pcOk fill:#e8f1fd,stroke:#7099c9
+  style pcRetry fill:#fdeceb,stroke:#c58b86
+  style ack fill:#e8f1fd,stroke:#7099c9
+  style handoff fill:#e8f1fd,stroke:#7099c9
+  style upload fill:#e8f1fd,stroke:#7099c9
+  style cloudOk fill:#e8f1fd,stroke:#7099c9
+  style cloud fill:#eee7fb,stroke:#9a7ac7
+  style queue fill:#fdeceb,stroke:#c58b86
+  style phone fill:#eee7fb,stroke:#9a7ac7
+  style web fill:#eee7fb,stroke:#9a7ac7
+  style reset fill:#e7f4e9,stroke:#69a977
+  style ticketImage fill:#e8f1fd,stroke:#7099c9
+  style ticketUsb fill:#e5f5f1,stroke:#459489
+  style ticketOk fill:#e8f1fd,stroke:#7099c9
+  style ticketTake fill:#e7f4e9,stroke:#69a977
+  style ticketRetry fill:#fdeceb,stroke:#c58b86

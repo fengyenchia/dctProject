@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2150" height="1460" viewBox="0 0 2150 1460">
+<rect width="2150" height="1460" fill="#f7f9fc"/>
+<polyline points="420,260.0 600,260.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="600.00,260.00 588.95,264.67 588.95,255.33" fill="#60738b"/>
+<polygon points="420.00,260.00 431.05,255.33 431.05,264.67" fill="#60738b"/>
+<polyline points="760.0,320 760.0,460" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="760.00,460.00 755.33,448.95 764.67,448.95" fill="#60738b"/>
+<polyline points="1260.0,320 1260,380 760,380 760.0,460" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="760.00,460.00 755.33,448.95 764.67,448.95" fill="#60738b"/>
+<polyline points="920,520.0 1100,520.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1100.00,520.00 1088.95,524.67 1088.95,515.33" fill="#60738b"/>
+<polyline points="760.0,580 760.0,720" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="760.00,720.00 755.33,708.95 764.67,708.95" fill="#60738b"/>
+<polyline points="920,780.0 1100,780.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1100.00,780.00 1088.95,784.67 1088.95,775.33" fill="#60738b"/>
+<polygon points="920.00,780.00 931.05,775.33 931.05,784.67" fill="#60738b"/>
+<rect x="939.0" y="749.0" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1010.0" y="764.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">成果／保存確認</text>
+<polyline points="920,560.0 1000,560 1000,650 1260,650 1260.0,720" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1260.00,720.00 1255.33,708.95 1264.67,708.95" fill="#60738b"/>
+<polygon points="920.00,560.00 931.05,555.33 931.05,564.67" fill="#60738b"/>
+<rect x="1049.0" y="620" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1120" y="635" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本機事件／管理</text>
+<polyline points="1420,780.0 1600,780.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1600.00,780.00 1588.95,784.67 1588.95,775.33" fill="#60738b"/>
+<polygon points="1420.00,780.00 1431.05,775.33 1431.05,784.67" fill="#60738b"/>
+<rect x="1484.0" y="749.0" width="52.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1510.0" y="764.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">管理</text>
+<polyline points="1260.0,840 1260.0,980" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1260.00,980.00 1255.33,968.95 1264.67,968.95" fill="#60738b"/>
+<polyline points="1420,780.0 1500,780 1500,1040 1600,1040.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1600.00,1040.00 1588.95,1044.67 1588.95,1035.33" fill="#60738b"/>
+<rect x="1464.5" y="915" width="71.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1500" y="930" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">HTTPS</text>
+<polyline points="1760.0,1100 1760.0,1220" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1760.00,1220.00 1755.33,1208.95 1764.67,1208.95" fill="#60738b"/>
+<rect x="1716.0" y="1129.0" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1760.0" y="1144.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">唯讀成果</text>
+<polyline points="260.0,580 260.0,720" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,720.00 255.33,708.95 264.67,708.95" fill="#60738b"/>
+<polyline points="260.0,840 260.0,980" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="260.00,980.00 255.33,968.95 264.67,968.95" fill="#60738b"/>
+<polyline points="760.0,580 760,650 470,650 470,780 420,780.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="420.00,780.00 431.05,775.33 431.05,784.67" fill="#60738b"/>
+<rect x="538.0" y="635" width="124.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="600" y="650" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">播放混音參考</text>
+<polyline points="420,1040.0 540,1040 540,520 600,520.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="600.00,520.00 588.95,524.67 588.95,515.33" fill="#60738b"/>
+<rect x="496.0" y="895" width="88.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="540" y="910" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">有效發聲</text>
+<polyline points="1100,1040.0 760,1040 760.0,1220" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="760.00,1220.00 755.33,1208.95 764.67,1208.95" fill="#60738b"/>
+<rect x="689.0" y="1130" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="760" y="1145" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">本機保存後列印</text>
+<polyline points="1420,780.0 1460,780 1460,630 1760,630 1760.0,580" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1760.00,580.00 1764.67,591.05 1755.33,591.05" fill="#60738b"/>
+<rect x="1559.0" y="615" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1630" y="630" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">前導／成果資料</text>
+<polyline points="920,520.0 960,520 960,400 1980,400 1980,660 1760,660 1760.0,720" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1760.00,720.00 1755.33,708.95 1764.67,708.95" fill="#60738b"/>
+<rect x="1429.0" y="385" width="142.0" height="30" rx="4" fill="#f7f9fc"/>
+<text x="1500" y="400" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#4d6079" text-anchor="middle">遊戲監看／錯誤</text>
+<rect x="100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3／Touch Plus</text>
+<text x="260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">頭手追蹤與控制器輸入</text>
+<rect x="600" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest Link／OpenXR</text>
+<text x="760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">PC 輸入與平台整合</text>
+<rect x="1100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">展場原點／已對位表面</text>
+<text x="1260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">回收站外殼基準</text>
+<rect x="100" y="460" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="260.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3 內建麥克風</text>
+<text x="260.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">經 Link 送入電腦</text>
+<rect x="600" y="460" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="760.0" y="490.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 6.3 LTS／MR</text>
+<text x="760.0" y="520.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">6000.3.19f1／Windows</text>
+<text x="760.0" y="550.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">唯一遊戲狀態</text>
+<rect x="1100" y="460" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1260.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3 MR 畫面／內建喇叭</text>
+<text x="1260.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">控制器震動</text>
+<rect x="600" y="720" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="760.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 執行端暫存</text>
+<text x="760.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">固定成果／待交付</text>
+<rect x="1100" y="720" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">電腦本機串接服務</text>
+<text x="1260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway</text>
+<rect x="1600" y="720" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1760.0" y="750.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">工作人員螢幕 ×1</text>
+<text x="1760.0" y="780.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">管理／Unity 監看</text>
+<text x="1760.0" y="810.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">除錯與錯誤紀錄</text>
+<rect x="1100" y="980" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1260.0" y="1025.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SQLite 成果／列印工作</text>
+<text x="1260.0" y="1055.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端 outbox</text>
+<rect x="1600" y="980" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
+<text x="1760.0" y="1010.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel：成果頁／API</text>
+<text x="1760.0" y="1040.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Neon：PostgreSQL</text>
+<text x="1760.0" y="1070.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">預製音軌／美術素材</text>
+<rect x="1600" y="1220" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
+<text x="1760.0" y="1265.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">離場手機成果頁</text>
+<text x="1760.0" y="1295.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">感謝信／摘要／旋律</text>
+<rect x="100" y="720" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機 AEC 回音消除</text>
+<text x="260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">抑制自身播放聲</text>
+<rect x="100" y="980" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="260.0" y="1025.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">VAD／音量／時長</text>
+<text x="260.0" y="1055.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">單次觸發／停聲與冷卻</text>
+<rect x="600" y="1220" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="760.0" y="1265.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">USB 感熱印表機</text>
+<text x="760.0" y="1295.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">聲音收藏票／自動裁切</text>
+<rect x="1600" y="460" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
+<text x="1760.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">觀眾螢幕 ×1</text>
+<text x="1760.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">前導影片／成果 QR</text>
+<text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">01  Quest 3 MR／PC 系統資料串接</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">電腦執行 Unity；Link 傳畫面與追蹤，Gateway 傳管理與成果。 循聲與操作搭配動畫；發聲只用字幕。</text>
+<text x="65" y="1428" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">MR 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
+</svg>

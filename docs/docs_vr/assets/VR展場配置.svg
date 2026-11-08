@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200">
+<rect width="1920" height="1200" fill="#f7f9fc"/>
+<text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="38" fill="#24334b" text-anchor="start">音虫 VR｜展場與互動配置</text>
+<text x="65" y="110" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="23" fill="#66758b" text-anchor="start">單一城市；有效區隨機分散最多 3 群，捕捉 1 群即補 1 群，SAN 歸零停止補充。</text>
+<rect x="65" y="215" width="840" height="660" rx="12" fill="#eef1f5" stroke="#596b84" stroke-width="3"/>
+<rect x="1025" y="215" width="830" height="660" rx="12" fill="#f2edfa" stroke="#9a7ac7" stroke-width="3"/>
+<text x="485" y="255" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="28" fill="#24334b" text-anchor="middle">真實展場｜身體活動區</text>
+<text x="1440" y="255" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="28" fill="#76569c" text-anchor="middle">Quest 3 內｜單一虛擬城市</text>
+<circle cx="450" cy="550" r="240" fill="#fff1df" stroke="#d29b57" stroke-width="3" stroke-dasharray="10 7"/>
+<circle cx="450" cy="550" r="180" fill="#e6f3ef" stroke="#459489" stroke-width="4"/>
+<circle cx="450" cy="530" r="27" fill="#c2e5ff" stroke="#4b84b1" stroke-width="3"/>
+<rect x="412" y="564" width="76" height="45" rx="12" fill="#c2e5ff" stroke="#4b84b1" stroke-width="3"/>
+<text x="450" y="475" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3 觀眾</text>
+<text x="450" y="660" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#377b6f" text-anchor="middle">活動圈 Ø3m｜移動 1:1</text>
+<text x="450" y="765" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#9d6d32" text-anchor="middle">外加 0.5m 淨空｜總占位 Ø4m</text>
+<rect x="750" y="330" width="125" height="125" rx="12" fill="#ffffff" stroke="#8a99ad" stroke-width="3"/>
+<text x="812" y="368" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">PC 主機</text>
+<text x="812" y="410" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#66758b" text-anchor="middle">位於區外</text>
+<text x="780" y="545" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">工作人員</text>
+<text x="780" y="580" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#66758b" text-anchor="middle">區外看護</text>
+<text x="485" y="827" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">圓圈標示＋系統邊界＋淨空／看護</text>
+<polyline points="922,550 1005,550" fill="none" stroke="#7099c9" stroke-width="3"/>
+<polygon points="1005.00,550.00 992.11,555.45 992.11,544.55" fill="#7099c9"/>
+<text x="963" y="505" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#24334b" text-anchor="middle">USB Link</text>
+<rect x="1077" y="320" width="226" height="90" rx="12" fill="#eee7fb" stroke="#9a7ac7" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1190" y="353" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">A01 虛擬群落</text>
+<text x="1190" y="385" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#76569c" text-anchor="middle">初始隱藏／循聲尋找</text>
+<rect x="1572" y="365" width="226" height="90" rx="12" fill="#eee7fb" stroke="#9a7ac7" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1685" y="398" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">A02 虛擬群落</text>
+<text x="1685" y="430" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#76569c" text-anchor="middle">初始隱藏／循聲尋找</text>
+<rect x="1097" y="610" width="226" height="90" rx="12" fill="#eee7fb" stroke="#9a7ac7" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1210" y="643" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#24334b" text-anchor="middle">B01 虛擬群落</text>
+<text x="1210" y="675" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#76569c" text-anchor="middle">初始隱藏／循聲尋找</text>
+<circle cx="1440" cy="540" r="27" fill="#c2e5ff" stroke="#4b84b1" stroke-width="3"/>
+<rect x="1402" y="574" width="76" height="45" rx="12" fill="#c2e5ff" stroke="#4b84b1" stroke-width="3"/>
+<text x="1440" y="485" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">同場景觀眾視點</text>
+<polyline points="1470,580 1690,550" fill="none" stroke="#d29b57" stroke-width="3"/>
+<polygon points="1690.00,550.00 1677.96,557.14 1676.49,546.34" fill="#d29b57"/>
+<circle cx="1690" cy="550" r="30" fill="#fff1df" stroke="#d29b57" stroke-width="3"/>
+<text x="1645" y="620" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#9d6d32" text-anchor="middle">Mask 隨指向移動</text>
+<rect x="1317" y="715" width="245" height="110" rx="12" fill="#eee7fb" stroke="#9a7ac7" stroke-width="3"/>
+<text x="1440" y="748" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="23" fill="#76569c" text-anchor="middle">虛擬回收站</text>
+<text x="1440" y="791" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#24334b" text-anchor="middle">開場後方 0.65m／可伸手</text>
+<text x="1440" y="837" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="20" fill="#76569c" text-anchor="middle">目標在可指向範圍，回收站在伸手可及範圍</text>
+<text x="485" y="175" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="middle">場地約 11.5 × 5m；尺寸為原型配置</text>
+<text x="1440" y="175" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="middle">所有互動在同一城市場景完成</text>
+<rect x="90" y="920" width="240" height="130" rx="12" fill="#ffffff" stroke="#7099c9" stroke-width="3"/>
+<text x="210" y="956" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="23" fill="#24334b" text-anchor="middle">觀眾螢幕 ×1</text>
+<text x="210" y="1005" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="19" fill="#66758b" text-anchor="middle">前導影片／成果 QR</text>
+<rect x="355" y="920" width="240" height="130" rx="12" fill="#ffffff" stroke="#7099c9" stroke-width="3"/>
+<text x="475" y="956" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">工作人員螢幕 ×1</text>
+<text x="475" y="1005" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="18" fill="#66758b" text-anchor="middle">Unity 監看／管理／除錯</text>
+<text x="650" y="938" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="23" fill="#24334b" text-anchor="start">同一台 PC：雙螢幕延伸顯示、遊戲與成果服務</text>
+<text x="650" y="976" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">出口：USB 感熱印表機，列印每場一張聲音收藏票</text>
+<text x="650" y="1012" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">Quest 3：畫面／內建喇叭與麥克風／追蹤；控制器：瞄準／UI／震動</text>
+<text x="65" y="1090" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="21" fill="#66758b" text-anchor="start">Mask 隨場景落點移動；捕捉只在有效對準音虫時累積，移開保留進度與外觀。</text>
+<text x="65" y="1140" dominant-baseline="central" font-family="Microsoft JhengHei, sans-serif" font-size="19" fill="#66758b" text-anchor="start">活動圈 Ø3m＋外圍 0.5m 緩衝；圓心沿場地長邊 4.5m、短邊 2.5m，布展前核對淨空與線材。</text>
+</svg>

@@ -1,0 +1,41 @@
+flowchart TD
+  voice["觀眾發聲"]
+  mic["現場麥克風 → Unity／音量／持續時間分析"]
+  voiceFx["發聲效果：3 秒淡入／接著 1 秒淡出／與捕捉進度分開"]
+  aim["有效對準既有群落"]
+  saved["累積並保存同群進度／移開暫停、重對準接續"]
+  baseline["持續顯現基準＝捕捉進度／聲音增益＝1－捕捉進度／移開保留，重對準接續"]
+  story["開場／成功捕捉後／先結算 SAN 與群落數"]
+  validStory["GROUP_SPAWN／Active／SAN > 0／少於 3 群／空位／未出現變體／去重"]
+  newGroup["隨機生成：開場 3／補 1／新身分、進度 0、隱藏／啟用對應紅外線燈"]
+  newAudio["播放新群聲音／全場同時最多 3 群／捕捉器仍不發聲"]
+  combine["最終顯現程度取較高值／發聲效果／捕捉進度基準"]
+  appearance["無進度：純發聲效果淡出後隱藏／有進度：保留進度對應顯現程度／Mask 只隨有效對準顯示"]
+  voiceGate["音量／持續時間達標／單次觸發／停聲與冷卻"]
+  captureAudio["Unity 更新該群聲源音量／原始音量 × (1－進度)／移開保留，成功後停聲"]
+  voice --> mic
+  aim --> saved
+  saved --> baseline
+  voiceFx --> combine
+  baseline --> combine
+  combine --> appearance
+  story --> validStory
+  validStory --> newGroup
+  newGroup --> newAudio
+  mic --> voiceGate
+  voiceGate --> voiceFx
+  baseline --> captureAudio
+  style voice fill:#e5f5f1,stroke:#459489
+  style mic fill:#e5f5f1,stroke:#459489
+  style voiceFx fill:#e8f1fd,stroke:#7099c9
+  style aim fill:#e8f1fd,stroke:#7099c9
+  style saved fill:#e8f1fd,stroke:#7099c9
+  style baseline fill:#e8f1fd,stroke:#7099c9
+  style story fill:#fff0df,stroke:#cc9154
+  style validStory fill:#e8f1fd,stroke:#7099c9
+  style newGroup fill:#e7f4e9,stroke:#69a977
+  style newAudio fill:#e7f4e9,stroke:#69a977
+  style combine fill:#e8f1fd,stroke:#7099c9
+  style appearance fill:#e7f4e9,stroke:#69a977
+  style voiceGate fill:#e8f1fd,stroke:#7099c9
+  style captureAudio fill:#e8f1fd,stroke:#7099c9
