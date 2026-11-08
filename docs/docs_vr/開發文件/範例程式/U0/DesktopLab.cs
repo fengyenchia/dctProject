@@ -96,7 +96,8 @@ namespace AudioBugs.Tutorial
         }
 
         private Transform Head => useExternalPose ? trackedHead : labCamera.transform;
-        private Vector3 AimPosition => useExternalPose ? trackedAim.position : Head.position + Vector3.down * .55f;
+        // 桌面射線與畫面中心一致；虛擬到站前端使用另一個位置，不能混作瞄準原點。
+        private Vector3 AimPosition => useExternalPose ? trackedAim.position : Head.position;
         private Vector3 AimForward => useExternalPose ? trackedAim.forward : Head.forward;
         private bool Inside => Head != null && new Vector2(Head.position.x, Head.position.z).magnitude <= 1.5f;
 
@@ -128,7 +129,8 @@ namespace AudioBugs.Tutorial
             } else { CurrentTargetId = null; mask.SetActive(false); }
             if (rules.Phase == GamePhase.Return) {
                 float headDistance = Vector2.Distance(new Vector2(Head.position.x, Head.position.z), new Vector2(StationPosition.x, StationPosition.z));
-                var tip = trackedTip == null ? AimPosition + AimForward * .55f : trackedTip.position;
+                var tip = trackedTip != null ? trackedTip.position : useExternalPose
+                    ? AimPosition + AimForward * .55f : Head.position + Vector3.down * .55f + Head.forward * .55f;
                 bool tipInside = stationZone == null ? Vector3.Distance(tip, StationPosition) <= .4f
                     : Vector3.Distance(stationZone.ClosestPoint(tip), tip) <= .001f;
                 rules.AuthorizeStation(poseValid, Inside, headDistance <= 1.1f, tipInside);

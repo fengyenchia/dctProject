@@ -205,7 +205,12 @@ namespace AudioBugs.Tutorial
                     completed_at = DateTime.UtcNow.ToString("o"), variants = items,
                     asset_version = lab.catalog == null ? "prototype-1" : lab.catalog.assetVersion,
                     recipe_version = lab.catalog == null ? "stems-1" : lab.catalog.recipeVersion,
-                    melody = new Melody { stem_ids = items.Select(item => item.stem_id).ToArray() } } };
+                    melody = new Melody {
+                        bpm = lab.catalog == null ? 100 : lab.catalog.bpm,
+                        beats_per_bar = lab.catalog == null ? 4 : lab.catalog.beatsPerBar,
+                        bars = lab.catalog == null ? 4 : lab.catalog.bars,
+                        stem_ids = items.Select(item => item.stem_id).ToArray()
+                    } } };
         }
 
         private void OnGUI()
