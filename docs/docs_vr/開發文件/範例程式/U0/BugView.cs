@@ -11,11 +11,13 @@ namespace AudioBugs.Tutorial
         public bool usePrototypeMaterial = true;
         private Renderer[] renderers;
         private AudioSource source;
-        private readonly MaterialPropertyBlock block = new MaterialPropertyBlock();
+        private MaterialPropertyBlock block;
         private readonly List<Material> ownedMaterials = new List<Material>();
 
         public void Initialize(Shader shader, AudioClip clip, Color color)
         {
+            // Unity native objects must be created on the main thread, not in field initializers.
+            if (block == null) block = new MaterialPropertyBlock();
             renderers = (visual == null ? transform : visual).GetComponentsInChildren<Renderer>();
             foreach (var renderer in renderers) {
                 if (usePrototypeMaterial) {
