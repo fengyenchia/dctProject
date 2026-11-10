@@ -97,8 +97,9 @@ dctProject/
 
 ```text
 git clone https://github.com/fengyenchia/dctProject.git
-cd dctProject
 ```
+
+clone 後用 VS Code「檔案 → 開啟資料夾」選 `dctProject`；日常開分支、Commit、Push 與 Pull 使用原始檔控制介面，PR 在 GitHub 網頁操作。
 
 新加入先讀[環境與 Git](docs/docs_vr/開發文件/環境與Git.md)的安裝與 clone，再看 [Unity 基本操作](docs/docs_vr/開發文件/Unity基本操作.md)入門，接著依工作包操作。開發設備已確認為 2 台 Windows、1 台 Mac M3；三人可認領 Unity 功能。Windows 進行正式 Quest Link 整合，Mac 使用 Apple Silicon 版 Editor 做桌面模擬、Gateway 與網頁。
 

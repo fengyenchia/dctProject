@@ -1,6 +1,6 @@
 # 環境與 Git
 
-所有工作包共用。工具安裝與 clone 在本頁；建立 Unity 專案請到 [U0](工作包/U0.md)，Node.js／pnpm 可到 I1／W1 開工前再安裝。
+所有工作包共用。**日常版控使用 VS Code 圖形介面；第一次取得專案使用 git clone。** 建立 Unity 專案請到 [U0](工作包/U0.md)，Node.js／pnpm 可到 I1／W1 開工前再安裝。
 
 ## 完成條件
 
@@ -48,23 +48,26 @@ Node 與框架由建置者固定版本；web／gateway 分別安裝、各自保�
 
 ```text
 git clone https://github.com/fengyenchia/dctProject.git
-cd dctProject
-git status
 ```
 
-- clone 後得到整個 repo；Unity、Web、Gateway 共用這個 Git。
+- clone 後，在 VS Code「檔案 → 開啟資料夾」選 `dctProject`；Unity、Web、Gateway 共用這個 Git。
 - Unity 專案加入 repo 後，到 Unity Hub → Add → 選其中的 `unity-vr/`；首次建立由主責依 [U0](工作包/U0.md)操作。
-- 首次提交前設定本 repo 的署名；將下面兩個值換成自己的資料，這不是登入密碼。
+<details>
+<summary>首次署名設定（一次性設定，不是日常提交流程）</summary>
+
+首次提交若提示缺少署名，依提示設定下列資料；這不是登入密碼。
 
 ```text
 git config user.name "你的姓名或GitHub名稱"
 git config user.email "你的GitHub提交信箱"
 ```
 
+</details>
+
 ## 2. 先設 Git 排除
 
 1. 在 repo 根目錄確認 [.gitignore](../../../.gitignore)存在，使用同一份排除規則。
-2. 執行 `git status --short`，不應出現 node_modules、.next、Unity Library、gateway/data。
+2. 打開 VS Code 左側「原始檔控制」，變更清單不應出現 node_modules、.next、Unity Library、gateway/data。
 3. 程式、素材來源、`.meta` 與 lockfile 仍須提交；大型素材另用 Git LFS。
 
 | 納入 Git | 排除 Git |
@@ -75,7 +78,14 @@ git config user.email "你的GitHub提交信箱"
 | `package.json`、web／gateway 各自的 `pnpm-lock.yaml` | `node_modules/`、`.next/`、本機資料庫與觀眾成果 |
 
 - 完整範本可查 [GitHub Unity gitignore](https://github.com/github/gitignore/blob/main/Unity.gitignore)。
-- 首次加入大模型／音檔前，三人安裝 Git LFS；在 repo 根目錄執行 `git lfs install`，再執行 `git lfs track "*.fbx" "*.blend" "*.wav" "*.mp4"`，提交產生的 `.gitattributes`。
+- 首次加入大模型／音檔前，由 U0 建立者設定 Git LFS 追蹤規則並提交 `.gitattributes`；三人安裝 Git LFS 並各執行一次 `git lfs install`。
+
+<details>
+<summary>U0 建立者：一次性 Git LFS 設定</summary>
+
+在 repo 根目錄執行 `git lfs track "*.fbx" "*.blend" "*.wav" "*.mp4"`；再用 VS Code 提交產生的 `.gitattributes`。
+
+</details>
 - 移動素材請在 Unity Project 視窗操作，避免漏移 `.meta`。
 
 ## 3. 每次開發
@@ -114,59 +124,61 @@ git config user.email "你的GitHub提交信箱"
 
 ### 開分支與提交
 
-以下指令在 **repo 根目錄**執行。拉取、合併或切分支前，先儲存並關閉 Unity；有尚未處理的變更時，先完成提交或處理，再切換。
+在 VS Code 開啟 **repo 根目錄 dctProject**。先停止 Play、儲存並關閉 Unity；拉取／切分支前，先提交目前分支要保留的修改。
+
+「原始檔控制」是左側分支圖示；「…」是該面板的更多動作。按鈕可能依語言顯示中英文。
 
 **1. 開始新功能**
 
-先執行 `git status --short`；沒有輸出代表工作目錄乾淨，再執行：
+| 步驟 | VS Code 操作 | 檢查 |
+| --- | --- | --- |
+| 1 | 原始檔控制確認「變更／已暫存變更」皆無待處理項目 | 有修改先提交，不直接捨棄。 |
+| 2 | 點左下角分支名稱 → 選 `main` | 左下角顯示 main。 |
+| 3 | 原始檔控制 → `…` → `Pull`（提取） | 取得 GitHub 最新整合版。 |
+| 4 | 左下角分支名稱 → `Create new branch…`（建立新分支） | 輸入上方分支表的名稱，例如 `unity/capture`。 |
+| 5 | 確認左下角已切到自己的分支，再開 Unity | 不在 main 直接開發。 |
 
-```text
-git switch main
-git pull --ff-only
-git switch -c unity/capture
-```
+接續既有分支時，直接從左下角選該分支，不重建；已發布的分支先 Pull 再開工。
 
-將 `unity/capture` 換成認領的分支名稱。接續既有分支時，用 `git switch unity/capture`，不重跑 `-c`；已推送過的分支再用 `git pull --ff-only` 更新。
+**2. 檢查、暫存與提交**
 
-**2. 檢查並提交本次修改**
+| 步驟 | VS Code 操作 | 檢查 |
+| --- | --- | --- |
+| 1 | 停止 Play、儲存；點「原始檔控制」內的變更檔案 | 左右對照差異，確認是本次修改。 |
+| 2 | 在本次檔案旁按 `＋`（Stage Changes／暫存變更） | 只暫存本次檔案；Unity 素材連同 `.meta`。 |
+| 3 | 展開「已暫存變更」逐一檢查 | 不含其他工作、快取、密鑰及觀眾資料。 |
+| 4 | 輸入提交訊息，例如「完成捕捉進度保留」→ `Commit`（提交） | Commit 先保存到本機，尚未上傳。 |
+| 5 | 新分支按 `Publish Branch`（發布分支）；後續用 `…` → `Push`（推送） | 發布到既有 origin；依提示登入 GitHub。 |
 
-停止 Play、儲存後執行：
-
-```text
-git status --short
-git diff
-```
-
-依 status 顯示的實際路徑，逐一加入本次修改。以下以U1的 GameRules 腳本為例；其他功能換成自己的檔案，不照抄無關路徑。
-
-```text
-git add "unity-vr/Assets/_Project/Scripts/Tutorial/GameRules.cs" "unity-vr/Assets/_Project/Scripts/Tutorial/GameRules.cs.meta"
-git diff --cached
-git commit -m "完成捕捉進度保留"
-git push -u origin unity/capture
-```
-
-- `git diff --cached` 是這次要提交的內容；確認沒有其他工作、快取或密鑰。
-- 新增／搬移 Unity 素材時連同 `.meta` 提交；不使用 `git add .` 一次加入未檢查的變更。
-- 首次 push 用 `-u` 設定遠端追蹤；同一分支後續提交可用 `git push`。
-- HTTPS 驗證可用憑證管理器登入；終端機要求密碼時使用 personal access token。無法推送時確認帳號具有 repo 寫入權限；見 [GitHub HTTPS 驗證](https://docs.github.com/en/get-started/git-basics/about-remote-repositories#cloning-with-https-urls)。
+- 使用 Publish Branch 發布目前分支；不要使用「Publish to GitHub」另建一個 repo。
+- Pull 是下載整合更新；Push 是上傳提交。`Sync Changes` 會先 Pull 再 Push，教學先分開操作。
+- 找不到按鈕時可在「檢視 → 命令選擇區」搜尋 `Git: Pull`、`Git: Push`；這是 VS Code 選單命令，不需輸入終端機指令。
 
 **3. 在 GitHub 網頁建立 PR**
 
 | 步驟 | 操作 |
 | --- | --- |
-| 1 | 開 repo → Pull requests → New pull request。 |
-| 2 | base 選 `main`，compare 選剛推送的功能分支。 |
-| 3 | 填寫完成內容、操作入口、測試步驟與限制，Create pull request。 |
-| 4 | 主責核對變更與自測結果；有問題繼續在同一分支 commit／push，PR 會更新。 |
-| 5 | 確認可合併並完成合併後，回本機執行下方指令，取得整合版本。 |
+| 1 | repo → Pull requests → New pull request。 |
+| 2 | base 選 `main`，compare 選剛發布的功能分支。 |
+| 3 | 填完成內容、操作入口、自測結果與限制 → Create pull request。 |
+| 4 | 檢查差異與可合併狀態；有問題在同一分支修正，再 Commit／Push。 |
+| 5 | 確認可合併並完成合併後，依下一節取得整合版。 |
 
-```text
-git switch main
-git pull --ff-only
-```
+**4. 合併後取得整合版**
 
-**開發中需要整合別人的更新：**先提交自己的變更，留在功能分支執行 `git fetch origin`、`git merge origin/main`；若有 Scene／Prefab 衝突，找原主責一起處理後再提交，不自行覆蓋對方內容。
+| 步驟 | VS Code 操作 | 預期 |
+| --- | --- | --- |
+| 1 | 關閉 Unity；確認目前修改已提交 | 沒有未處理的變更。 |
+| 2 | 左下角分支名稱 → 選 `main` | main 為目前分支。 |
+| 3 | 原始檔控制 → `…` → `Pull` | 本機取得剛合併的內容。 |
+| 4 | 再開 Unity，執行相關測試場景 | 看得到更新，Console 無新增紅字。 |
+
+**自己的功能尚未完成，但要接入別人的更新：**
+
+1. 提交自己的修改，關閉 Unity，留在自己的功能分支。
+2. 原始檔控制 → `…` → `Fetch`（擷取），取得遠端分支資訊。
+3. 「檢視 → 命令選擇區」→ 搜尋 `Git: Merge`，選合併分支操作 → 選 `origin/main`。
+4. 無衝突時自測後 Commit／Push；如有 Scene／Prefab 衝突，找該資產主責一起處理，不直接選全部接受或覆蓋。
 
 ## 4. 避免互相卡住
 
@@ -188,6 +200,6 @@ git pull --ff-only
 | Windows 才能用的功能在 Mac 報錯 | 列印／原生音訊介面用平台條件隔離；Mac 用模擬適配器。 |
 | Play 中改的數值不見 | 停止 Play 後再修改；執行中改值通常不會保存到場景。 |
 
-來源：[Unity 系統需求](https://docs.unity3d.com/6000.3/Documentation/Manual/system-requirements.html)、[Node LTS](https://nodejs.org/en/about/previous-releases)、[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)。
+來源：[VS Code 版控](https://code.visualstudio.com/docs/sourcecontrol/overview)、[分支操作](https://code.visualstudio.com/docs/sourcecontrol/branches-worktrees)、[Pull／Push](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes)、[Unity 系統需求](https://docs.unity3d.com/6000.3/Documentation/Manual/system-requirements.html)、[Node LTS](https://nodejs.org/en/about/previous-releases)、[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)。
 
 [回工作包入口](README.md)
