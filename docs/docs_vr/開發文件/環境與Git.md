@@ -22,7 +22,7 @@ git clone https://github.com/fengyenchia/dctProject.git
 ```
 
 - 已有 repo 者不用重新 clone。
-- VS Code →「檔案 → 開啟資料夾」→ 選 `dctProject`，可看到本文件。
+- VS Code →「File → Open Folder…」→ 選 `dctProject`，可看到本文件。
 - **現在先做到這裡。** 尚未出現 `unity-vr/` 時，等待 U0 建立者提交共用專案。
 - Node.js／pnpm 到 I1／W1 開工前再準備，見[網頁／Gateway 環境](共用/網頁開發慣例.md)。
 
@@ -32,7 +32,7 @@ git clone https://github.com/fengyenchia/dctProject.git
 
 | 誰要做 | 操作 | 完成標準 |
 | --- | --- | --- |
-| 其他兩位成員 | 關閉 Unity，在 VS Code 切到 main → 原始檔控制「… → Pull」 | repo 出現 `unity-vr/`；不另建第二份專案。 |
+| 其他兩位成員 | 關閉 Unity，在 VS Code 切到 main → Source Control「… → Pull」 | repo 出現 `unity-vr/`；不另建第二份專案。 |
 | 三人 | Unity Hub → Add／Add project from disk → 選 `unity-vr/` | 使用 6000.3.19f1 開啟同一套專案，等待初次匯入。 |
 | 三人 | 開啟專案後進 Preferences／Settings → External Tools → External Script Editor，選 VS Code；Windows 從 Edit 選單進入，Mac 從 Unity 選單進入 | 在 Unity 雙擊 `.cs`，會用 VS Code 開啟。 |
 | 其他兩位成員 | 開啟共用專案，等待匯入與編譯完成 | 無編譯錯誤即可開始自己的 U2／U3；不用完整跑 U1 或另交練習場景。 |
@@ -71,7 +71,7 @@ git config user.email "你的GitHub提交信箱"
 | [.gitignore](../../../.gitignore) | 排除 Unity／網頁快取、自動產生的 IDE 檔案、密鑰及本機成果。 |
 | [.gitattributes](../../../.gitattributes) | FBX、Blend、WAV、MP4 使用 Git LFS；程式、`.meta` 與 lockfile 仍正常提交。 |
 
-**所有成員：**安裝 [Git LFS](https://git-lfs.com/)，在自己的 repo 根目錄終端機執行一次：
+**所有成員：** 安裝 [Git LFS](https://git-lfs.com/)，在自己的 repo 根目錄終端機執行一次：
 
 ```text
 git lfs install
@@ -112,16 +112,16 @@ git lfs install
 
 在 VS Code 開啟 **repo 根目錄 dctProject**。先停止 Play、儲存並關閉 Unity；拉取／切分支前，先提交目前分支要保留的修改。
 
-「原始檔控制」是左側分支圖示；「…」是該面板的更多動作。按鈕可能依語言顯示中英文。
+**Source Control** 是左側分支圖示；`…` 是該面板的 **More Actions**。本文操作名稱採英文介面。
 
 **1. 開始新功能**
 
 | 步驟 | VS Code 操作 | 檢查 |
 | --- | --- | --- |
-| 1 | 原始檔控制確認「變更／已暫存變更」皆無待處理項目 | 有修改先提交，不直接捨棄。 |
+| 1 | Source Control確認「Changes／Staged Changes」皆無待處理項目 | 有修改先提交，不直接捨棄。 |
 | 2 | 點左下角分支名稱 → 選 `main` | 左下角顯示 main。 |
-| 3 | 原始檔控制 → `…` → `Pull`（提取） | 取得 GitHub 最新整合版。 |
-| 4 | 左下角分支名稱 → `Create new branch…`（建立新分支） | 輸入上方分支表的名稱，例如 `unity/capture`。 |
+| 3 | Source Control → `…` → `Pull` | 取得 GitHub 最新整合版。 |
+| 4 | 左下角分支名稱 → `Create new branch…` | 輸入上方分支表的名稱，例如 `unity/capture`。 |
 | 5 | 確認左下角已切到自己的分支，再開 Unity | 不在 main 直接開發。 |
 
 接續既有分支時，直接從左下角選該分支，不重建；已發布的分支先 Pull 再開工。
@@ -130,21 +130,21 @@ git lfs install
 
 | 步驟 | VS Code 操作 | 檢查 |
 | --- | --- | --- |
-| 1 | 停止 Play、儲存；點「原始檔控制」內的變更檔案 | 左右對照差異，確認是本次修改。 |
-| 2 | 在本次檔案旁按 `＋`（Stage Changes／暫存變更） | 只暫存本次檔案；Unity 素材連同 `.meta`。 |
-| 3 | 展開「已暫存變更」逐一檢查 | 不含其他工作、快取、密鑰及觀眾資料。 |
-| 4 | 輸入提交訊息，例如「完成捕捉進度保留」→ `Commit`（提交） | Commit 先保存到本機，尚未上傳。 |
-| 5 | 新分支按 `Publish Branch`（發布分支）；後續用 `…` → `Push`（推送） | 發布到既有 origin；依提示登入 GitHub。 |
+| 1 | 停止 Play、儲存；點「Source Control」內的變更檔案 | 左右對照差異，確認是本次修改。 |
+| 2 | 在本次檔案旁按 `＋`（Stage Changes） | 只暫存本次檔案；Unity 素材連同 `.meta`。 |
+| 3 | 展開「Staged Changes」逐一檢查 | 不含其他工作、快取、密鑰及觀眾資料。 |
+| 4 | 輸入提交訊息，例如「完成捕捉進度保留」→ `Commit` | Commit 先保存到本機，尚未上傳。 |
+| 5 | 新分支按 `Publish Branch`；後續用 `…` → `Push` | 發布到既有 origin；依提示登入 GitHub。 |
 
 - 使用 Publish Branch 發布目前分支；不要使用「Publish to GitHub」另建一個 repo。
 - Pull 是下載整合更新；Push 是上傳提交。`Sync Changes` 會先 Pull 再 Push，教學先分開操作。
-- 找不到按鈕時可在「檢視 → 命令選擇區」搜尋 `Git: Pull`、`Git: Push`；這是 VS Code 選單命令，不需輸入終端機指令。
+- 找不到按鈕時可在「View → Command Palette…」搜尋 `Git: Pull`、`Git: Push`；這是 VS Code 選單命令，不需輸入終端機指令。
 
 **3. 合併與推送**
 
 **功能分支接入最新 main → 解衝突 → Unity 自測 → 合併 main → 再驗證 → Push**
 
-先提交修改、關閉 Unity；同時只由一人整合 main。以下 `…` 都是 VS Code 原始檔控制面板的更多動作。
+先提交修改、關閉 Unity；同時只由一人整合 main。以下 `…` 都是 VS Code Source Control面板的更多動作。
 
 | 步驟 | 在哪個分支 | 操作 |
 | --- | --- | --- |
