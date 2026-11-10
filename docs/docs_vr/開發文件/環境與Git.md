@@ -1,62 +1,47 @@
 # 環境與 Git
 
-所有工作包共用。**日常版控使用 VS Code 圖形介面；第一次取得專案使用 git clone。** 建立 Unity 專案請到 [U0](工作包/U0.md)，Node.js／pnpm 可到 I1／W1 開工前再安裝。
+依下列階段操作；日常版控使用 **VS Code 圖形介面**，首次取得 repo 使用 `git clone`。
 
-## 完成條件
+## 1. 現在所有人要做
 
-- [ ] 三人使用 Unity **6000.3.19f1**，可開同一個 URP 專案。
-- [ ] 各自提交一個測試 Prefab；其他人拉取後可看到。
-- [ ] 不提交 `Library`、密碼、成果資料及輸出執行檔。
+**對象：三位技術組成員。** 開發設備為 2 台 Windows、1 台 Mac M3；此階段先安裝工具、取得 repo，不用各自建立 Unity 專案。
 
-## 1. 安裝工具
-
-| 工具 | Windows（2 台） | macOS（Mac M3，1 台） |
-| --- | --- | --- |
-| Unity Hub | 安裝後登入；Installs → Locate 可加入已有 Editor | 同左 |
-| Unity Editor | 6000.3.19f1 | 6000.3.19f1，選 Apple Silicon 版 |
-| 程式編輯器 | VS Code＋C# 擴充 | 同左 |
-| Git | 安裝 Git for Windows，終端機輸入 `git --version` 確認 | 安裝 Git，終端機輸入 `git --version` 確認 |
-| Node.js | 共用 **24 LTS** 主版本；初次建置記錄完整版本 | 同左 |
-| pnpm | web／gateway 固定 **11.9.0** | 同版本。 |
-
-1. Unity Hub → Installs → 該版本 → Add modules。
-2. Windows 正式打包環境安裝 Windows Build Support／IL2CPP 需要的工具；先做 Editor 練習可不先打包。
-3. Mac 安裝對應的 Mac Build Support，供桌面測試；Quest Link 留在 Windows 驗證。
-4. 原型不需要 Android APK；目前遊戲由電腦執行。
-5. Unity → Preferences／Settings → External Tools → 選 VS Code；讓雙擊 `.cs` 可開啟編輯器。
-
-終端機核對：
-
-```text
-git --version
-node --version
-npm --version
-pnpm --version
-```
-
-若未安裝 pnpm，執行 `npm install --global pnpm@11.9.0`，再用 `pnpm --version` 核對；此 npm 命令只安裝工具。已安裝 pnpm 11.9.0 者可略過；npm 與 pnpm 是不同工具，分別核對版本。
-
-| 資料夾 | 套件管理 | 要提交的 lockfile | 其他組員初次安裝 |
+| 工具 | Windows 成員（2 人） | Mac M3 成員（1 人） | 完成標準 |
 | --- | --- | --- | --- |
-| `web/` | pnpm 11.9.0 | `pnpm-lock.yaml` | 在 web 執行 `pnpm install --frozen-lockfile`。 |
-| `gateway/` | pnpm 11.9.0 | `pnpm-lock.yaml` | 在 gateway 執行 `pnpm install --frozen-lockfile`。 |
+| Unity Hub | 安裝、登入 | 安裝、登入 | 可開啟 Hub。 |
+| Unity Editor | 安裝 **6000.3.19f1** | 安裝 **6000.3.19f1 Apple Silicon 版** | Hub 的 Installs 看得到此版本；已有者不重裝。 |
+| VS Code | 安裝 VS Code＋C# 擴充 | 同左 | 可開啟程式編輯器。 |
+| Git | 安裝 Git for Windows | 安裝 Git | 終端機執行 `git --version` 能顯示版本。 |
 
-Node 與框架由建置者固定版本；web／gateway 分別安裝、各自保留 lockfile，不混用 npm／Yarn 安裝依賴。終端機位置見[目錄與啟動表](README.md#同一個-repo-的目錄)。
+### 取得 repo（三人各做一次）
 
-### 第一次取得 repo
-
-終端機先切到要存放專案的**上一層資料夾**，再執行；已有 repo 的人不必重新 clone。
+在要存放專案的上一層資料夾開終端機，執行：
 
 ```text
 git clone https://github.com/fengyenchia/dctProject.git
 ```
 
-- clone 後，在 VS Code「檔案 → 開啟資料夾」選 `dctProject`；Unity、Web、Gateway 共用這個 Git。
-- Unity 專案加入 repo 後，到 Unity Hub → Add → 選其中的 `unity-vr/`；首次建立由主責依 [U0](工作包/U0.md)操作。
-<details>
-<summary>首次署名設定（一次性設定，不是日常提交流程）</summary>
+- 已有 repo 者不用重新 clone。
+- VS Code →「檔案 → 開啟資料夾」→ 選 `dctProject`，可看到本文件。
+- **現在先做到這裡。** 尚未出現 `unity-vr/` 時，等待 U0 建立者提交共用專案。
+- Node.js／pnpm 到 I1／W1 開工前再準備，見[網頁／Gateway 環境](共用/網頁開發慣例.md)。
 
-首次提交若提示缺少署名，依提示設定下列資料；這不是登入密碼。
+## 2. 拿到共用專案後要做
+
+**U0 建立者先做：**依 [U0 教學](工作包/U0.md)建立唯一的 Universal 3D（URP）專案，放在 repo 的 `unity-vr/`，提交並合併後通知其他兩人。
+
+| 誰要做 | 操作 | 完成標準 |
+| --- | --- | --- |
+| 其他兩位成員 | 關閉 Unity，在 VS Code 切到 main → 原始檔控制「… → Pull」 | repo 出現 `unity-vr/`；不另建第二份專案。 |
+| 三人 | Unity Hub → Add／Add project from disk → 選 `unity-vr/` | 使用 6000.3.19f1 開啟同一套專案，等待初次匯入。 |
+| 三人 | 開啟專案後進 Preferences／Settings → External Tools → External Script Editor，選 VS Code；Windows 從 Edit 選單進入，Mac 從 Unity 選單進入 | 在 Unity 雙擊 `.cs`，會用 VS Code 開啟。 |
+| 三人 | 依 U0／U1 起步教學執行 CaptureLab，另存個人練習場景 | 三台可執行；不覆寫別人的 Scene。 |
+| 三人 | 提交前依第 4 節檢查排除規則；首次拉取大素材前設定 Git LFS | 不提交 Library／快取；素材連同 `.meta`。 |
+
+<details>
+<summary>首次 Commit 提示缺少署名時才做（三人各自設定）</summary>
+
+只有提交時出現缺少姓名／信箱的提示，才在 repo 根目錄終端機執行；不是登入密碼：
 
 ```text
 git config user.name "你的姓名或GitHub名稱"
@@ -65,7 +50,18 @@ git config user.email "你的GitHub提交信箱"
 
 </details>
 
-## 2. 先設 Git 排除
+## 3. 之後打包才要做
+
+**現在不用補裝打包模組。** 以下只由實際輸出執行檔的人處理；一般 Editor 練習不需要完成這張表。
+
+| 誰要做 | 什麼時候 | 操作 | 完成標準 |
+| --- | --- | --- | --- |
+| X1 負責人（Windows） | 要輸出 Windows 執行檔前 | Unity Hub → Installs → 6000.3.19f1 的管理選單 → Add modules；按 X1 的建置後端確認所需工具，使用 IL2CPP 時補裝 Windows Build Support（IL2CPP）及對應 C++ 建置工具 | 依 [X1](工作包/X1.md)輸出並執行 Windows 桌面版，再進行 Quest Link 驗證。 |
+| Mac M3 成員 | 需要輸出 Mac 桌面測試版時 | 在 Hub 確認對應 Mac 建置支援，缺少需要的模組才補裝 | 可執行 Mac 測試版；平常只在 Editor 操作可略過。 |
+
+本方案由電腦執行遊戲，**不需要安裝 Android Build Support 來製作 Quest APK**。
+
+## 4. Git 排除與素材設定
 
 1. 在 repo 根目錄確認 [.gitignore](../../../.gitignore)存在，使用同一份排除規則。
 2. 打開 VS Code 左側「原始檔控制」，變更清單不應出現 node_modules、.next、Unity Library、gateway/data。
@@ -89,7 +85,7 @@ git config user.email "你的GitHub提交信箱"
 </details>
 - 移動素材請在 Unity Project 視窗操作，避免漏移 `.meta`。
 
-## 3. 每次開發
+## 5. 每次開發
 
 ### 分支安排與名稱
 
@@ -181,7 +177,7 @@ git config user.email "你的GitHub提交信箱"
 3. 「檢視 → 命令選擇區」→ 搜尋 `Git: Merge`，選合併分支操作 → 選 `origin/main`。
 4. 無衝突時自測後 Commit／Push；如有 Scene／Prefab 衝突，找該資產主責一起處理，不直接選全部接受或覆蓋。
 
-## 4. 避免互相卡住
+## 6. 避免互相卡住
 
 | 檔案 | 協作方式 |
 | --- | --- |
