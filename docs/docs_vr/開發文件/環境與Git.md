@@ -140,24 +140,29 @@ git lfs install
 - Pull 是下載整合更新；Push 是上傳提交。`Sync Changes` 會先 Pull 再 Push，教學先分開操作。
 - 找不到按鈕時可在「View → Command Palette…」搜尋 `Git: Pull`、`Git: Push`；這是 VS Code 選單命令，不需輸入終端機指令。
 
-**3. 合併與推送**
+**3. 把完成的功能合併到 main**
 
-**功能分支接入最新 main → 解衝突 → Unity 自測 → 合併 main → 再驗證 → Push**
+以下以 **U1 的 `unity/capture`** 為例；其他工作包換成自己的分支名稱。`…` 都是 VS Code 的 **Source Control → More Actions**。
 
-先提交修改、關閉 Unity；同時只由一人整合 main。以下 `…` 都是 VS Code Source Control面板的更多動作。
+**Pull 只更新目前分支。要把 U1 放進 main，必須在 main 執行 Merge，選 `unity/capture`。**
 
-| 步驟 | 在哪個分支 | 操作 |
-| --- | --- | --- |
-| 1. 接入 main | 自己的功能分支 | `… → Fetch`，再 `… → Branch → Merge… → origin/main`。 |
-| 2. 解衝突 | 自己的功能分支 | 有 Merge Changes 就逐檔處理，儲存、暫存，依提示完成合併提交；沒有則繼續。 |
-| 3. 自測 | 自己的功能分支 | 開 Unity，確認編譯、場景與相關功能正常；再關閉，必要時 Commit，Push 功能分支。 |
-| 4. 合併 main | main | 切 main → `… → Pull` → `… → Branch → Merge…`，選自己的本機功能分支，如 `unity/setup`。 |
-| 5. 再驗證 | main | 確認無衝突，再開 Unity 複驗，通過後儲存、關閉；有修正先檢查並 Commit。 |
-| 6. 推送 | main | `… → Push`，讓其他人能從 main 拉取。 |
+**先在功能分支檢查**
 
-- 步驟 4 的 Pull 若帶入新提交，先回功能分支重做步驟 1～3。
-- Git 無衝突仍要做 Unity 測試；任何衝突或功能錯誤未處理完，先不要 Push main。
-- Push 被拒絕時先核對遠端更新、重新整合與測試，不使用 Force Push。
+1. 左下角切到 **`unity/capture`**；Commit 自己的修改，關閉 Unity。
+2. **Source Control → `…` → Fetch**，再 **`… → Branch → Merge…` → 選 `origin/main`**。若出現 Merge Changes，處理後依提示完成合併提交。
+3. 開 Unity，確認編譯及相關功能正常；再儲存、關閉，必要時 Commit，最後 Push 功能分支。
+
+**再合併到 main**
+
+1. 左下角切到 **`main`**，確認沒有未提交修改；同時只由一人整合。
+2. **Source Control → `…` → Pull**。沒有新內容也正常，繼續下一步。
+3. **Source Control → `…` → Branch → Merge…**。
+4. 在清單選 **`unity/capture`**。這一步才是把 U1 合併進 main。
+5. 確認無衝突，再開 Unity 測試；通過後儲存、關閉，有修正先檢查並 Commit。
+6. **Source Control → `…` → Push**，把包含 U1 的 main 推上 GitHub。
+
+- 第 2 步若拉到先前沒測過的新提交，先回功能分支重新整合及測試，再合併 main。
+- 有衝突或功能錯誤先修正，不推送未驗證的 main；Push 被拒絕時先核對遠端更新，不使用 Force Push。
 
 <details>
 <summary>出現衝突時怎麼處理</summary>
@@ -174,7 +179,7 @@ git lfs install
 
 **儲存／提交修改 → 關閉 Unity → 切 main →「… → Pull」→ 開 Unity 複驗。** 下一個功能從更新後的 main 開新分支。
 
-功能尚未完成、只想接入其他人的更新時，依上表步驟 1～3 操作即可。
+功能尚未完成、只想接入別人的更新時，先做「在功能分支檢查」即可，暫不合併到 main。
 
 ## 6. 避免互相卡住
 
