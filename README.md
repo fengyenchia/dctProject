@@ -116,5 +116,5 @@ clone 後用 VS Code「檔案 → 開啟資料夾」選 `dctProject`；日常開
 - 留在 repo 根目錄時，可用 `pnpm --dir web dev` 啟動網頁，或 `pnpm --dir gateway dev` 啟動本機服務。
 - web 與 gateway 各自保留 `package.json`、`pnpm-lock.yaml`，分開安裝與啟動。
 - 提交程式、`.meta`、設定及 lockfile；快取與本機資料依根目錄 [.gitignore](.gitignore) 排除。
-- 大模型、音檔與影片先設定 Git LFS；同一場景／Prefab 同時由一人修改。
+- Git LFS 共用規則已設定；每位成員安裝後執行一次 `git lfs install`。同一場景／Prefab 同時由一人修改。
 - 教學範例與實機驗收分開記錄；桌面模擬通過後，仍需測試 Quest Link、收音、循聲及效能。

@@ -28,7 +28,7 @@ git clone https://github.com/fengyenchia/dctProject.git
 
 ## 2. 拿到共用專案後要做
 
-**U0 建立者先做：**依 [U0 教學](工作包/U0.md)建立唯一的 Universal 3D（URP）專案，放在 repo 的 `unity-vr/`，提交並合併後通知其他兩人。
+**U0 建立者先做：** 依 [U0 教學](工作包/U0.md)建立唯一的 Universal 3D（URP）專案，放在 repo 的 `unity-vr/`，提交並合併後通知其他兩人。
 
 | 誰要做 | 操作 | 完成標準 |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ git clone https://github.com/fengyenchia/dctProject.git
 | 三人 | 開啟專案後進 Preferences／Settings → External Tools → External Script Editor，選 VS Code；Windows 從 Edit 選單進入，Mac 從 Unity 選單進入 | 在 Unity 雙擊 `.cs`，會用 VS Code 開啟。 |
 | 其他兩位成員 | 開啟共用專案，等待匯入與編譯完成 | 無編譯錯誤即可開始自己的 U2／U3；不用完整跑 U1 或另交練習場景。 |
 | U0／U1 負責人（A） | 執行 CaptureLab，依 U1 檢查完整捕捉與回收流程 | 完整規則驗證由 A 負責。 |
-| 三人 | 提交前依第 4 節檢查排除規則；首次拉取大素材前設定 Git LFS | 不提交 Library／快取；素材連同 `.meta`。 |
+| 三人 | 提交前確認排除規則生效；依第 4 節安裝並初始化 Git LFS 一次 | 不提交 Library／快取；素材連同 `.meta`。 |
 
 <details>
 <summary>首次 Commit 提示缺少署名時才做（三人各自設定）</summary>
@@ -64,27 +64,20 @@ git config user.email "你的GitHub提交信箱"
 
 ## 4. Git 排除與素材設定
 
-1. 在 repo 根目錄確認 [.gitignore](../../../.gitignore)存在，使用同一份排除規則。
-2. 打開 VS Code 左側「原始檔控制」，變更清單不應出現 node_modules、.next、Unity Library、gateway/data。
-3. 程式、素材來源、`.meta` 與 lockfile 仍須提交；大型素材另用 Git LFS。
+**共用規則已設定好，組員不用重做。**
 
-| 納入 Git | 排除 Git |
+| 共用檔案 | 用途 |
 | --- | --- |
-| `Assets/` 與所有 `.meta` | `Library/`、`Temp/`、`Logs/`、`Obj/` |
-| `Packages/manifest.json`、`packages-lock.json` | `UserSettings/`、`Builds/` |
-| `ProjectSettings/`、本文件與共用契約 | `.env*` 的真實密碼檔；只留 `.env.example` |
-| `package.json`、web／gateway 各自的 `pnpm-lock.yaml` | `node_modules/`、`.next/`、本機資料庫與觀眾成果 |
+| [.gitignore](../../../.gitignore) | 排除 Unity／網頁快取、自動產生的 IDE 檔案、密鑰及本機成果。 |
+| [.gitattributes](../../../.gitattributes) | FBX、Blend、WAV、MP4 使用 Git LFS；程式、`.meta` 與 lockfile 仍正常提交。 |
 
-- 完整範本可查 [GitHub Unity gitignore](https://github.com/github/gitignore/blob/main/Unity.gitignore)。
-- 首次加入大模型／音檔前，由 U0 建立者設定 Git LFS 追蹤規則並提交 `.gitattributes`；三人安裝 Git LFS 並各執行一次 `git lfs install`。
+**所有成員：**安裝 [Git LFS](https://git-lfs.com/)，在自己的 repo 根目錄終端機執行一次：
 
-<details>
-<summary>U0 建立者：一次性 Git LFS 設定</summary>
+```text
+git lfs install
+```
 
-在 repo 根目錄執行 `git lfs track "*.fbx" "*.blend" "*.wav" "*.mp4"`；再用 VS Code 提交產生的 `.gitattributes`。
-
-</details>
-- 移動素材請在 Unity Project 視窗操作，避免漏移 `.meta`。
+之後照常 Commit／Push 素材，不用再設定追蹤規則。移動 Unity 素材請在 Project 視窗操作，連同 `.meta` 一起提交。
 
 ## 5. 每次開發
 
