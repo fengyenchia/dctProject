@@ -107,7 +107,7 @@ git config user.email "你的GitHub提交信箱"
 | [X1](工作包/X1.md) | `unity/quest-link` | Windows／Quest Link、追蹤與實機整合。 |
 | 文件 | `docs/development` | 開發教學與技術文件更新。 |
 
-- **建議認領：** A：U0 → U1 → W1；B：U2 → X1；C：U3 → I1 → I2。可互換，詳見[認領表](01_工作包與認領.md#三人怎麼認領與接續)。
+- **分工安排：** A：U0＋U1，後期接 W1＋I2；B：U2＋I1；C：U3＋X1（另一位 Windows 成員）。各包依分段期限並行，詳見[認領表](01_工作包與認領.md#三人怎麼認領與接續)。
 - 每個工作包可拆多次 PR；不用等整包做完才合併。後續另取具體名稱，例如 `unity/capture-progress`、`web/souvenir-player`。
 - 合併後確認內容已進 `main`，即可刪除已合併分支；下一項工作從更新後的 `main` 新開。
 - 同時修改同一個 Scene／Prefab／Input Actions 前先協調；分支無法避免同一資產的合併衝突。
