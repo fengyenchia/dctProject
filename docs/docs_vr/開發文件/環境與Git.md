@@ -17,7 +17,7 @@
 | 程式編輯器 | VS Code＋C# 擴充 | 同左 |
 | Git | 安裝 Git for Windows，終端機輸入 `git --version` 確認 | 安裝 Git，終端機輸入 `git --version` 確認 |
 | Node.js | 共用 **24 LTS** 主版本；初次建置記錄完整版本 | 同左 |
-| pnpm | web／gateway 固定 **11.8.0** | 同版本。 |
+| pnpm | web／gateway 固定 **11.9.0** | 同版本。 |
 
 1. Unity Hub → Installs → 該版本 → Add modules。
 2. Windows 正式打包環境安裝 Windows Build Support／IL2CPP 需要的工具；先做 Editor 練習可不先打包。
@@ -31,14 +31,15 @@
 git --version
 node --version
 npm --version
+pnpm --version
 ```
 
-若未安裝 pnpm，執行 `npm install --global pnpm@11.8.0`，再用 `pnpm --version` 核對；此 npm 命令只安裝工具。
+若未安裝 pnpm，執行 `npm install --global pnpm@11.9.0`，再用 `pnpm --version` 核對；此 npm 命令只安裝工具。已安裝 pnpm 11.9.0 者可略過；npm 與 pnpm 是不同工具，分別核對版本。
 
 | 資料夾 | 套件管理 | 要提交的 lockfile | 其他組員初次安裝 |
 | --- | --- | --- | --- |
-| `web/` | pnpm 11.8.0 | `pnpm-lock.yaml` | 在 web 執行 `pnpm install --frozen-lockfile`。 |
-| `gateway/` | pnpm 11.8.0 | `pnpm-lock.yaml` | 在 gateway 執行 `pnpm install --frozen-lockfile`。 |
+| `web/` | pnpm 11.9.0 | `pnpm-lock.yaml` | 在 web 執行 `pnpm install --frozen-lockfile`。 |
+| `gateway/` | pnpm 11.9.0 | `pnpm-lock.yaml` | 在 gateway 執行 `pnpm install --frozen-lockfile`。 |
 
 Node 與框架由建置者固定版本；web／gateway 分別安裝、各自保留 lockfile，不混用 npm／Yarn 安裝依賴。終端機位置見[目錄與啟動表](README.md#同一個-repo-的目錄)。
 
