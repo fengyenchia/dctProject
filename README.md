@@ -81,7 +81,7 @@ git clone https://github.com/fengyenchia/dctProject.git
 cd dctProject
 ```
 
-新加入先讀[環境與 Git](docs/docs_vr/開發文件/環境與Git.md)的安裝與 clone，再看 [Unity 基本操作](docs/docs_vr/開發文件/Unity基本操作.md)入門，接著依工作包操作。三人可認領 Unity 功能；Windows 負責正式 Quest Link 整合，Mac 可先做桌面模擬。
+新加入先讀[環境與 Git](docs/docs_vr/開發文件/環境與Git.md)的安裝與 clone，再看 [Unity 基本操作](docs/docs_vr/開發文件/Unity基本操作.md)入門，接著依工作包操作。開發設備已確認為 2 台 Windows、1 台 Mac M3；三人可認領 Unity 功能。Windows 進行正式 Quest Link 整合，Mac 使用 Apple Silicon 版 Editor 做桌面模擬、Gateway 與網頁。
 
 協作採 `main`＋功能分支；命名為 `範圍/功能`，如 `unity/capture`、`web/souvenir`。完整名稱與工作包對應見[分支安排](docs/docs_vr/開發文件/環境與Git.md#分支安排與名稱)。每項工作一位主責，完成自測並記錄結果後，以 PR 合併 main。
 

@@ -10,11 +10,10 @@
 
 ## 1. 安裝工具
 
-| 工具 | Windows | macOS |
+| 工具 | Windows（2 台） | macOS（Mac M3，1 台） |
 | --- | --- | --- |
 | Unity Hub | 安裝後登入；Installs → Locate 可加入已有 Editor | 同左 |
-| Unity Editor | 6000.3.19f1 | 同版本；Apple 選單 → 關於這台 Mac，先查看晶片 |
-| Mac Editor 分支 | 不適用 | M1／M2／M3 等用 Apple Silicon；Intel 用 Intel 版 |
+| Unity Editor | 6000.3.19f1 | 6000.3.19f1，選 Apple Silicon 版 |
 | 程式編輯器 | VS Code＋C# 擴充 | 同左 |
 | Git | 安裝 Git for Windows，終端機輸入 `git --version` 確認 | 安裝 Git，終端機輸入 `git --version` 確認 |
 | Node.js | 共用 **24 LTS** 主版本；初次建置記錄完整版本 | 同左 |
