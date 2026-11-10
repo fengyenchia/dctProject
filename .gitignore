@@ -6,6 +6,16 @@
 /unity-vr/UserSettings/
 /unity-vr/Builds/
 
+# Unity-generated IDE files
+/unity-vr/*.csproj
+/unity-vr/*.csproj.user
+/unity-vr/*.sln
+/unity-vr/*.slnx
+/unity-vr/*.suo
+/unity-vr/*.user
+/unity-vr/*.userprefs
+/unity-vr/.vs/
+
 # Node dependencies, build output and local stores
 **/node_modules/
 **/.next/
