@@ -90,7 +90,7 @@ git config user.email "你的GitHub提交信箱"
 ### 分支安排與名稱
 
 - `main` 保存目前整合版本，同時包含 Unity、Gateway、Web 與文件。
-- 每項功能從最新 `main` 開分支；主責完成自測、記錄結果後，提 Pull Request（PR）回 `main` 並確認可合併。
+- 每項功能從最新 `main` 開分支；主責先在功能分支整合最新 main、自測並記錄結果，再由當次整合者於本機合併到 main，驗證後 Push。
 - 一個分支指定一位主責；按功能認領，不綁定 A／B／C。
 - 分支包含整個 repo 的版本；名稱只標示工作範圍，並非只保留該資料夾。
 
@@ -115,7 +115,7 @@ git config user.email "你的GitHub提交信箱"
 | 文件 | `docs/development` | 開發教學與技術文件更新。 |
 
 - **分工安排：** A：U0＋U1，後期接 W1＋I2；B：U2＋I1；C：U3＋X1（另一位 Windows 成員）。各包依分段期限並行，詳見[認領表](01_工作包與認領.md#三人怎麼認領與接續)。
-- 每個工作包可拆多次 PR；不用等整包做完才合併。後續另取具體名稱，例如 `unity/capture-progress`、`web/souvenir-player`。
+- 每個工作包可分多次小成果合併；不用等整包做完才合併。後續另取具體名稱，例如 `unity/capture-progress`、`web/souvenir-player`。
 - 合併後確認內容已進 `main`，即可刪除已合併分支；下一項工作從更新後的 `main` 新開。
 - 同時修改同一個 Scene／Prefab／Input Actions 前先協調；分支無法避免同一資產的合併衝突。
 
@@ -151,31 +151,45 @@ git config user.email "你的GitHub提交信箱"
 - Pull 是下載整合更新；Push 是上傳提交。`Sync Changes` 會先 Pull 再 Push，教學先分開操作。
 - 找不到按鈕時可在「檢視 → 命令選擇區」搜尋 `Git: Pull`、`Git: Push`；這是 VS Code 選單命令，不需輸入終端機指令。
 
-**3. 在 GitHub 網頁建立 PR**
+**3. 合併前：先在功能分支檢查**
 
-| 步驟 | 操作 |
-| --- | --- |
-| 1 | repo → Pull requests → New pull request。 |
-| 2 | base 選 `main`，compare 選剛發布的功能分支。 |
-| 3 | 填完成內容、操作入口、自測結果與限制 → Create pull request。 |
-| 4 | 檢查差異與可合併狀態；有問題在同一分支修正，再 Commit／Push。 |
-| 5 | 確認可合併並完成合併後，依下一節取得整合版。 |
+Git 在合併時偵測文字衝突；Unity 再驗證編譯、場景及功能。**兩種檢查都要通過，才可推送 main。**
 
-**4. 合併後取得整合版**
-
-| 步驟 | VS Code 操作 | 預期 |
+| 步驟 | VS Code／Unity 操作 | 通過標準 |
 | --- | --- | --- |
-| 1 | 關閉 Unity；確認目前修改已提交 | 沒有未處理的變更。 |
-| 2 | 左下角分支名稱 → 選 `main` | main 為目前分支。 |
-| 3 | 原始檔控制 → `…` → `Pull` | 本機取得剛合併的內容。 |
-| 4 | 再開 Unity，執行相關測試場景 | 看得到更新，Console 無新增紅字。 |
+| 1 | 與組員約定本次只有一人整合 main；提交自己的修改、關閉 Unity，留在功能分支 | 變更／暫存清單乾淨。 |
+| 2 | 原始檔控制 → `…` → `Fetch` | 更新遠端 main 的資訊。 |
+| 3 | `…` → `Branch` → `Merge…` → 選 `origin/main` | 把最新 main 接入自己的功能分支，先處理整合問題。 |
+| 4 | 檢查是否出現 `Merge Changes`／衝突檔案 | 無未解決衝突；處理方法見下表。 |
+| 5 | 開 Unity，等待編譯，執行本包測試與受影響的共用流程 | Console 無新增紅字，Scene／Prefab 無遺失引用。 |
+| 6 | 儲存並關閉 Unity；檢查差異，必要時 Commit，再 Push 功能分支 | 交付分支包含整合結果與測試紀錄。 |
 
-**自己的功能尚未完成，但要接入別人的更新：**
+| 遇到的狀況 | 怎麼做 |
+| --- | --- |
+| 程式／文字衝突 | 在 VS Code 開啟衝突檔，逐段比較 Current／Incoming 與結果；確認後儲存、暫存，依提示完成合併提交。 |
+| Scene／Prefab／Input Actions 衝突 | 找資產主責共同處理；不要整份直接選 Accept Current／Incoming／Both。 |
+| 編譯或功能錯誤 | 在功能分支修正並重新測試，先不要合併／推送 main。 |
+| Push 被拒絕 | 先 Fetch／Pull 核對遠端更新、重新整合及測試；不使用 Force Push 覆蓋組員提交。 |
 
-1. 提交自己的修改，關閉 Unity，留在自己的功能分支。
-2. 原始檔控制 → `…` → `Fetch`（擷取），取得遠端分支資訊。
-3. 「檢視 → 命令選擇區」→ 搜尋 `Git: Merge`，選合併分支操作 → 選 `origin/main`。
-4. 無衝突時自測後 Commit／Push；如有 Scene／Prefab 衝突，找該資產主責一起處理，不直接選全部接受或覆蓋。
+**4. 本機合併到 main，再推送**
+
+| 步驟 | VS Code 操作 | 檢查 |
+| --- | --- | --- |
+| 1 | 完成第 3 節後，關閉 Unity；確認變更清單乾淨 | 本次由一位整合者操作。 |
+| 2 | 左下角分支名稱 → `main` → 原始檔控制「… → Pull」 | 取得最新 main。若這次帶入新的提交，先回功能分支重做第 3 節。 |
+| 3 | 在 main 點「… → Branch → Merge…」→ 選本機功能分支，例如 `unity/setup` | 不是切換到功能分支；要將它合併進目前的 main。 |
+| 4 | 確認無衝突；若仍出現衝突，先停止推送，依上表處理並複驗 | 無未完成的合併或衝突標記。 |
+| 5 | 開 Unity，確認編譯及相關場景可執行；再儲存、關閉 Unity | main 的整合結果也須實測，不能只測原功能分支。 |
+| 6 | 如有需要保存的修正，先檢查、暫存並 Commit；再「… → Push」 | 將已驗證的 main 推到 GitHub；被拒絕時不強制推送。 |
+
+**5. 其他組員取得整合版**
+
+1. 儲存／提交自己的修改，關閉 Unity。
+2. VS Code 左下角切到 `main` → 原始檔控制「… → Pull」。
+3. 再開 Unity，等待套件／素材匯入，確認相關測試場景能執行。
+4. 要做下一個功能時，從更新後的 main 開新分支。
+
+功能尚未完成，但要接入其他人的更新時，也依第 3 節將 `origin/main` 合併進自己的功能分支，再測試。
 
 ## 6. 避免互相卡住
 
@@ -197,6 +211,6 @@ git config user.email "你的GitHub提交信箱"
 | Windows 才能用的功能在 Mac 報錯 | 列印／原生音訊介面用平台條件隔離；Mac 用模擬適配器。 |
 | Play 中改的數值不見 | 停止 Play 後再修改；執行中改值通常不會保存到場景。 |
 
-來源：[VS Code 版控](https://code.visualstudio.com/docs/sourcecontrol/overview)、[分支操作](https://code.visualstudio.com/docs/sourcecontrol/branches-worktrees)、[Pull／Push](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes)、[Unity 系統需求](https://docs.unity3d.com/6000.3/Documentation/Manual/system-requirements.html)、[Node LTS](https://nodejs.org/en/about/previous-releases)、[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)。
+來源：[VS Code 衝突處理](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)、[VS Code 版控](https://code.visualstudio.com/docs/sourcecontrol/overview)、[分支操作](https://code.visualstudio.com/docs/sourcecontrol/branches-worktrees)、[Pull／Push](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes)、[Unity 系統需求](https://docs.unity3d.com/6000.3/Documentation/Manual/system-requirements.html)、[Node LTS](https://nodejs.org/en/about/previous-releases)、[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)。
 
 [回工作包入口](README.md)
