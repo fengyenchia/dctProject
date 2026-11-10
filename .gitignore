@@ -25,3 +25,5 @@ Thumbs.db
 
 # Native audio plugin build output
 /native-aec/build/
+
+desktop.ini
