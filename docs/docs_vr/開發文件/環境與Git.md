@@ -146,8 +146,7 @@ git lfs install
 
 | 檔案 | 協作方式 |
 | --- | --- |
-| 測試場景 | 各自一個，如 `CaptureLab`、`AudioLab`、`UiLab`。 |
-| 正式 Integration 場景 | 每次指定一位整合者；其他人交 Prefab。 |
+| 共用場景 `CaptureLab` | 同一時間一人修改 Scene，其他人可做 Prefab、素材或腳本。交接時先合併到 `main`，接手者更新後再改。 |
 | 群落 Prefab | 一位主責；美術交模型子物件，技術保留 Collider 與腳本根物件。 |
 | Input Actions／ProjectSettings | 修改前先告知；合併後全員重開驗證。 |
 | 套件版本 | 主責單次修改並提交 lockfile；其他人不按 Update all。 |
