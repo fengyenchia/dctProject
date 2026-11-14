@@ -108,61 +108,28 @@ git lfs install
 - 小功能完成就可合併；下一項工作從更新後的 main 開新分支。
 - 同一個 Scene／Prefab／Input Actions 同時只由一人修改。
 
-### 開分支與提交
+### 一般開發
 
-在 VS Code 開啟 **repo 根目錄 dctProject**。先停止 Play、儲存並關閉 Unity；拉取／切分支前，先提交目前分支要保留的修改。
+以下的 **…** 指 VS Code 左側 **Source Control** 面板的 **More Actions**。
 
-**Source Control** 是左側分支圖示；`…` 是該面板的 **More Actions**。本文操作名稱採英文介面。
+1. **開始新工作包**　關閉 Unity → 點左下角分支名稱，切到 `main` → **… → Pull** → 再點左下角分支名稱 → **Create new branch…** → 輸入上表的分支名稱。
+2. **開發中，main 有更新**　先 Commit 手上的修改並關閉 Unity → 留在自己的功能分支 → **… → Fetch** → **… → Branch → Merge…** → 選 `origin/main`。有衝突就先處理，再開 Unity 確認。若 main 沒有更新，直接在自己的分支繼續做。
+3. **提交自己的修改**　儲存後在 **Source Control** 確認變更 → **Stage Changes**（素材連同 `.meta`）→ 輸入訊息 → **Commit**。
 
-**1. 開始新功能**
+### 自己合併到 main
 
-| 步驟 | VS Code 操作 | 檢查 |
-| --- | --- | --- |
-| 1 | Source Control確認「Changes／Staged Changes」皆無待處理項目 | 有修改先提交，不直接捨棄。 |
-| 2 | 點左下角分支名稱 → 選 `main` | 左下角顯示 main。 |
-| 3 | Source Control → `…` → `Pull` | 取得 GitHub 最新整合版。 |
-| 4 | 左下角分支名稱 → `Create new branch…` | 輸入上方分支表的名稱，例如 `unity/capture`。 |
-| 5 | 確認左下角已切到自己的分支，再開 Unity | 不在 main 直接開發。 |
+1. **在自己的功能分支檢查**　Commit 並關閉 Unity → **… → Fetch** → **… → Branch → Merge…** → 選 `origin/main`。有衝突先處理，再開 Unity 確認編譯及場景正常。若有修正，先 Commit。首次上傳功能分支用 **Publish Branch**，之後用 **… → Push**。
+2. **切到 main 合併**　關閉 Unity → 切到 `main` → **… → Pull** → **… → Branch → Merge…** → 選自己的功能分支，例如 `unity/capture`。若 Pull 取得新提交，先回功能分支重做上一步。
+3. **測試並推送**　有衝突先處理，開 Unity 確認功能正常。有修正就先 Commit，通過後用 **… → Push** 更新 GitHub 的 `main`。
 
-接續既有分支時，直接從左下角選該分支，不重建；已發布的分支先 Pull 再開工。
+### 看最新成果
 
-**2. 檢查、暫存與提交**
+儲存並 Commit 手上的修改 → 關閉 Unity → 切到 `main` → **… → Pull** → 開 Unity 看更新。
 
-| 步驟 | VS Code 操作 | 檢查 |
-| --- | --- | --- |
-| 1 | 停止 Play、儲存；點「Source Control」內的變更檔案 | 左右對照差異，確認是本次修改。 |
-| 2 | 在本次檔案旁按 `＋`（Stage Changes） | 只暫存本次檔案；Unity 素材連同 `.meta`。 |
-| 3 | 展開「Staged Changes」逐一檢查 | 不含其他工作、快取、密鑰及觀眾資料。 |
-| 4 | 輸入提交訊息，例如「完成捕捉進度保留」→ `Commit` | Commit 先保存到本機，尚未上傳。 |
-| 5 | 新分支按 `Publish Branch`；後續用 `…` → `Push` | 發布到既有 origin；依提示登入 GitHub。 |
+### Fetch 和 Pull 的差別
 
-- 使用 Publish Branch 發布目前分支；不要使用「Publish to GitHub」另建一個 repo。
-- Pull 是下載整合更新；Push 是上傳提交。`Sync Changes` 會先 Pull 再 Push，教學先分開操作。
-- 找不到按鈕時可在「View → Command Palette…」搜尋 `Git: Pull`、`Git: Push`；這是 VS Code 選單命令，不需輸入終端機指令。
-
-**3. 把完成的功能合併到 main**
-
-以下以 **U1 的 `unity/capture`** 為例；其他工作包換成自己的分支名稱。`…` 都是 VS Code 的 **Source Control → More Actions**。
-
-**Pull 只更新目前分支。要把 U1 放進 main，必須在 main 執行 Merge，選 `unity/capture`。**
-
-**先在功能分支檢查**
-
-1. 左下角切到 **`unity/capture`**；Commit 自己的修改，關閉 Unity。
-2. **Source Control → `…` → Fetch**，再 **`… → Branch → Merge…` → 選 `origin/main`**。若出現 Merge Changes，處理後依提示完成合併提交。
-3. 開 Unity，確認編譯及相關功能正常；再儲存、關閉，必要時 Commit，最後 Push 功能分支。
-
-**再合併到 main**
-
-1. 左下角切到 **`main`**，確認沒有未提交修改；同時只由一人整合。
-2. **Source Control → `…` → Pull**。沒有新內容也正常，繼續下一步。
-3. **Source Control → `…` → Branch → Merge…**。
-4. 在清單選 **`unity/capture`**。這一步才是把 U1 合併進 main。
-5. 確認無衝突，再開 Unity 測試；通過後儲存、關閉，有修正先檢查並 Commit。
-6. **Source Control → `…` → Push**，把包含 U1 的 main 推上 GitHub。
-
-- 第 2 步若拉到先前沒測過的新提交，先回功能分支重新整合及測試，再合併 main。
-- 有衝突或功能錯誤先修正，不推送未驗證的 main；Push 被拒絕時先核對遠端更新，不使用 Force Push。
+- **Fetch** 只更新遠端分支的紀錄，例如 `origin/main`。要接到自己的分支，再 **Merge…** 並選 `origin/main`。
+- **Pull** 取得遠端更新並整合到目前分支。在 `main` 上按 **Pull**，會更新本機的 `main`。
 
 <details>
 <summary>出現衝突時怎麼處理</summary>
@@ -174,12 +141,6 @@ git lfs install
 | 編譯或功能錯誤 | 在功能分支修正並重新測試；main 合併後仍出錯，也先修正、複驗再推送。 |
 
 </details>
-
-**4. 其他組員取得整合版**
-
-**儲存／提交修改 → 關閉 Unity → 切 main →「… → Pull」→ 開 Unity 複驗。** 下一個功能從更新後的 main 開新分支。
-
-功能尚未完成、只想接入別人的更新時，先做「在功能分支檢查」即可，暫不合併到 main。
 
 ## 6. 避免互相卡住
 
