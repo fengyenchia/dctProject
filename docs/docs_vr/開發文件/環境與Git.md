@@ -36,7 +36,7 @@ git clone https://github.com/fengyenchia/dctProject.git
 | 三人 | Unity Hub → Add／Add project from disk → 選 `unity-vr/` | 使用 6000.3.19f1 開啟同一套專案，等待初次匯入。 |
 | 三人 | 開啟專案後進 Preferences／Settings → External Tools → External Script Editor，選 VS Code；Windows 從 Edit 選單進入，Mac 從 Unity 選單進入 | 在 Unity 雙擊 `.cs`，會用 VS Code 開啟。 |
 | 其他兩位成員 | 開啟共用專案，等待匯入與編譯完成 | 無編譯錯誤即可開始自己的 U2／U3；不用完整跑 U1 或另交練習場景。 |
-| U0／U1 負責人（A） | 執行 CaptureLab，依 U1 檢查完整捕捉與回收流程 | 完整規則驗證由 A 負責。 |
+| U0／U1 負責人 | 執行 CaptureLab，依 U1 檢查完整捕捉與回收流程 | 跑完捕捉與回收流程。 |
 | 三人 | 提交前確認排除規則生效；依第 4 節安裝並初始化 Git LFS 一次 | 不提交 Library／快取；素材連同 `.meta`。 |
 
 <details>
