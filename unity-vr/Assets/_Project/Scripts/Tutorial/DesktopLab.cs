@@ -48,7 +48,7 @@ namespace AudioBugs.Tutorial
         private GameRules rules = new GameRules();
         private Camera labCamera;
         private Vector3 physicalCentre;
-        private readonly Vector3[] points = new Vector3[6];
+        private Vector3[] points = new Vector3[GameRules.DefaultSpawnPointCount];
         private readonly Dictionary<string, GameObject> views = new Dictionary<string, GameObject>();
         private readonly Dictionary<Collider, BugState> targets = new Dictionary<Collider, BugState>();
         private readonly List<AudioClip> generatedClips = new List<AudioClip>();
@@ -58,6 +58,7 @@ namespace AudioBugs.Tutorial
         private GameObject capturePreview;
         private float capturePreviewRemaining;
         private float yaw, pitch, phaseSeconds;
+        private bool desktopCursorCaptured;
         private readonly Vector3 station = new Vector3(0f, .9f, 14f);
         public GameRules Rules => rules;
         public string CurrentTargetId { get; private set; }
@@ -82,24 +83,26 @@ namespace AudioBugs.Tutorial
                 labCamera.transform.SetPositionAndRotation(new Vector3(0, 1.6f, 0), Quaternion.identity);
                 if (FindFirstObjectByType<AudioListener>() == null) labCamera.gameObject.AddComponent<AudioListener>();
             }
-            if (spawnPoints.Length != 0 && (spawnPoints.Length != 6 || spawnPoints.Any(p => p == null))) {
-                Debug.LogError("Spawn Points must be empty or contain exactly six assigned transforms."); enabled = false; return;
+            if (spawnPoints.Length != 0 && (spawnPoints.Length < 6 || spawnPoints.Any(p => p == null)
+                || spawnPoints.Select(p => p.position).Distinct().Count() != spawnPoints.Length)) {
+                Debug.LogError("Spawn Points must be empty or contain at least six assigned transforms at distinct positions."); enabled = false; return;
             }
-            if (spawnRooms.Length != 0 && (spawnPoints.Length != 6 || spawnRooms.Length != 6)) {
-                Debug.LogError("Spawn Rooms must be empty or match the six custom Spawn Points."); enabled = false; return;
+            if (spawnRooms.Length != 0 && spawnRooms.Length != spawnPoints.Length) {
+                Debug.LogError("Spawn Rooms must be empty or match the number of custom Spawn Points."); enabled = false; return;
             }
             if (variantPrefabs.Length != 0 && variantPrefabs.Length != 9) {
                 Debug.LogError("Variant Prefabs must be empty or have nine entries; empty entries use Group Prefab."); enabled = false; return;
             }
             if (createLabGeometry) MakeSolid("LabFloor", new Vector3(0, -.1f, 7f), new Vector3(10, .2f, 17));
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < points.Length; i++) {
                 float side = i % 2 == 0 ? -1f : 1f;
-                float depth = 2.5f + i * 1.7f;
-                points[i] = spawnPoints.Length == 6 ? spawnPoints[i].position : new Vector3(side * 3.2f, 1.3f, depth);
+                float depth = i == 7 ? 1f : 2.5f + i * 1.7f;
+                points[i] = new Vector3(side * 3.2f, 1.3f, depth);
                 if (createLabGeometry) {
                     MakeSolid("LabWall_" + i, new Vector3(side * 4.6f, 1.5f, depth), new Vector3(.2f, 3, 2.8f));
                 }
             }
+            if (spawnPoints.Length != 0) points = spawnPoints.Select(p => p.position).ToArray();
             if (createLabGeometry && spawnPoints.Length == 0) labRoom = CreateLabRoom();
             if (stationAnchor == null) MakeSolid("LabStation", station, new Vector3(.6f, .5f, .3f));
             if (createLabGeometry) {
@@ -149,12 +152,8 @@ namespace AudioBugs.Tutorial
         {
             if (xrMoveProvider != null) xrMoveProvider.enabled = useExternalPose && CanMove;
             if (useExternalPose && (trackedHead == null || trackedAim == null)) return;
-            if (!useExternalPose && Mouse.current != null && Mouse.current.rightButton.isPressed) {
-                var delta = Mouse.current.delta.ReadValue();
-                yaw += delta.x * .15f;
-                pitch = Mathf.Clamp(pitch - delta.y * .15f, -75f, 75f);
-                Head.rotation = Quaternion.Euler(pitch, yaw, 0);
-            }
+            if (!useExternalPose) UpdateDesktopLook();
+            UpdateDeveloperControls(Keyboard.current);
             if (!CanInteract) { CurrentTargetId = null; mask.SetActive(false); SyncViews(); return; }
             if (capturePreview != null) {
                 capturePreviewRemaining -= Time.deltaTime;
@@ -201,6 +200,81 @@ namespace AudioBugs.Tutorial
             }
             if (exitMarker != null) exitMarker.SetActive(rules.Phase == GamePhase.ExitRoute);
         }
+
+        private void UpdateDeveloperControls(Keyboard keyboard)
+        {
+            if (!showDeveloperPanel || keyboard == null) return;
+            if (keyboard.pKey.wasPressedThisFrame) {
+                SetPaused(!rules.Paused);
+                if (rules.Paused) ReleaseDesktopCursor();
+                else LockDesktopCursor();
+                return;
+            }
+            if (!CanInteract) return;
+            if (keyboard.tabKey.wasPressedThisFrame && !desktopCursorCaptured) LockDesktopCursor();
+            if (!keyboard.enterKey.wasPressedThisFrame && !keyboard.numpadEnterKey.wasPressedThisFrame) return;
+
+            switch (rules.Phase) {
+                case GamePhase.Ready: BeginSession(); break;
+                case GamePhase.Intro:
+                    rules.CompleteIntro();
+                    phaseSeconds = 0f;
+                    break;
+                case GamePhase.Tutorial:
+                    CompleteTutorial();
+                    phaseSeconds = 0f;
+                    break;
+                case GamePhase.Active:
+                case GamePhase.Return:
+                    if (rules.StationVisited) ConfirmRecycle();
+                    break;
+                case GamePhase.Recycling: CompleteRepair(); break;
+                case GamePhase.EndingVideo: CompleteEndingVideo(); break;
+                case GamePhase.ThankYou:
+                    if (rules.LetterOpened) FinishThankYou();
+                    else OpenThankYou();
+                    break;
+                case GamePhase.Ending: SaveLabResult(); break;
+            }
+        }
+
+        private void UpdateDesktopLook()
+        {
+            if (!desktopCursorCaptured) return;
+            if (!CanMove || Cursor.lockState != CursorLockMode.Locked ||
+                (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)) {
+                ReleaseDesktopCursor();
+                return;
+            }
+            if (Mouse.current == null) return;
+            var delta = Mouse.current.delta.ReadValue();
+            yaw += delta.x * .15f;
+            pitch = Mathf.Clamp(pitch - delta.y * .15f, -75f, 75f);
+            Head.rotation = Quaternion.Euler(pitch, yaw, 0);
+        }
+
+        private void LockDesktopCursor()
+        {
+            if (useExternalPose || !CanMove || Mouse.current == null) return;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            desktopCursorCaptured = true;
+        }
+
+        private void ReleaseDesktopCursor()
+        {
+            if (!desktopCursorCaptured) return;
+            desktopCursorCaptured = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        private void OnApplicationFocus(bool focused)
+        {
+            if (!focused) ReleaseDesktopCursor();
+        }
+
+        private void OnDisable() => ReleaseDesktopCursor();
 
         private void MoveDesktop(Keyboard keyboard)
         {
@@ -382,8 +456,18 @@ namespace AudioBugs.Tutorial
                 Head.SetPositionAndRotation(new Vector3(0, 1.6f, 0), Quaternion.identity);
             }
         }
-        public bool CompleteTutorial() => rules.CompleteTutorial(labRoom != null ? LabRoomPoint : (int?)null);
-        public void ConfirmRecycle() { if (rules.ConfirmRecycle(poseValid, Inside)) ClearCapturePreview(); }
+        public bool CompleteTutorial()
+        {
+            if (!rules.CompleteTutorial(labRoom != null ? LabRoomPoint : (int?)null, points.Length)) return false;
+            LockDesktopCursor();
+            return true;
+        }
+
+        public void ConfirmRecycle()
+        {
+            if (!rules.ConfirmRecycle(poseValid, Inside)) return;
+            ClearCapturePreview();
+        }
         public void CompleteRepair() { rules.CompleteRepair(); }
         public void CompleteEndingVideo() { if (CanInteract) rules.CompleteEndingVideo(); }
         public void OpenThankYou() { if (CanInteract) rules.OpenThankYou(); }
@@ -430,34 +514,32 @@ namespace AudioBugs.Tutorial
         {
             if (!showDeveloperPanel) return;
             GUILayout.BeginArea(new Rect(12, 12, 560, 350), GUI.skin.box);
-            GUILayout.Label("DESKTOP LAB | RMB: look | WASD: move");
+            GUILayout.Label("DEVELOPMENT TEST | P: pause / resume");
+            if (!useExternalPose)
+                GUILayout.Label("WASD: move | Mouse: look | Esc: cursor | Tab: mouse look");
             GUILayout.Label($"Phase: {rules.Phase} | SAN: {rules.San} | Collected: {rules.Collected.Count}");
             if (rules.Phase == GamePhase.Active) GUILayout.Label($"Weather: {(rules.IsRaining ? "rain" : "dry")} | Active: {rules.ExplorationSeconds:F0}s");
-            if (rules.Phase == GamePhase.Ready && GUILayout.Button("Start intro")) BeginSession();
-            if ((rules.Phase == GamePhase.Intro || rules.Phase == GamePhase.Tutorial) && GUILayout.Button("Developer skip current demonstration")) {
-                if (rules.Phase == GamePhase.Intro) rules.CompleteIntro(); else CompleteTutorial();
-                phaseSeconds = 0;
-            }
             if (rules.Phase == GamePhase.Tutorial) GUILayout.Label("Listen > aim for 3s > walk to station > return to entrance. Demo only.");
             foreach (var group in rules.Groups) GUILayout.Label($"Variant {group.Variant + 1}: {group.Progress:P0} | gain {group.Gain:F2}");
-            if (GUILayout.Button(rules.Paused ? "Resume lab" : "Pause lab")) {
-                SetPaused(!rules.Paused);
-            }
-            if (rules.CanRecycle) {
+            if (rules.CanRecycle && !rules.StationVisited)
                 GUILayout.Label("Reach the far end of the street and aim the tip at the station.");
-                if (rules.StationVisited && GUILayout.Button("Confirm recycle")) ConfirmRecycle();
-            }
-            if (rules.Phase == GamePhase.Recycling && GUILayout.Button("Complete placeholder repair")) CompleteRepair();
             if (rules.Phase == GamePhase.ExitRoute) GUILayout.Label("Return to the entrance (start of the street).");
-            if (rules.Phase == GamePhase.EndingVideo && GUILayout.Button("Complete placeholder ending video")) CompleteEndingVideo();
-            if (rules.Phase == GamePhase.ThankYou) {
-                if (!rules.LetterOpened && GUILayout.Button("Open thank-you letter")) OpenThankYou();
-                if (rules.LetterOpened) {
-                    GUILayout.Label($"Thank-you letter version: {rules.LetterTier} | Collected: {rules.Collected.Count}");
-                    if (GUILayout.Button("Finish experience")) FinishThankYou();
-                }
+            if (rules.Phase == GamePhase.ThankYou && rules.LetterOpened)
+                GUILayout.Label($"Thank-you letter version: {rules.LetterTier} | Collected: {rules.Collected.Count}");
+            if (rules.Paused) GUILayout.Label("Paused. Press P to resume.");
+            else {
+                var action = rules.Phase switch {
+                    GamePhase.Ready => "Start intro",
+                    GamePhase.Intro or GamePhase.Tutorial => "Skip current demonstration",
+                    GamePhase.Active or GamePhase.Return when rules.StationVisited => "Confirm recycle",
+                    GamePhase.Recycling => "Complete placeholder repair",
+                    GamePhase.EndingVideo => "Complete placeholder ending",
+                    GamePhase.ThankYou => rules.LetterOpened ? "Finish experience" : "Open thank-you letter",
+                    GamePhase.Ending => "Write lab result JSON",
+                    _ => null
+                };
+                if (action != null) GUILayout.Label($"Enter: {action}");
             }
-            if (rules.Phase == GamePhase.Ending && GUILayout.Button("Write lab result JSON")) SaveLabResult();
             GUILayout.EndArea();
         }
 

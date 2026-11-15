@@ -25,12 +25,15 @@ namespace AudioBugs.Tutorial
     {
         public const int CaptureLimit = 5;
         public const int ConcurrentGroupLimit = 2;
-        public const float RainStartsAt = 180f;
+        public const int DefaultSpawnPointCount = 8;
+        public const float RainStartsAt = 60f;
         private const int VariantsPerType = 3;
         private readonly Random random;
         private readonly HashSet<int> appeared = new HashSet<int>();
+        private readonly HashSet<int> usedPoints = new HashSet<int>();
         private readonly List<BugState> groups = new List<BugState>();
         private readonly List<int> collected = new List<int>();
+        private int spawnPointCount = DefaultSpawnPointCount;
         public IReadOnlyList<BugState> Groups => groups;
         public IReadOnlyList<int> Collected => collected;
         public GamePhase Phase { get; private set; } = GamePhase.Ready;
@@ -65,9 +68,10 @@ namespace AudioBugs.Tutorial
             return true;
         }
 
-        public bool CompleteTutorial(int? firstPoint = null)
+        public bool CompleteTutorial(int? firstPoint = null, int pointCount = DefaultSpawnPointCount)
         {
-            if (Paused || Phase != GamePhase.Tutorial) return false;
+            if (Paused || Phase != GamePhase.Tutorial || pointCount < ConcurrentGroupLimit) return false;
+            spawnPointCount = pointCount;
             Phase = GamePhase.Active;
             SpawnOne(firstPoint);
             for (int i = 1; i < ConcurrentGroupLimit; i++) SpawnOne();
@@ -98,11 +102,12 @@ namespace AudioBugs.Tutorial
         public string Tick(float delta, string aimedId)
         {
             if (Paused || Phase != GamePhase.Active || delta <= 0f) return null;
+            bool startsRaining = !IsRaining && ExplorationSeconds + delta >= RainStartsAt;
             float validDelta = delta;
             if (!IsRaining) validDelta = Math.Min(delta, RainStartsAt - ExplorationSeconds);
-            string captured = AdvanceCapture(validDelta, aimedId);
+            string captured = AdvanceCapture(validDelta, aimedId, replenish: !startsRaining);
             ExplorationSeconds += delta;
-            if (!IsRaining && ExplorationSeconds >= RainStartsAt && Phase == GamePhase.Active) {
+            if (startsRaining && Phase == GamePhase.Active) {
                 IsRaining = true;
                 groups.Clear();
                 for (int i = 0; i < ConcurrentGroupLimit; i++) SpawnOne();
@@ -110,7 +115,7 @@ namespace AudioBugs.Tutorial
             return captured;
         }
 
-        private string AdvanceCapture(float delta, string aimedId)
+        private string AdvanceCapture(float delta, string aimedId, bool replenish)
         {
             if (delta <= 0f) return null;
             foreach (var group in groups)
@@ -123,7 +128,7 @@ namespace AudioBugs.Tutorial
             groups.Remove(target);
             collected.Add(target.Variant);
             if (San == 0) Phase = GamePhase.Return;
-            else SpawnOne();
+            else if (replenish) SpawnOne();
             return target.Id;
         }
 
@@ -133,7 +138,7 @@ namespace AudioBugs.Tutorial
             int start = IsRaining ? VariantsPerType * 2 : 0;
             int count = IsRaining ? VariantsPerType : VariantsPerType * 2;
             var variants = Enumerable.Range(start, count).Where(x => !appeared.Contains(x)).ToArray();
-            var points = Enumerable.Range(0, 6).Where(x => groups.All(g => g.Point != x)).ToArray();
+            var points = Enumerable.Range(0, spawnPointCount).Where(x => !usedPoints.Contains(x)).ToArray();
             if (variants.Length == 0 || points.Length == 0) return;
             int variant = variants[random.Next(variants.Length)];
             int point = preferredPoint.HasValue && points.Contains(preferredPoint.Value)
@@ -143,6 +148,7 @@ namespace AudioBugs.Tutorial
                 Variant = variant
             });
             appeared.Add(variant);
+            usedPoints.Add(point);
         }
 
         public bool AuthorizeStation(bool validTracking, bool insideCircle, bool headNear, bool tipInside)

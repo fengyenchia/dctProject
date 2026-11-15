@@ -95,12 +95,12 @@
 <text x="960.0" y="1925.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有進度：保留對應顯現程度</text>
 <text x="960.0" y="1955.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Mask 隨有效場景落點移動</text>
 <rect x="1500" y="200" width="360" height="120" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
-<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">晴天 A／B；探索 180 秒</text>
+<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">晴天 A／B；探索 1 分鐘</text>
 <text x="1680.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未捕捉 A／B 退場換 C</text>
 <rect x="1500" y="450" width="360" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1680.0" y="480.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">GROUP_SPAWN</text>
 <text x="1680.0" y="510.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Active／SAN &gt; 0／少於 2 群</text>
-<text x="1680.0" y="540.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">空位／未出現變體／去重</text>
+<text x="1680.0" y="540.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未用點位／未出現變體／去重</text>
 <rect x="1500" y="700" width="360" height="140" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
 <text x="1680.0" y="740.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">開場／雨天最多 2 群</text>
 <text x="1680.0" y="770.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉後依天氣池補群</text>

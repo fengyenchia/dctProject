@@ -40,7 +40,7 @@
 | 場景上的腳本元件 | Hierarchy 的物件 | Lab 欄位拖掛有 DesktopLab 的物件；**不是拖 `.cs` 檔**。 |
 | Prefab 資產 | Project | Group Prefab 拖 `BugGroup.prefab`。 |
 | Shader／音檔 | Project | Reveal Shader 拖 `.shader`；Source Clips 拖 `.wav`。 |
-| Array 清單 | 先展開欄位，填 Size／拖拉長度，再填 Element 0、1… | 6 個出現點對應 6 個欄位。 |
+| Array 清單 | 先展開欄位，填 Size／拖拉長度，再填 Element 0、1… | 8 個出現點對應 8 個欄位。 |
 
 `None` 代表還沒接；欄位顯示物件名稱才算完成。點欄位中的名稱可確認指到哪個物件。
 
