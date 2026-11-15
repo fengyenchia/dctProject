@@ -1,7 +1,7 @@
 flowchart TD
   pose["控制器姿態／虛擬捕捉器前端"]
-  surfaceRay["Unity 場景射線／落點與法線"]
-  surfaceValid{"探索／追蹤／圓內有效／命中可照射表面？"}
+  surfaceRay["Unity 射線／場景表面或有效群落"]
+  surfaceValid{"探索／追蹤／圓內有效／有表面或有效群落？"}
   mask["Mask 隨落點移動／不需要命中音虫"]
   hideMask["無落點／失效／UI 接管／收起光罩"]
   targetRay["同方向檢查群落／距離／遮擋／狀態"]

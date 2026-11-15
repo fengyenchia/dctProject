@@ -42,6 +42,7 @@ namespace AudioBugs.Tutorial
         public UnityEvent onResetRequested = new UnityEvent();
         public bool ticketHandoffReady;
         public UnityEvent onCaptured = new UnityEvent();
+        [Min(.02f)] public float maskDiameter = .25f;
         [Min(0f)] public float capturePreviewSeconds = .35f;
 
         private GameRules rules = new GameRules();
@@ -117,7 +118,7 @@ namespace AudioBugs.Tutorial
             material.SetFloat("_Visibility", 1f);
             material.SetFloat("_RoundMask", 1f);
             mask.GetComponent<Renderer>().material = material;
-            mask.transform.localScale = Vector3.one * .7f;
+            mask.transform.localScale = Vector3.one * maskDiameter;
             mask.SetActive(false);
             if (rainEffects != null) rainEffects.SetActive(false);
         }
@@ -219,16 +220,24 @@ namespace AudioBugs.Tutorial
             if (uiBusy) { mask.SetActive(false); return null; }
             var ray = new Ray(AimPosition, AimForward);
             bool hitSurface = Physics.Raycast(ray, out var surface, 20f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
-            mask.SetActive(hitSurface);
-            if (hitSurface) mask.transform.SetPositionAndRotation(surface.point + surface.normal * .01f, Quaternion.LookRotation(surface.normal));
             float nearest = hitSurface ? surface.distance : 20f;
             string selected = null;
+            Vector3 targetPoint = default;
             foreach (var hit in Physics.RaycastAll(ray, 20f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Collide)) {
                 if (hit.distance > nearest || !targets.TryGetValue(hit.collider, out var group)) continue;
                 var room = RoomAt(group.Point);
                 if (room != null && !RoomContains(room, Head.position)) continue;
                 selected = group.Id;
                 nearest = hit.distance;
+                targetPoint = hit.point;
+            }
+            mask.SetActive(selected != null || hitSurface);
+            if (selected != null) {
+                var facing = -ray.direction;
+                mask.transform.SetPositionAndRotation(targetPoint + facing * .01f, Quaternion.LookRotation(facing));
+            } else if (hitSurface) {
+                mask.transform.SetPositionAndRotation(surface.point + surface.normal * .01f,
+                    Quaternion.LookRotation(surface.normal));
             }
             return selected;
         }
