@@ -47,9 +47,9 @@
 <polyline points="1160,1070.0 1300,1070 1300,1420 1500,1420.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
 <polygon points="1500.00,1420.00 1488.95,1424.67 1488.95,1415.33" fill="#60738b"/>
 <rect x="100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
-<text x="260.0" y="260.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">觀眾發聲</text>
+<text x="260.0" y="260.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">後續規劃：觀眾發聲</text>
 <rect x="100" y="400" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
-<text x="260.0" y="445.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest 3 內建麥克風</text>
+<text x="260.0" y="445.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">後續：Quest 3 內建麥克風</text>
 <text x="260.0" y="475.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">經 Link 送入電腦</text>
 <rect x="100" y="600" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="645.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機 AEC 回音消除</text>
@@ -76,7 +76,7 @@
 <text x="260.0" y="1935.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重新接受下一次發聲</text>
 <rect x="800" y="200" width="360" height="140" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="980.0" y="240.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 遊戲輸出混音</text>
-<text x="980.0" y="270.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場最多 3 群音虫聲源</text>
+<text x="980.0" y="270.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場最多 2 群音虫聲源</text>
 <text x="980.0" y="300.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">AEC 播放參考／內建喇叭</text>
 <rect x="800" y="600" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="960.0" y="660.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有效對準既有群落</text>
@@ -95,24 +95,25 @@
 <text x="960.0" y="1925.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有進度：保留對應顯現程度</text>
 <text x="960.0" y="1955.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Mask 隨有效場景落點移動</text>
 <rect x="1500" y="200" width="360" height="120" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
-<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">開場／成功捕捉後</text>
-<text x="1680.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">先結算 SAN 與群落數</text>
+<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">晴天 A／B；探索 180 秒</text>
+<text x="1680.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未捕捉 A／B 退場換 C</text>
 <rect x="1500" y="450" width="360" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1680.0" y="480.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">GROUP_SPAWN</text>
-<text x="1680.0" y="510.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Active／SAN &gt; 0／少於 3 群</text>
+<text x="1680.0" y="510.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Active／SAN &gt; 0／少於 2 群</text>
 <text x="1680.0" y="540.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">空位／未出現變體／去重</text>
 <rect x="1500" y="700" width="360" height="140" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
-<text x="1680.0" y="755.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">隨機生成：開場 3／補 1</text>
-<text x="1680.0" y="785.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">新身分、進度 0、隱藏</text>
+<text x="1680.0" y="740.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">開場／雨天最多 2 群</text>
+<text x="1680.0" y="770.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉後依天氣池補群</text>
+<text x="1680.0" y="800.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">新身分、進度 0、隱藏</text>
 <rect x="1500" y="1000" width="360" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
 <text x="1680.0" y="1030.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">播放新群聲音</text>
-<text x="1680.0" y="1060.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場同時最多 3 群</text>
+<text x="1680.0" y="1060.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場同時最多 2 群</text>
 <text x="1680.0" y="1090.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉器仍不發聲</text>
 <rect x="1500" y="1350" width="360" height="140" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1680.0" y="1390.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 更新該群聲源音量</text>
 <text x="1680.0" y="1420.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">原始音量 × (1－進度)</text>
 <text x="1680.0" y="1450.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">移開保留，成功後停聲</text>
 <text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">03  回音消除、單次發聲與顯現合成</text>
-<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">左：有效發聲；中：進度驅動外觀與音量；右：捕捉後先扣 SAN，再決定是否隨機補出。</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">本階段做中間的照射與右側的群落切換；左側發聲顯現及 AEC 保留規劃，先不做。</text>
 <text x="65" y="2168" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">VR 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
 </svg>

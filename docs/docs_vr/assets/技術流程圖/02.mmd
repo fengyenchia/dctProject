@@ -12,8 +12,8 @@ flowchart TD
   ui["群落進度／虛擬螢幕／使用同一份 Unity 資料"]
   time{"同群累積達 3 秒／群落仍有效？"}
   update["CAPTURE_PROGRESS／等待新鮮瞄準資料"]
-  commit["整群收走／停該群聲音／記錄一次／SAN 扣 20"]
-  feedback["UI／震動；SAN 0 進入回收／捕捉器不發聲"]
+  commit["停聲／記錄一次／SAN 扣 20／短暫顯示正式外觀後退場"]
+  feedback["UI／震動；至少 1 群可回收／SAN 0 停止捕捉及補群"]
   ended["群落移除／回收結算／本場結束／重置"]
   clear["清該群進度與顯現基準／新群落不繼承"]
   pose --> surfaceRay

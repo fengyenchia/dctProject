@@ -93,8 +93,8 @@ git lfs install
 | --- | --- | --- |
 | [U0](工作包/U0.md) | `unity/setup` | 建立 Unity 專案、固定套件與 Git 設定。 |
 | [U1](工作包/U1.md) | `unity/capture` | 群落生成、捕捉進度、SAN 與去重。 |
-| [U2](工作包/U2.md) | `unity/mask-audio` | 場景 Mask、發聲顯現與捕捉音量。 |
-| [U3](工作包/U3.md) | `unity/ui-recycle` | 左右手、介面、到站與回收演出。 |
+| [U2](工作包/U2.md) | `unity/mask-audio` | 場景 Mask、照射顯現與捕捉音量。 |
+| [U3](工作包/U3.md) | `unity/ui-recycle` | 左手移動、右手捕捉、介面、回收與結尾。 |
 | I1 前置 | `shared/result-schema` | shared 的成果格式、素材對照與範例資料。 |
 | [I1](工作包/I1.md) | `gateway/save` | Gateway 連線、本機保存與 ACK。 |
 | [W1](工作包/W1.md) | `web/souvenir` | Next.js 成果頁與聲部播放。 |

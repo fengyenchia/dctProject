@@ -38,17 +38,23 @@
 <polygon points="420.00,1060.00 431.05,1055.33 431.05,1064.67" fill="#60738b"/>
 <polyline points="260.0,1120 260.0,1260" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
 <polygon points="260.00,1260.00 255.33,1248.95 264.67,1248.95" fill="#60738b"/>
+<polyline points="420,1320.0 600,1320.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="600.00,1320.00 588.95,1324.67 588.95,1315.33" fill="#60738b"/>
+<polyline points="920,1320.0 1100,1320.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1100.00,1320.00 1088.95,1324.67 1088.95,1315.33" fill="#60738b"/>
+<polyline points="1420,1320.0 1600,1320.0" fill="none" stroke="#60738b" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1600.00,1320.00 1588.95,1324.67 1588.95,1315.33" fill="#60738b"/>
 <rect x="100" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SAN 歸零＝任務完成</text>
-<text x="260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Return：停止探索與群落啟用</text>
+<text x="260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有收藏即可前往回收</text>
+<text x="260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SAN 0 停止捕捉及補群</text>
 <rect x="600" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">圈內轉向同場景回收站</text>
-<text x="760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉器前端靠近感應區</text>
+<text x="760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">搖桿走到城市右端</text>
+<text x="760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">前端靠近回收站感應區</text>
 <rect x="1100" y="200" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">檢查虛擬站體距離</text>
 <text x="1260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉器前端進感應區</text>
 <polygon points="1760.0,188 1930,260.0 1760.0,332 1590,260.0" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="1760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本場 Return／追蹤有效</text>
+<text x="1760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有收藏／追蹤有效</text>
 <text x="1760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">實際身體仍在圈內？</text>
 <rect x="1600" y="460" width="320" height="120" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
 <text x="1760.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">不開放授權</text>
@@ -57,19 +63,17 @@
 <text x="1260.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">記錄 station_visited</text>
 <text x="1260.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">可移開，資格保留</text>
 <rect x="600" y="460" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
-<text x="760.0" y="490.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">虛擬螢幕顯示</text>
-<text x="760.0" y="520.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">「確認回收」</text>
-<text x="760.0" y="550.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SAN 顯示 0</text>
+<text x="760.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">顯示「確認回收」</text>
+<text x="760.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SAN 顯示當前值</text>
 <rect x="100" y="720" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
-<text x="260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">控制器選取虛擬按鈕</text>
+<text x="260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">左手選取回收確認</text>
 <text x="260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">送出後顯示處理中</text>
 <rect x="600" y="720" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="760.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">RECYCLE_REQUEST</text>
 <text x="760.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 檢查</text>
 <polygon points="1260.0,708 1430,780.0 1260.0,852 1090,780.0" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="1260.0" y="750.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Return／已到站</text>
-<text x="1260.0" y="780.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">追蹤有效／圓內</text>
-<text x="1260.0" y="810.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">尚未結算？</text>
+<text x="1260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">已有收藏且到站</text>
+<text x="1260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">追蹤有效／尚未結算？</text>
 <rect x="1600" y="720" width="320" height="120" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
 <text x="1760.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">拒絕結算／回傳原因</text>
 <text x="1760.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重送不重複回收</text>
@@ -77,15 +81,24 @@
 <text x="1260.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">已回收／固定收藏清單</text>
 <text x="1260.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">剩餘群落與聲源退場</text>
 <rect x="600" y="1000" width="320" height="120" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
-<text x="760.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">噪音能量</text>
-<text x="760.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">轉化為物品</text>
+<text x="760.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">能量轉成金色光球</text>
+<text x="760.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">粒子量依實收</text>
 <rect x="100" y="1000" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
-<text x="260.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">虛擬回收站／城市修復</text>
-<text x="260.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">身體不需移出圓圈</text>
+<text x="260.0" y="1045.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">城市材質修復</text>
+<text x="260.0" y="1075.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">角色可移動觀看</text>
+<rect x="1600" y="1260" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
+<text x="1760.0" y="1305.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">固定成果快照</text>
+<text x="1760.0" y="1335.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">接圖 05 保存與交付</text>
 <rect x="100" y="1260" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
-<text x="260.0" y="1305.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">結尾／固定成果快照</text>
-<text x="260.0" y="1335.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">接圖 05 保存與交付</text>
-<text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">04  虛擬回收站到站與確認</text>
-<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">同一場景、身體留在圓內；捕捉器前端靠近站體後，再選取確認。</text>
+<text x="260.0" y="1305.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">修復完沿原路返回</text>
+<text x="260.0" y="1335.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">左端定點觸發結尾</text>
+<rect x="600" y="1260" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
+<text x="760.0" y="1305.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">定點觸發</text>
+<text x="760.0" y="1335.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 畫面淡黑</text>
+<rect x="1100" y="1260" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
+<text x="1260.0" y="1305.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">左手開信／播放美術影格</text>
+<text x="1260.0" y="1335.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">播完顯示對應正文</text>
+<text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">04  提前回收、城市修復與結尾</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">收集至少 1 群 → 右端到站與確認 → 修復 → 返回左端定點，淡黑後開信。</text>
 <text x="65" y="1468" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">VR 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
 </svg>

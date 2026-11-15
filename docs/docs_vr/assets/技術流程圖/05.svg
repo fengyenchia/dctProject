@@ -131,7 +131,7 @@
 <text x="1760.0" y="2515.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重置遊戲，保留成果</text>
 <rect x="100" y="2180" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="2210.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway 保存收藏票票面</text>
-<text x="260.0" y="2240.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">5變體組合圖＋聲音清單</text>
+<text x="260.0" y="2240.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本場變體組合圖＋清單</text>
 <text x="260.0" y="2270.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">同一成果 QR</text>
 <rect x="600" y="2180" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="760.0" y="2225.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Windows 列印佇列 → USB</text>

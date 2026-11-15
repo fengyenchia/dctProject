@@ -43,7 +43,9 @@ namespace AudioBugs.Tutorial
                     .OrderBy(File.GetLastWriteTimeUtc).ToArray();
                 if (candidates.Length > 0) {
                     var recovered = JsonUtility.FromJson<Envelope>(File.ReadAllText(candidates[0]));
-                    if (recovered?.payload?.variants == null || recovered.payload.san != 0 || recovered.payload.capture_count != 5
+                    if (recovered?.payload?.variants == null || GameRules.GetLetterTier(recovered.payload.capture_count) == 0
+                        || recovered.payload.capture_count != recovered.payload.variants.Length
+                        || recovered.payload.san != 100 - recovered.payload.capture_count * 20
                         || !recovered.payload.recycled || string.IsNullOrEmpty(recovered.session_id)
                         || string.IsNullOrEmpty(recovered.payload.result_id) || recovered.payload.token?.Length != 64) throw new InvalidDataException("Invalid pending result");
                     var variants = recovered.payload.variants.Select(item => {
@@ -203,6 +205,7 @@ namespace AudioBugs.Tutorial
             return new Envelope { event_id = Guid.NewGuid().ToString("N"), session_id = session,
                 payload = new Payload { result_id = Guid.NewGuid().ToString("N"), token = BitConverter.ToString(bytes).Replace("-", "").ToLowerInvariant(),
                     completed_at = DateTime.UtcNow.ToString("o"), variants = items,
+                    san = lab.Rules.San, capture_count = items.Length,
                     asset_version = lab.catalog == null ? "prototype-1" : lab.catalog.assetVersion,
                     recipe_version = lab.catalog == null ? "stems-1" : lab.catalog.recipeVersion,
                     melody = new Melody {
@@ -256,7 +259,7 @@ namespace AudioBugs.Tutorial
         [Serializable] private sealed class Payload {
             public string result_id, token, completed_at;
             public string layout_id = "vr-prototype-1", asset_version = "prototype-1", recipe_version = "stems-1";
-            public int san = 0, capture_count = 5;
+            public int san, capture_count;
             public bool recycled = true;
             public Item[] variants;
             public Melody melody;

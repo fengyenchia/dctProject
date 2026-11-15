@@ -5,7 +5,7 @@ using System.Linq;
 // 教學用純 C# 核心：不依賴 XR、材質、網頁或音訊套件。
 namespace AudioBugs.Tutorial
 {
-    public enum GamePhase { Ready, Intro, Tutorial, Active, Return, Recycling, Ending }
+    public enum GamePhase { Ready, Intro, Tutorial, Active, Return, Recycling, ExitRoute, EndingVideo, ThankYou, Ending }
 
     public sealed class BugState
     {
@@ -23,6 +23,10 @@ namespace AudioBugs.Tutorial
 
     public sealed class GameRules
     {
+        public const int CaptureLimit = 5;
+        public const int ConcurrentGroupLimit = 2;
+        public const float RainStartsAt = 180f;
+        private const int VariantsPerType = 3;
         private readonly Random random;
         private readonly HashSet<int> appeared = new HashSet<int>();
         private readonly List<BugState> groups = new List<BugState>();
@@ -32,7 +36,18 @@ namespace AudioBugs.Tutorial
         public GamePhase Phase { get; private set; } = GamePhase.Ready;
         public bool Paused { get; private set; }
         public bool StationVisited { get; private set; }
+        public bool CanRecycle => collected.Count > 0 && (Phase == GamePhase.Active || Phase == GamePhase.Return);
+        public bool LetterOpened { get; private set; }
+        public float ExplorationSeconds { get; private set; }
+        public bool IsRaining { get; private set; }
+        public int LetterTier => GetLetterTier(collected.Count);
         public int San => Math.Max(0, 100 - collected.Count * 20);
+        public static int GetLetterTier(int count)
+        {
+            if (count < 1 || count > CaptureLimit) return 0;
+            if (count == 1) return 1;
+            return count <= 3 ? 2 : 3;
+        }
 
         public GameRules(int? seed = null) { random = seed.HasValue ? new Random(seed.Value) : new Random(); }
 
@@ -50,20 +65,22 @@ namespace AudioBugs.Tutorial
             return true;
         }
 
-        public bool CompleteTutorial()
+        public bool CompleteTutorial(int? firstPoint = null)
         {
             if (Paused || Phase != GamePhase.Tutorial) return false;
             Phase = GamePhase.Active;
-            for (int i = 0; i < 3; i++) SpawnOne();
+            SpawnOne(firstPoint);
+            for (int i = 1; i < ConcurrentGroupLimit; i++) SpawnOne();
             return true;
         }
 
         public void SetPaused(bool paused) { Paused = paused; }
         // 只接受 I1 已落盤的完整成功成果；不從 UI 文字重建進行中的遊戲。
         public bool RestoreCompleted(int[] variants) {
-            if (Phase != GamePhase.Ready || variants == null || variants.Length != 5
-                || variants.Distinct().Count() != 5 || variants.Any(i => i < 0 || i >= 9)) return false;
+            if (Phase != GamePhase.Ready || variants == null || GetLetterTier(variants.Length) == 0
+                || variants.Distinct().Count() != variants.Length || variants.Any(i => i < 0 || i >= 9)) return false;
             collected.AddRange(variants); foreach (var variant in variants) appeared.Add(variant);
+            LetterOpened = true;
             Phase = GamePhase.Ending; return true;
         }
 
@@ -81,6 +98,21 @@ namespace AudioBugs.Tutorial
         public string Tick(float delta, string aimedId)
         {
             if (Paused || Phase != GamePhase.Active || delta <= 0f) return null;
+            float validDelta = delta;
+            if (!IsRaining) validDelta = Math.Min(delta, RainStartsAt - ExplorationSeconds);
+            string captured = AdvanceCapture(validDelta, aimedId);
+            ExplorationSeconds += delta;
+            if (!IsRaining && ExplorationSeconds >= RainStartsAt && Phase == GamePhase.Active) {
+                IsRaining = true;
+                groups.Clear();
+                for (int i = 0; i < ConcurrentGroupLimit; i++) SpawnOne();
+            }
+            return captured;
+        }
+
+        private string AdvanceCapture(float delta, string aimedId)
+        {
+            if (delta <= 0f) return null;
             foreach (var group in groups)
                 if (group.VoiceAge >= 0f) group.VoiceAge += delta;
             var target = groups.Find(x => x.Id == aimedId);
@@ -95,15 +127,19 @@ namespace AudioBugs.Tutorial
             return target.Id;
         }
 
-        private void SpawnOne()
+        private void SpawnOne(int? preferredPoint = null)
         {
-            if (Paused || Phase != GamePhase.Active || San <= 0 || groups.Count >= 3) return;
-            var variants = Enumerable.Range(0, 9).Where(x => !appeared.Contains(x)).ToArray();
+            if (Paused || Phase != GamePhase.Active || San <= 0 || groups.Count >= ConcurrentGroupLimit) return;
+            int start = IsRaining ? VariantsPerType * 2 : 0;
+            int count = IsRaining ? VariantsPerType : VariantsPerType * 2;
+            var variants = Enumerable.Range(start, count).Where(x => !appeared.Contains(x)).ToArray();
             var points = Enumerable.Range(0, 6).Where(x => groups.All(g => g.Point != x)).ToArray();
             if (variants.Length == 0 || points.Length == 0) return;
             int variant = variants[random.Next(variants.Length)];
+            int point = preferredPoint.HasValue && points.Contains(preferredPoint.Value)
+                ? preferredPoint.Value : points[random.Next(points.Length)];
             groups.Add(new BugState {
-                Id = Guid.NewGuid().ToString("N"), Point = points[random.Next(points.Length)],
+                Id = Guid.NewGuid().ToString("N"), Point = point,
                 Variant = variant
             });
             appeared.Add(variant);
@@ -111,7 +147,7 @@ namespace AudioBugs.Tutorial
 
         public bool AuthorizeStation(bool validTracking, bool insideCircle, bool headNear, bool tipInside)
         {
-            if (Paused || Phase != GamePhase.Return || !validTracking || !insideCircle || !headNear || !tipInside)
+            if (Paused || !CanRecycle || !validTracking || !insideCircle || !headNear || !tipInside)
                 return false;
             StationVisited = true;
             return true;
@@ -121,7 +157,7 @@ namespace AudioBugs.Tutorial
 
         public bool ConfirmRecycle(bool validTracking, bool insideCircle)
         {
-            if (Paused || Phase != GamePhase.Return || !StationVisited || !validTracking || !insideCircle)
+            if (Paused || !CanRecycle || !StationVisited || !validTracking || !insideCircle)
                 return false;
             Phase = GamePhase.Recycling;
             // 收集清單保留供成果使用；場內剩餘群落在回收結算時退場。
@@ -133,6 +169,34 @@ namespace AudioBugs.Tutorial
         public bool CompleteRepair()
         {
             if (Paused || Phase != GamePhase.Recycling) return false;
+            Phase = GamePhase.ExitRoute;
+            return true;
+        }
+
+        public bool ArriveAtExit(bool insideExit)
+        {
+            if (Paused || Phase != GamePhase.ExitRoute || !insideExit) return false;
+            Phase = GamePhase.EndingVideo;
+            return true;
+        }
+
+        public bool CompleteEndingVideo()
+        {
+            if (Paused || Phase != GamePhase.EndingVideo) return false;
+            Phase = GamePhase.ThankYou;
+            return true;
+        }
+
+        public bool OpenThankYou()
+        {
+            if (Paused || Phase != GamePhase.ThankYou || LetterOpened) return false;
+            LetterOpened = true;
+            return true;
+        }
+
+        public bool FinishThankYou()
+        {
+            if (Paused || Phase != GamePhase.ThankYou || !LetterOpened) return false;
             Phase = GamePhase.Ending;
             return true;
         }

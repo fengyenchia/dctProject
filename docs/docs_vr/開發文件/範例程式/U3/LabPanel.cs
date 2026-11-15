@@ -13,6 +13,7 @@ namespace AudioBugs.Tutorial
         public TMP_Text statusText;
         public TMP_Text collectionText;
         public GameObject mainPage;
+        public bool enableCollectionPreview;
         public GameObject collectionPage;
         public GameObject recyclePage;
         public Button confirmButton;
@@ -30,27 +31,35 @@ namespace AudioBugs.Tutorial
             var rules = lab.Rules;
             if (!ReferenceEquals(displayedRules, rules)) { displayedRules = rules; collectionOpen = false; ClearHover(); }
             var target = lab.CurrentTarget;
-            statusText.text = $"{rules.Phase}\nSAN {rules.San}   COLLECTED {rules.Collected.Count}/5\n"
+            statusText.text = $"SAN {rules.San}\n"
                 + (target == null ? "TARGET --" : $"TARGET {Code(target.Variant)}  {target.Progress:P0}");
-            collectionText.text = rules.Collected.Count == 0 ? "NO COLLECTION" : string.Join("\n", rules.Collected.Select(Code));
-            string key = string.Join(",", rules.Collected);
-            if (catalog != null && cardRoot != null && cardPrefab != null && cardsKey != key) {
-                foreach (Transform child in cardRoot) Destroy(child.gameObject);
-                foreach (int index in rules.Collected) Instantiate(cardPrefab, cardRoot).Show(catalog, index);
-                cardsKey = key; collectionText.text = rules.Collected.Count == 0 ? "NO COLLECTION" : "";
-            }
-            if (catalog != null && cardRoot != null && cardPrefab != null && rules.Collected.Count > 0) collectionText.text = "";
-            bool recycle = rules.Phase == GamePhase.Return && rules.StationVisited;
-            mainPage.SetActive(!collectionOpen && !recycle);
-            collectionPage.SetActive(collectionOpen && !recycle);
+            if (enableCollectionPreview && collectionText != null) UpdateCollection(rules);
+            bool recycle = rules.CanRecycle && rules.StationVisited;
+            bool showCollection = enableCollectionPreview && collectionPage != null && collectionOpen && !recycle;
+            mainPage.SetActive(!showCollection && !recycle);
+            if (collectionPage != null) collectionPage.SetActive(showCollection);
             recyclePage.SetActive(recycle);
             confirmButton.interactable = recycle && lab.CanInteract;
             lab.uiBusy = pointers.Count > 0;
         }
 
+        private void UpdateCollection(GameRules rules)
+        {
+            string key = string.Join(",", rules.Collected);
+            if (cardsKey == key) return;
+            cardsKey = key;
+            bool showCards = catalog != null && cardRoot != null && cardPrefab != null;
+            if (showCards) {
+                foreach (Transform child in cardRoot) Destroy(child.gameObject);
+                foreach (int index in rules.Collected) Instantiate(cardPrefab, cardRoot).Show(catalog, index);
+            }
+            collectionText.text = rules.Collected.Count == 0 ? "NO COLLECTION"
+                : showCards ? "" : string.Join("\n", rules.Collected.Select(Code));
+        }
+
         private static string Code(int variant) => $"{(char)('A' + variant / 3)}{variant % 3 + 1}";
         public void ShowMain() { collectionOpen = false; }
-        public void ShowCollection() { collectionOpen = true; }
+        public void ShowCollection() { if (enableCollectionPreview) collectionOpen = true; }
         public void ConfirmRecycle() { lab.ConfirmRecycle(); }
         public void StartSession() { lab.BeginSession(); }
         public void CompleteRepair() { lab.CompleteRepair(); }

@@ -32,8 +32,9 @@ function valid(value: unknown): value is Envelope {
     && typeof p.result_id === 'string' && !!p.result_id && typeof p.token === 'string' && /^[a-f0-9]{64}$/.test(p.token)
     && typeof p.asset_version === 'string' && /^[a-zA-Z0-9_-]+$/.test(p.asset_version)
     && typeof p.recipe_version === 'string' && !!p.recipe_version
-    && p.san === 0 && p.capture_count === 5 && p.recycled === true && Array.isArray(p.variants)
-    && p.variants.length === 5 && new Set(p.variants.map(v => v?.variant_id)).size === 5
+    && Number.isInteger(p.capture_count) && p.capture_count >= 1 && p.capture_count <= 5
+    && p.san === 100 - 20 * p.capture_count && p.recycled === true && Array.isArray(p.variants)
+    && p.variants.length === p.capture_count && new Set(p.variants.map(v => v?.variant_id)).size === p.capture_count
     && p.variants.every(v => /^[ABC][123]$/.test(v?.variant_id) && v.stem_id === `stem-${v.variant_id}`)
     && p.variants.every(v => ['name', 'source_label', 'image_id'].every(field => typeof (v as Record<string, unknown>)[field] === 'string'))
     && Array.isArray(p.melody?.stem_ids) && JSON.stringify(p.melody.stem_ids) === JSON.stringify(p.variants.map(v => v.stem_id));

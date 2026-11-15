@@ -93,11 +93,11 @@
 <text x="760.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">CAPTURE_PROGRESS</text>
 <text x="760.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">等待新鮮瞄準資料</text>
 <rect x="1100" y="1240" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
-<text x="1260.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">整群收走／停該群聲音</text>
-<text x="1260.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">記錄一次／SAN 扣 20</text>
+<text x="1260.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">停聲／記錄一次／SAN 扣 20</text>
+<text x="1260.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">短暫顯示正式外觀後退場</text>
 <rect x="1600" y="1240" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
-<text x="1760.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">UI／震動；SAN 0 進入回收</text>
-<text x="1760.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉器不發聲</text>
+<text x="1760.0" y="1285.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">UI／震動；至少 1 群可回收</text>
+<text x="1760.0" y="1315.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SAN 0 停止捕捉及補群</text>
 <rect x="100" y="1500" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="1545.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">群落移除／回收結算</text>
 <text x="260.0" y="1575.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本場結束／重置</text>

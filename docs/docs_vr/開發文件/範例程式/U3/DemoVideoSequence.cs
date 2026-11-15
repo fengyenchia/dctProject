@@ -37,7 +37,7 @@ namespace AudioBugs.Tutorial
             }
             if (!lab.CanInteract) { if (video.isPlaying) video.Pause(); return; }
             if (finished) {
-                if (phase == GamePhase.Intro) lab.Rules.CompleteIntro(); else lab.Rules.CompleteTutorial();
+                if (phase == GamePhase.Intro) lab.Rules.CompleteIntro(); else lab.CompleteTutorial();
             } else if (video.isPrepared && !video.isPlaying) video.Play();
         }
         private void OnDestroy() { if (video != null && handler != null) video.loopPointReached -= handler; }

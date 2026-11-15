@@ -17,8 +17,9 @@ function lines(text: string, length = 23): string[] {
   return result;
 }
 export async function renderTicket(payload: TicketResult, dataDir: string, resultsBase: string, requireArt = false): Promise<TicketFiles> {
+  const count = payload.variants.length;
   if (!/^[a-f0-9]{64}$/.test(payload.token) || !/^[\w-]+$/.test(payload.asset_version)
-    || payload.variants.length !== 5 || new Set(payload.variants.map(x => x.variant_id)).size !== 5)
+    || count < 1 || count > 5 || new Set(payload.variants.map(x => x.variant_id)).size !== count)
     throw new Error('Invalid ticket result');
   const url = new URL(resultsBase.replace(/\/$/, '') + '/' + payload.token);
   if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || url.search || url.hash)
@@ -30,7 +31,8 @@ export async function renderTicket(payload: TicketResult, dataDir: string, resul
   const icons = payload.variants.map((v, i) => {
     if (!/^[ABC][123]$/.test(v.variant_id) || !/^[\w-]+$/.test(v.image_id)) throw new Error('Invalid image id');
     const file = resolve('assets', payload.asset_version, 'ticket', v.image_id + '.png');
-    const x = i < 3 ? 106 + i * 182 : 197 + (i - 3) * 182;
+    const rowCount = i < 3 ? Math.min(count, 3) : count - 3;
+    const x = 288 + ((i % 3) - (rowCount - 1) / 2) * 182;
     const y = i < 3 ? 200 : 360;
     let image: string;
     if (existsSync(file)) image = `<image x="${x-58}" y="${y-58}" width="116" height="116" href="data:image/png;base64,${readFileSync(file).toString('base64')}"/>`;
@@ -54,7 +56,7 @@ export async function renderTicket(payload: TicketResult, dataDir: string, resul
   <rect width="576" height="1390" fill="white"/>
   <g font-family="Microsoft JhengHei, PingFang TC, Noto Sans CJK TC, sans-serif" fill="black">
     <text x="288" y="65" text-anchor="middle" font-size="40" font-weight="bold">聲音收藏票</text>
-    <text x="288" y="110" text-anchor="middle" font-size="22">本場收集 5 個變體</text>
+    <text x="288" y="110" text-anchor="middle" font-size="22">本場收集 ${count} 個變體</text>
     <path d="M24 132H552 M24 490H552 M24 950H552" stroke="black" stroke-width="2" stroke-dasharray="8 7"/>
     ${icons}<text x="288" y="530" text-anchor="middle" font-size="26">聲音清單</text>${list}
     <image x="128" y="975" width="320" height="320" href="${qr}"/>

@@ -11,6 +11,7 @@ namespace AudioBugs.Tutorial
         public Transform origin;
         public string reason = "Awaiting calibration";
         public bool calibrated, safe;
+        private Vector3 physicalCentre;
         private bool displayFocused = true;
         private readonly List<XRDisplaySubsystem> displays = new List<XRDisplaySubsystem>();
         private readonly List<XRInputSubsystem> inputs = new List<XRInputSubsystem>();
@@ -40,7 +41,8 @@ namespace AudioBugs.Tutorial
         private void Update() {
             if (!TrackingReady()) { StopInteraction("Check Link, worn state, focus and both controllers"); return; }
             if (!calibrated) { StopInteraction("Stand at physical centre and Calibrate"); return; }
-            float radius = new Vector2(lab.trackedHead.position.x, lab.trackedHead.position.z).magnitude;
+            var physicalOffset = origin.InverseTransformPoint(lab.trackedHead.position) - physicalCentre;
+            float radius = new Vector2(physicalOffset.x, physicalOffset.z).magnitude;
             if (radius > 1.5f) { StopInteraction("Outside 1.5 m radius; return to centre"); return; }
             safe = true; lab.poseValid = true; reason = radius > 1.2f ? "Near boundary" : "Ready; resume explicitly if paused";
         }
@@ -48,9 +50,14 @@ namespace AudioBugs.Tutorial
             if (!TrackingReady() || origin == null || lab.trackedHead == null) { StopInteraction("Cannot calibrate without valid Link pose"); return; }
             lab.SetPaused(true); var head = lab.trackedHead;
             origin.RotateAround(head.position, Vector3.up, -head.eulerAngles.y);
-            origin.position -= new Vector3(head.position.x, 0, head.position.z);
+            if (lab.Rules.Phase == GamePhase.Ready) {
+                var entry = lab.exitAnchor == null ? Vector3.zero : lab.exitAnchor.position;
+                origin.position += new Vector3(entry.x - head.position.x, 0, entry.z - head.position.z);
+            }
+            physicalCentre = origin.InverseTransformPoint(head.position);
+            lab.SetPhysicalTrackingCentre(origin, physicalCentre);
             lab.Rules.InvalidateStation(); calibrated = true; lab.calibrationValid = true;
-            safe = true; lab.poseValid = true; reason = "Calibrated; check station and Resume";
+            safe = true; lab.poseValid = true; reason = "Calibrated; check the entry and Resume";
         }
         private void OnGUI() { GUILayout.BeginArea(new Rect(12, 390, 560, 100), GUI.skin.box);
             GUILayout.Label("QUEST GUARD | " + reason);

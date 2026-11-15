@@ -7,14 +7,15 @@ export function isResult(value: unknown, token?: string): value is Result {
   const p = value as Result & Record<string, unknown>;
   return typeof p.result_id === 'string' && /^[a-zA-Z0-9_-]{1,100}$/.test(p.result_id)
     && typeof p.token === 'string' && /^[a-f0-9]{64}$/.test(p.token) && (!token || p.token === token)
-    && p.san === 0 && p.capture_count === 5 && p.recycled === true
+    && Number.isInteger(p.capture_count) && p.capture_count >= 1 && p.capture_count <= 5
+    && p.san === 100 - 20 * p.capture_count && p.recycled === true
     && typeof p.asset_version === 'string' && /^[a-zA-Z0-9_-]+$/.test(p.asset_version)
     && typeof p.recipe_version === 'string' && p.recipe_version.length > 0
-    && Array.isArray(p.variants) && p.variants.length === 5 && new Set(p.variants.map(v => v?.variant_id)).size === 5
+    && Array.isArray(p.variants) && p.variants.length === p.capture_count && new Set(p.variants.map(v => v?.variant_id)).size === p.capture_count
     && p.variants.every(v => v && /^[ABC][123]$/.test(v.variant_id) && v.image_id === v.variant_id
       && v.stem_id === `stem-${v.variant_id}` && typeof v.name === 'string' && v.name.length <= 100
       && typeof v.source_label === 'string' && v.source_label.length <= 200)
-    && Array.isArray(p.melody?.stem_ids) && p.melody.stem_ids.length === 5
+    && Array.isArray(p.melody?.stem_ids) && p.melody.stem_ids.length === p.capture_count
     && p.melody.stem_ids.every((id, i) => id === `stem-${p.variants[i].variant_id}`);
 }
 function canonical(value: unknown): string {

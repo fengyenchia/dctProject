@@ -25,10 +25,11 @@ createServer(async (request, response) => {
     for await (const chunk of request) { raw += chunk.toString(); if (Buffer.byteLength(raw) > 65536) throw new Error('body_too_large'); }
     const e = JSON.parse(raw); const p = e?.payload;
     if (e?.schema_version !== 1 || typeof e.session_id !== 'string' || typeof p?.result_id !== 'string'
-      || !/^[a-f0-9]{64}$/.test(p?.token) || p.san !== 0 || p.capture_count !== 5 || p.recycled !== true
-      || !Array.isArray(p.variants) || p.variants.length !== 5
+      || !/^[a-f0-9]{64}$/.test(p?.token) || !Number.isInteger(p.capture_count) || p.capture_count < 1 || p.capture_count > 5
+      || p.san !== 100 - 20 * p.capture_count || p.recycled !== true
+      || !Array.isArray(p.variants) || p.variants.length !== p.capture_count
       || p.variants.some((v: { variant_id?: string } | null) => !v || !/^[ABC][123]$/.test(v.variant_id ?? ''))
-      || new Set(p.variants.map((v: { variant_id: string }) => v.variant_id)).size !== 5) {
+      || new Set(p.variants.map((v: { variant_id: string }) => v.variant_id)).size !== p.capture_count) {
       reply(400, { error: 'invalid_result' }); return;
     }
     const hash = createHash('sha256').update(canonical(p)).digest('hex');
