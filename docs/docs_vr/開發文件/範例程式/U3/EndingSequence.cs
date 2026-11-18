@@ -23,6 +23,16 @@ namespace AudioBugs.Tutorial
         private bool opening;
         private bool bodyShown;
 
+        private void OnEnable()
+        {
+            if (lab != null) lab.EndingPresenter = this;
+        }
+
+        private void OnDisable()
+        {
+            if (lab != null && lab.EndingPresenter == this) lab.EndingPresenter = null;
+        }
+
         private void Start()
         {
             blackout.alpha = 0f;

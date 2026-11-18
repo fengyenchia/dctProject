@@ -56,6 +56,7 @@ namespace AudioBugs.Tutorial
         private readonly List<AudioClip> generatedClips = new List<AudioClip>();
         private GameObject mask;
         private GameObject exitMarker;
+        private Material exitMarkerMaterial;
         private BoxCollider labRoom;
         private GameObject capturePreview;
         private float capturePreviewRemaining;
@@ -66,8 +67,10 @@ namespace AudioBugs.Tutorial
         public string CurrentTargetId { get; private set; }
         public BugState CurrentTarget => rules.Groups.FirstOrDefault(g => g.Id == CurrentTargetId);
         public bool CanInteract => !rules.Paused && poseValid && Inside;
+        internal Behaviour EndingPresenter { get; set; }
         private Vector3 StationPosition => stationAnchor == null ? station : stationAnchor.position;
-        private Vector3 ExitPosition => exitAnchor == null ? station + Vector3.back * 2f + Vector3.down * station.y : exitAnchor.position;
+        private Vector3 ExitPosition => exitAnchor == null
+            ? new Vector3(station.x + 2f, 0f, station.z) : exitAnchor.position;
 
         private void Start()
         {
@@ -116,9 +119,12 @@ namespace AudioBugs.Tutorial
             if (createLabGeometry) {
                 exitMarker = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
                 exitMarker.name = "LabExit";
-                exitMarker.transform.SetPositionAndRotation(ExitPosition + Vector3.up * .025f, Quaternion.identity);
+                exitMarker.transform.SetPositionAndRotation(ExitPosition + Vector3.up * .05f, Quaternion.identity);
                 exitMarker.transform.localScale = new Vector3(1.5f, .025f, 1.5f);
                 exitMarker.GetComponent<Collider>().enabled = false;
+                exitMarkerMaterial = new Material(revealShader);
+                exitMarkerMaterial.SetColor("_BaseColor", new Color(.15f, .9f, 1f, 1f));
+                exitMarker.GetComponent<Renderer>().sharedMaterial = exitMarkerMaterial;
                 exitMarker.SetActive(false);
             }
             mask = GameObject.CreatePrimitive(PrimitiveType.Quad);
@@ -203,7 +209,10 @@ namespace AudioBugs.Tutorial
             }
             if (rules.Phase == GamePhase.ExitRoute) {
                 var offset = Head.position - ExitPosition;
-                rules.ArriveAtExit(new Vector2(offset.x, offset.z).magnitude <= .75f);
+                if (rules.ArriveAtExit(new Vector2(offset.x, offset.z).magnitude <= .75f)) {
+                    ReleaseDesktopCursor();
+                    if (!useExternalPose && EndingPresenter == null) CompleteEndingVideo();
+                }
             }
             if (exitMarker != null) exitMarker.SetActive(rules.Phase == GamePhase.ExitRoute);
         }
@@ -533,7 +542,12 @@ namespace AudioBugs.Tutorial
             foreach (var group in rules.Groups) GUILayout.Label($"Variant {group.Variant + 1}: {group.Progress:P0} | gain {group.Gain:F2}");
             if (rules.CanRecycle && !rules.StationVisited)
                 GUILayout.Label("Reach the far end of the street and aim the tip at the station.");
-            if (rules.Phase == GamePhase.ExitRoute) GUILayout.Label("Go to the ending marker near the recycling station.");
+            if (rules.Phase == GamePhase.ExitRoute)
+                GUILayout.Label(exitMarker != null && exitAnchor == null
+                    ? "Find the cyan disk on the ground to the right of the station."
+                    : "Go to the ending marker near the recycling station.");
+            if (rules.Phase == GamePhase.ThankYou && !rules.LetterOpened && EndingPresenter == null)
+                GUILayout.Label("You reached the ending.");
             if (rules.Phase == GamePhase.ThankYou && rules.LetterOpened)
                 GUILayout.Label($"Thank-you letter version: {rules.LetterTier} | Collected: {rules.Collected.Count}");
             if (rules.Paused) GUILayout.Label("Paused. Press P to resume.");
@@ -557,6 +571,7 @@ namespace AudioBugs.Tutorial
 
         private void OnDestroy()
         {
+            if (exitMarkerMaterial != null) Destroy(exitMarkerMaterial);
             foreach (var clip in generatedClips) Destroy(clip);
         }
     }
