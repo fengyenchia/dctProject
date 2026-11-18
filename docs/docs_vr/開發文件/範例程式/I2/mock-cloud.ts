@@ -28,7 +28,7 @@ createServer(async (request, response) => {
       || !/^[a-f0-9]{64}$/.test(p?.token) || !Number.isInteger(p.capture_count) || p.capture_count < 1 || p.capture_count > 5
       || p.san !== 100 - 20 * p.capture_count || p.recycled !== true
       || !Array.isArray(p.variants) || p.variants.length !== p.capture_count
-      || p.variants.some((v: { variant_id?: string } | null) => !v || !/^[ABC][123]$/.test(v.variant_id ?? ''))
+      || p.variants.some((v: { variant_id?: string } | null) => !v || !/^(?:[ABC][123]|B4)$/.test(v.variant_id ?? ''))
       || new Set(p.variants.map((v: { variant_id: string }) => v.variant_id)).size !== p.capture_count) {
       reply(400, { error: 'invalid_result' }); return;
     }

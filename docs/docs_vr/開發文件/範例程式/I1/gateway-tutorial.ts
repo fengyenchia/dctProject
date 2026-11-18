@@ -35,7 +35,7 @@ function valid(value: unknown): value is Envelope {
     && Number.isInteger(p.capture_count) && p.capture_count >= 1 && p.capture_count <= 5
     && p.san === 100 - 20 * p.capture_count && p.recycled === true && Array.isArray(p.variants)
     && p.variants.length === p.capture_count && new Set(p.variants.map(v => v?.variant_id)).size === p.capture_count
-    && p.variants.every(v => /^[ABC][123]$/.test(v?.variant_id) && v.stem_id === `stem-${v.variant_id}`)
+    && p.variants.every(v => /^(?:[ABC][123]|B4)$/.test(v?.variant_id) && v.stem_id === `stem-${v.variant_id}`)
     && p.variants.every(v => ['name', 'source_label', 'image_id'].every(field => typeof (v as Record<string, unknown>)[field] === 'string'))
     && Array.isArray(p.melody?.stem_ids) && JSON.stringify(p.melody.stem_ids) === JSON.stringify(p.variants.map(v => v.stem_id));
 }

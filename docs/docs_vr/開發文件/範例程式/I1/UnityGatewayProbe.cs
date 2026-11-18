@@ -50,8 +50,9 @@ namespace AudioBugs.Tutorial
                         || string.IsNullOrEmpty(recovered.payload.result_id) || recovered.payload.token?.Length != 64) throw new InvalidDataException("Invalid pending result");
                     var variants = recovered.payload.variants.Select(item => {
                         string id = item.variant_id;
-                        if (id == null || id.Length != 2 || id[0] < 'A' || id[0] > 'C' || id[1] < '1' || id[1] > '3') throw new InvalidDataException("Invalid variant");
-                        return (id[0] - 'A') * 3 + id[1] - '1';
+                        int index = GameRules.VariantIndex(id);
+                        if (index < 0) throw new InvalidDataException("Invalid variant");
+                        return index;
                     }).ToArray();
                     if (!lab.RestoreEnding(variants)) throw new InvalidDataException("Cannot restore Ending");
                     pending = recovered; session = recovered.session_id; publicToken = recovered.payload.token;
@@ -195,10 +196,10 @@ namespace AudioBugs.Tutorial
         private Envelope MakeResult()
         {
             var items = lab.Rules.Collected.Select(index => {
-                string type = ((char)('A' + index / 3)).ToString();
-                string id = type + (index % 3 + 1);
-                return new Item { type_id = type, variant_id = id, name = lab.catalog == null ? "Sample " + id : lab.catalog.Name(index),
-                    source_id = "source-" + id, source_label = lab.catalog == null ? "Source " + id : lab.catalog.Source(index), stem_id = "stem-" + id, image_id = id };
+                string id = GameRules.VariantCode(index);
+                string type = id.Substring(0, 1);
+                return new Item { type_id = type, variant_id = id, name = lab.catalog == null ? VariantCatalog.DefaultName(index) : lab.catalog.Name(index),
+                    source_id = "source-" + id, source_label = lab.catalog == null ? VariantCatalog.DefaultSource(index) : lab.catalog.Source(index), stem_id = "stem-" + id, image_id = id };
             }).ToArray();
             var bytes = new byte[32];
             using (var rng = RandomNumberGenerator.Create()) rng.GetBytes(bytes);
@@ -206,7 +207,7 @@ namespace AudioBugs.Tutorial
                 payload = new Payload { result_id = Guid.NewGuid().ToString("N"), token = BitConverter.ToString(bytes).Replace("-", "").ToLowerInvariant(),
                     completed_at = DateTime.UtcNow.ToString("o"), variants = items,
                     san = lab.Rules.San, capture_count = items.Length,
-                    asset_version = lab.catalog == null ? "prototype-1" : lab.catalog.assetVersion,
+                    asset_version = lab.catalog == null ? "prototype-2" : lab.catalog.assetVersion,
                     recipe_version = lab.catalog == null ? "stems-1" : lab.catalog.recipeVersion,
                     melody = new Melody {
                         bpm = lab.catalog == null ? 100 : lab.catalog.bpm,

@@ -7,7 +7,6 @@ namespace AudioBugs.Tutorial
     public sealed class BugView : MonoBehaviour
     {
         public Transform visual;
-        public GameObject captureVisual;
         [Range(0f, 1f)] public float baseVolume = .12f;
         [Range(0f, 1f)] public float outsideRoomGain = .45f;
         [Range(300f, 22000f)] public float behindWallCutoff = 1200f;
@@ -27,7 +26,6 @@ namespace AudioBugs.Tutorial
         {
             // Unity native objects must be created on the main thread, not in field initializers.
             if (block == null) block = new MaterialPropertyBlock();
-            if (captureVisual != null) captureVisual.SetActive(false);
             renderers = (visual == null ? transform : visual).GetComponentsInChildren<Renderer>();
             foreach (var renderer in renderers) {
                 if (usePrototypeMaterial) {
@@ -78,20 +76,14 @@ namespace AudioBugs.Tutorial
                     muffled ? behindWallCutoff : 22000f, blend);
         }
 
-        public void ShowCaptured(Color previewColor)
+        public void ShowCaptured()
         {
             GetComponent<BoxCollider>().enabled = false;
             captureGain = 0f;
             source.Stop();
-            if (captureVisual != null) {
-                foreach (var renderer in renderers) renderer.enabled = false;
-                captureVisual.SetActive(true);
-                return;
-            }
             foreach (var renderer in renderers) {
                 renderer.GetPropertyBlock(block);
                 block.SetFloat("_Visibility", 1f);
-                if (usePrototypeMaterial) block.SetColor("_BaseColor", previewColor);
                 renderer.SetPropertyBlock(block);
             }
         }

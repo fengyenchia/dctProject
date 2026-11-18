@@ -29,7 +29,7 @@ export async function renderTicket(payload: TicketResult, dataDir: string, resul
   const qr = await QRCode.toDataURL(url.href, { errorCorrectionLevel: 'M', margin: 4, width: 320 });
   let placeholder = false;
   const icons = payload.variants.map((v, i) => {
-    if (!/^[ABC][123]$/.test(v.variant_id) || !/^[\w-]+$/.test(v.image_id)) throw new Error('Invalid image id');
+    if (!/^(?:[ABC][123]|B4)$/.test(v.variant_id) || !/^[\w-]+$/.test(v.image_id)) throw new Error('Invalid image id');
     const file = resolve('assets', payload.asset_version, 'ticket', v.image_id + '.png');
     const rowCount = i < 3 ? Math.min(count, 3) : count - 3;
     const x = 288 + ((i % 3) - (rowCount - 1) / 2) * 182;

@@ -76,7 +76,7 @@
 <text x="260.0" y="1935.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">重新接受下一次發聲</text>
 <rect x="800" y="200" width="360" height="140" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="980.0" y="240.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 遊戲輸出混音</text>
-<text x="980.0" y="270.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場最多 2 群音虫聲源</text>
+<text x="980.0" y="270.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">一般 3 群／雨天最多 4 群</text>
 <text x="980.0" y="300.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">AEC 播放參考／內建喇叭</text>
 <rect x="800" y="600" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="960.0" y="660.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有效對準既有群落</text>
@@ -95,19 +95,19 @@
 <text x="960.0" y="1925.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">有進度：保留對應顯現程度</text>
 <text x="960.0" y="1955.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Mask 隨有效場景落點移動</text>
 <rect x="1500" y="200" width="360" height="120" rx="15" fill="#fff0df" stroke="#cc9154" stroke-width="2"/>
-<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">晴天 A／B；探索 1 分鐘</text>
-<text x="1680.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未捕捉 A／B 退場換 C</text>
+<text x="1680.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">第 60 秒下雨，C1 加入</text>
+<text x="1680.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">第 120 秒雨停，C1 退場</text>
 <rect x="1500" y="450" width="360" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1680.0" y="480.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">GROUP_SPAWN</text>
-<text x="1680.0" y="510.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Active／SAN &gt; 0／少於 2 群</text>
+<text x="1680.0" y="510.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Active／SAN &gt; 0／檢查上限</text>
 <text x="1680.0" y="540.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未用點位／未出現變體／去重</text>
 <rect x="1500" y="700" width="360" height="140" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
-<text x="1680.0" y="740.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">開場／雨天最多 2 群</text>
-<text x="1680.0" y="770.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉後依天氣池補群</text>
+<text x="1680.0" y="740.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">一般最多 3 群</text>
+<text x="1680.0" y="770.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雨天加 C1，最多 4 群</text>
 <text x="1680.0" y="800.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">新身分、進度 0、隱藏</text>
 <rect x="1500" y="1000" width="360" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
 <text x="1680.0" y="1030.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">播放新群聲音</text>
-<text x="1680.0" y="1060.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">全場同時最多 2 群</text>
+<text x="1680.0" y="1060.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">一般 3 群／雨天最多 4 群</text>
 <text x="1680.0" y="1090.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">捕捉器仍不發聲</text>
 <rect x="1500" y="1350" width="360" height="140" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1680.0" y="1390.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 更新該群聲源音量</text>

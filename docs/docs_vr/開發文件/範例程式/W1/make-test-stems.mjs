@@ -2,8 +2,8 @@ import { mkdirSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 // 僅供串接練習的合成音色，不是正式配樂。
-const output = resolve(process.argv[2] ?? 'public/assets/prototype-1/stems');
-const ids = ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3'];
+const output = resolve(process.argv[2] ?? 'public/assets/prototype-2/stems');
+const ids = ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'B4', 'C1'];
 const frequencies = [261.626, 329.628, 391.995, 130.813, 164.814, 195.998, 523.251, 659.255, 783.991];
 const paths = ids.map(id => resolve(output, `stem-${id}.wav`));
 if (paths.some(path => existsSync(path))) throw new Error('測試音檔已存在；不覆蓋既有素材。');
@@ -23,4 +23,4 @@ ids.forEach((id, index) => {
   }
   writeFileSync(paths[index], wav);
 });
-console.log(`Created 9 tutorial stems, 100 BPM, 4/4, 4 bars: ${output}`);
+console.log(`Created ${ids.length} tutorial stems, 100 BPM, 4/4, 4 bars: ${output}`);

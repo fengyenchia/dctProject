@@ -12,7 +12,7 @@ export function isResult(value: unknown, token?: string): value is Result {
     && typeof p.asset_version === 'string' && /^[a-zA-Z0-9_-]+$/.test(p.asset_version)
     && typeof p.recipe_version === 'string' && p.recipe_version.length > 0
     && Array.isArray(p.variants) && p.variants.length === p.capture_count && new Set(p.variants.map(v => v?.variant_id)).size === p.capture_count
-    && p.variants.every(v => v && /^[ABC][123]$/.test(v.variant_id) && v.image_id === v.variant_id
+    && p.variants.every(v => v && /^(?:[ABC][123]|B4)$/.test(v.variant_id) && v.image_id === v.variant_id
       && v.stem_id === `stem-${v.variant_id}` && typeof v.name === 'string' && v.name.length <= 100
       && typeof v.source_label === 'string' && v.source_label.length <= 200)
     && Array.isArray(p.melody?.stem_ids) && p.melody.stem_ids.length === p.capture_count

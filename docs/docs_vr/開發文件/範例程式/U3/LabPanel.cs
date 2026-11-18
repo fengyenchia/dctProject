@@ -57,7 +57,7 @@ namespace AudioBugs.Tutorial
                 : showCards ? "" : string.Join("\n", rules.Collected.Select(Code));
         }
 
-        private static string Code(int variant) => $"{(char)('A' + variant / 3)}{variant % 3 + 1}";
+        private static string Code(int variant) => GameRules.VariantCode(variant);
         public void ShowMain() { collectionOpen = false; }
         public void ShowCollection() { if (enableCollectionPreview) collectionOpen = true; }
         public void ConfirmRecycle() { lab.ConfirmRecycle(); }

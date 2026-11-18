@@ -13,10 +13,11 @@ namespace AudioBugs.Tutorial
     {
         private const int LabRoomPoint = 2;
         public Shader revealShader;
-        public AudioClip[] sourceClips = new AudioClip[9];
+        public AudioClip[] sourceClips = new AudioClip[GameRules.VariantSlotCount];
         public BugView groupPrefab;
         public BugView[] variantPrefabs = new BugView[0];
         public Transform[] spawnPoints = new Transform[0];
+        public string[] spawnVariantCodes = new string[0];
         public BoxCollider[] spawnRooms = new BoxCollider[0];
         public bool createLabGeometry = true;
         public Transform stationAnchor;
@@ -49,6 +50,7 @@ namespace AudioBugs.Tutorial
         private Camera labCamera;
         private Vector3 physicalCentre;
         private Vector3[] points = new Vector3[GameRules.DefaultSpawnPointCount];
+        private int[] fixedPointVariants;
         private readonly Dictionary<string, GameObject> views = new Dictionary<string, GameObject>();
         private readonly Dictionary<Collider, BugState> targets = new Dictionary<Collider, BugState>();
         private readonly List<AudioClip> generatedClips = new List<AudioClip>();
@@ -65,7 +67,7 @@ namespace AudioBugs.Tutorial
         public BugState CurrentTarget => rules.Groups.FirstOrDefault(g => g.Id == CurrentTargetId);
         public bool CanInteract => !rules.Paused && poseValid && Inside;
         private Vector3 StationPosition => stationAnchor == null ? station : stationAnchor.position;
-        private Vector3 ExitPosition => exitAnchor == null ? Vector3.zero : exitAnchor.position;
+        private Vector3 ExitPosition => exitAnchor == null ? station + Vector3.back * 2f + Vector3.down * station.y : exitAnchor.position;
 
         private void Start()
         {
@@ -90,8 +92,14 @@ namespace AudioBugs.Tutorial
             if (spawnRooms.Length != 0 && spawnRooms.Length != spawnPoints.Length) {
                 Debug.LogError("Spawn Rooms must be empty or match the number of custom Spawn Points."); enabled = false; return;
             }
-            if (variantPrefabs.Length != 0 && variantPrefabs.Length != 9) {
-                Debug.LogError("Variant Prefabs must be empty or have nine entries; empty entries use Group Prefab."); enabled = false; return;
+            if (spawnVariantCodes.Length != 0) {
+                fixedPointVariants = spawnVariantCodes.Select(GameRules.VariantIndex).ToArray();
+                if (fixedPointVariants.Length != spawnPoints.Length
+                    || fixedPointVariants.Any(index => !GameRules.IsCurrentVariant(index))
+                    || fixedPointVariants.Distinct().Count() != GameRules.CurrentVariantCount) {
+                    Debug.LogError("Spawn Variant Codes must match custom Spawn Points and include A1–A3, B1–B4 and C1.");
+                    enabled = false; return;
+                }
             }
             if (createLabGeometry) MakeSolid("LabFloor", new Vector3(0, -.1f, 7f), new Vector3(10, .2f, 17));
             for (int i = 0; i < points.Length; i++) {
@@ -170,16 +178,15 @@ namespace AudioBugs.Tutorial
                 if (enableVoiceRevealPreview && Keyboard.current != null && Keyboard.current.vKey.wasPressedThisFrame)
                     TriggerVoiceForDevelopment();
                 CurrentTargetId = FindTargetAndMoveMask();
-                var aimedGroup = CurrentTarget;
                 bool wasRaining = rules.IsRaining;
                 string captured = rules.Tick(Time.deltaTime, CurrentTargetId);
-                if (!wasRaining && rules.IsRaining) {
-                    CurrentTargetId = null;
-                    if (rainEffects != null) rainEffects.SetActive(true);
-                    onRainStarted.Invoke();
+                if (wasRaining != rules.IsRaining) {
+                    if (rainEffects != null) rainEffects.SetActive(rules.IsRaining);
+                    if (rules.IsRaining) onRainStarted.Invoke();
+                    if (!rules.Groups.Any(group => group.Id == CurrentTargetId)) CurrentTargetId = null;
                 }
                 if (captured != null) {
-                    ShowCapturePreview(captured, aimedGroup.Variant);
+                    ShowCapturePreview(captured);
                     CurrentTargetId = null;
                     Debug.Log("CAPTURE_RESULT " + captured + " SAN=" + rules.San);
                     onCaptured.Invoke();
@@ -350,7 +357,7 @@ namespace AudioBugs.Tutorial
             }
             foreach (var group in rules.Groups) {
                 if (!views.TryGetValue(group.Id, out var go)) {
-                    var selectedPrefab = variantPrefabs.Length == 9 && variantPrefabs[group.Variant] != null
+                    var selectedPrefab = group.Variant < variantPrefabs.Length && variantPrefabs[group.Variant] != null
                         ? variantPrefabs[group.Variant] : groupPrefab;
                     if (selectedPrefab != null) go = Instantiate(selectedPrefab).gameObject;
                     else {
@@ -376,17 +383,20 @@ namespace AudioBugs.Tutorial
                 bool outsideRoom = room != null && !RoomContains(room, Head.position);
                 bool wallBetween = outsideRoom && Physics.Linecast(Head.position, points[group.Point],
                     Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
-                go.GetComponent<BugView>().Present(group, !CanInteract, outsideRoom, wallBetween);
+                var view = go.GetComponent<BugView>();
+                if (group.Variant == GameRules.RainVariant && view.visual != null && CanInteract)
+                    view.visual.localRotation = Quaternion.Euler(0, (rules.ExplorationSeconds - GameRules.RainStartsAt) * 30f, 0);
+                view.Present(group, !CanInteract, outsideRoom, wallBetween);
             }
         }
 
-        private void ShowCapturePreview(string id, int variant)
+        private void ShowCapturePreview(string id)
         {
             if (capturePreviewSeconds <= 0f || !views.TryGetValue(id, out var go)) return;
             ClearCapturePreview();
             views.Remove(id);
             targets.Remove(go.GetComponent<Collider>());
-            go.GetComponent<BugView>().ShowCaptured(Color.HSVToRGB(variant / 9f, .7f, 1f));
+            go.GetComponent<BugView>().ShowCaptured();
             capturePreview = go;
             capturePreviewRemaining = capturePreviewSeconds;
         }
@@ -458,7 +468,7 @@ namespace AudioBugs.Tutorial
         }
         public bool CompleteTutorial()
         {
-            if (!rules.CompleteTutorial(labRoom != null ? LabRoomPoint : (int?)null, points.Length)) return false;
+            if (!rules.CompleteTutorial(labRoom != null ? LabRoomPoint : (int?)null, points.Length, fixedPointVariants)) return false;
             LockDesktopCursor();
             return true;
         }
@@ -519,11 +529,11 @@ namespace AudioBugs.Tutorial
                 GUILayout.Label("WASD: move | Mouse: look | Esc: cursor | Tab: mouse look");
             GUILayout.Label($"Phase: {rules.Phase} | SAN: {rules.San} | Collected: {rules.Collected.Count}");
             if (rules.Phase == GamePhase.Active) GUILayout.Label($"Weather: {(rules.IsRaining ? "rain" : "dry")} | Active: {rules.ExplorationSeconds:F0}s");
-            if (rules.Phase == GamePhase.Tutorial) GUILayout.Label("Listen > aim for 3s > walk to station > return to entrance. Demo only.");
+            if (rules.Phase == GamePhase.Tutorial) GUILayout.Label("Listen > aim for 3s > recycle > go to the ending marker. Demo only.");
             foreach (var group in rules.Groups) GUILayout.Label($"Variant {group.Variant + 1}: {group.Progress:P0} | gain {group.Gain:F2}");
             if (rules.CanRecycle && !rules.StationVisited)
                 GUILayout.Label("Reach the far end of the street and aim the tip at the station.");
-            if (rules.Phase == GamePhase.ExitRoute) GUILayout.Label("Return to the entrance (start of the street).");
+            if (rules.Phase == GamePhase.ExitRoute) GUILayout.Label("Go to the ending marker near the recycling station.");
             if (rules.Phase == GamePhase.ThankYou && rules.LetterOpened)
                 GUILayout.Label($"Thank-you letter version: {rules.LetterTier} | Collected: {rules.Collected.Count}");
             if (rules.Paused) GUILayout.Label("Paused. Press P to resume.");

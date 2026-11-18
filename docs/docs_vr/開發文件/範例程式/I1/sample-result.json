@@ -9,19 +9,19 @@
     "token": "DEMO_LOCAL_ONLY_NOT_A_PUBLIC_TOKEN",
     "completed_at": "2027-01-31T04:00:00Z",
     "layout_id": "vr-prototype-1",
-    "asset_version": "prototype-1",
+    "asset_version": "prototype-2",
     "recipe_version": "stems-1",
     "san": 0,
     "capture_count": 5,
     "recycled": true,
     "variants": [
-      { "type_id": "A", "variant_id": "A1", "name": "示例 A1", "source_id": "source-A1", "source_label": "來源聲音 A1", "stem_id": "stem-A1", "image_id": "A1" },
-      { "type_id": "A", "variant_id": "A2", "name": "示例 A2", "source_id": "source-A2", "source_label": "來源聲音 A2", "stem_id": "stem-A2", "image_id": "A2" },
-      { "type_id": "B", "variant_id": "B1", "name": "示例 B1", "source_id": "source-B1", "source_label": "來源聲音 B1", "stem_id": "stem-B1", "image_id": "B1" },
-      { "type_id": "B", "variant_id": "B2", "name": "示例 B2", "source_id": "source-B2", "source_label": "來源聲音 B2", "stem_id": "stem-B2", "image_id": "B2" },
-      { "type_id": "C", "variant_id": "C1", "name": "示例 C1", "source_id": "source-C1", "source_label": "來源聲音 C1", "stem_id": "stem-C1", "image_id": "C1" }
+      { "type_id": "A", "variant_id": "A1", "name": "海天使 1", "source_id": "source-A1", "source_label": "鬧鐘", "stem_id": "stem-A1", "image_id": "A1" },
+      { "type_id": "A", "variant_id": "A2", "name": "海天使 2", "source_id": "source-A2", "source_label": "廣播壞掉", "stem_id": "stem-A2", "image_id": "A2" },
+      { "type_id": "B", "variant_id": "B1", "name": "海蛞蝓 1", "source_id": "source-B1", "source_label": "電視雜訊", "stem_id": "stem-B1", "image_id": "B1" },
+      { "type_id": "B", "variant_id": "B4", "name": "海蛞蝓 4", "source_id": "source-B4", "source_label": "冷氣", "stem_id": "stem-B4", "image_id": "B4" },
+      { "type_id": "C", "variant_id": "C1", "name": "魟魚", "source_id": "source-C1", "source_label": "下雨", "stem_id": "stem-C1", "image_id": "C1" }
     ],
-    "melody": { "bpm": 100, "beats_per_bar": 4, "bars": 4, "stem_ids": ["stem-A1", "stem-A2", "stem-B1", "stem-B2", "stem-C1"] },
+    "melody": { "bpm": 100, "beats_per_bar": 4, "bars": 4, "stem_ids": ["stem-A1", "stem-A2", "stem-B1", "stem-B4", "stem-C1"] },
     "repair_id": "repair-demo"
   }
 }

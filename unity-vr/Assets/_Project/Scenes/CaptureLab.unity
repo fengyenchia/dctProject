@@ -286,9 +286,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   groupPrefab: {fileID: 0}
   variantPrefabs: []
   spawnPoints: []
+  spawnVariantCodes: []
   createLabGeometry: 1
   stationAnchor: {fileID: 0}
   stationZone: {fileID: 0}

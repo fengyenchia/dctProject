@@ -24,10 +24,17 @@ namespace AudioBugs.Tutorial
     public sealed class GameRules
     {
         public const int CaptureLimit = 5;
-        public const int ConcurrentGroupLimit = 2;
+        public const int ConcurrentGroupLimit = 3;
         public const int DefaultSpawnPointCount = 8;
         public const float RainStartsAt = 60f;
-        private const int VariantsPerType = 3;
+        public const float RainEndsAt = 120f;
+        private static readonly string[] VariantCodes = { "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3", "B4" };
+        private static readonly int[] RegularVariants = { 0, 1, 2, 3, 4, 5, 9 };
+        private static readonly int[] RainVariants = { RainVariant };
+        public const int RainVariant = 6;
+        public const int VariantSlotCount = 10;
+        public static int CurrentVariantCount => RegularVariants.Length + RainVariants.Length;
+        private int[] pointVariants;
         private readonly Random random;
         private readonly HashSet<int> appeared = new HashSet<int>();
         private readonly HashSet<int> usedPoints = new HashSet<int>();
@@ -68,10 +75,18 @@ namespace AudioBugs.Tutorial
             return true;
         }
 
-        public bool CompleteTutorial(int? firstPoint = null, int pointCount = DefaultSpawnPointCount)
+        public static string VariantCode(int index) => VariantCodes[index];
+        public static int VariantIndex(string code) => Array.IndexOf(VariantCodes, code);
+        public static bool IsCurrentVariant(int index) => index == RainVariant || Array.IndexOf(RegularVariants, index) >= 0;
+
+        public bool CompleteTutorial(int? firstPoint = null, int pointCount = DefaultSpawnPointCount,
+            int[] configuredPointVariants = null)
         {
             if (Paused || Phase != GamePhase.Tutorial || pointCount < ConcurrentGroupLimit) return false;
+            if (configuredPointVariants != null && (configuredPointVariants.Length != pointCount
+                || configuredPointVariants.Any(index => !IsCurrentVariant(index)))) return false;
             spawnPointCount = pointCount;
+            pointVariants = configuredPointVariants;
             Phase = GamePhase.Active;
             SpawnOne(firstPoint);
             for (int i = 1; i < ConcurrentGroupLimit; i++) SpawnOne();
@@ -82,7 +97,8 @@ namespace AudioBugs.Tutorial
         // 只接受 I1 已落盤的完整成功成果；不從 UI 文字重建進行中的遊戲。
         public bool RestoreCompleted(int[] variants) {
             if (Phase != GamePhase.Ready || variants == null || GetLetterTier(variants.Length) == 0
-                || variants.Distinct().Count() != variants.Length || variants.Any(i => i < 0 || i >= 9)) return false;
+                || variants.Distinct().Count() != variants.Length
+                || variants.Any(i => i < 0 || i >= VariantSlotCount)) return false;
             collected.AddRange(variants); foreach (var variant in variants) appeared.Add(variant);
             LetterOpened = true;
             Phase = GamePhase.Ending; return true;
@@ -102,20 +118,26 @@ namespace AudioBugs.Tutorial
         public string Tick(float delta, string aimedId)
         {
             if (Paused || Phase != GamePhase.Active || delta <= 0f) return null;
-            bool startsRaining = !IsRaining && ExplorationSeconds + delta >= RainStartsAt;
+            float nextTime = ExplorationSeconds + delta;
+            bool startsRaining = ExplorationSeconds < RainStartsAt && nextTime >= RainStartsAt;
+            bool endsRaining = ExplorationSeconds < RainEndsAt && nextTime >= RainEndsAt;
             float validDelta = delta;
-            if (!IsRaining) validDelta = Math.Min(delta, RainStartsAt - ExplorationSeconds);
-            string captured = AdvanceCapture(validDelta, aimedId, replenish: !startsRaining);
-            ExplorationSeconds += delta;
-            if (startsRaining && Phase == GamePhase.Active) {
+            if (endsRaining && groups.Any(group => group.Id == aimedId && group.Variant == RainVariant))
+                validDelta = RainEndsAt - ExplorationSeconds;
+            string captured = AdvanceCapture(validDelta, aimedId);
+            ExplorationSeconds = nextTime;
+            if (startsRaining && !endsRaining && Phase == GamePhase.Active) {
                 IsRaining = true;
-                groups.Clear();
-                for (int i = 0; i < ConcurrentGroupLimit; i++) SpawnOne();
+                SpawnOne(rain: true);
+            }
+            if (endsRaining) {
+                IsRaining = false;
+                groups.RemoveAll(group => group.Variant == RainVariant);
             }
             return captured;
         }
 
-        private string AdvanceCapture(float delta, string aimedId, bool replenish)
+        private string AdvanceCapture(float delta, string aimedId)
         {
             if (delta <= 0f) return null;
             foreach (var group in groups)
@@ -128,21 +150,22 @@ namespace AudioBugs.Tutorial
             groups.Remove(target);
             collected.Add(target.Variant);
             if (San == 0) Phase = GamePhase.Return;
-            else if (replenish) SpawnOne();
+            else SpawnOne();
             return target.Id;
         }
 
-        private void SpawnOne(int? preferredPoint = null)
+        private void SpawnOne(int? preferredPoint = null, bool rain = false)
         {
-            if (Paused || Phase != GamePhase.Active || San <= 0 || groups.Count >= ConcurrentGroupLimit) return;
-            int start = IsRaining ? VariantsPerType * 2 : 0;
-            int count = IsRaining ? VariantsPerType : VariantsPerType * 2;
-            var variants = Enumerable.Range(start, count).Where(x => !appeared.Contains(x)).ToArray();
-            var points = Enumerable.Range(0, spawnPointCount).Where(x => !usedPoints.Contains(x)).ToArray();
+            if (Paused || Phase != GamePhase.Active || San <= 0) return;
+            if (!rain && groups.Count(group => group.Variant != RainVariant) >= ConcurrentGroupLimit) return;
+            var pool = rain ? RainVariants : RegularVariants;
+            var variants = pool.Where(x => !appeared.Contains(x)).ToArray();
+            var points = Enumerable.Range(0, spawnPointCount).Where(x => !usedPoints.Contains(x)
+                && (pointVariants == null || variants.Contains(pointVariants[x]))).ToArray();
             if (variants.Length == 0 || points.Length == 0) return;
-            int variant = variants[random.Next(variants.Length)];
             int point = preferredPoint.HasValue && points.Contains(preferredPoint.Value)
                 ? preferredPoint.Value : points[random.Next(points.Length)];
+            int variant = pointVariants == null ? variants[random.Next(variants.Length)] : pointVariants[point];
             groups.Add(new BugState {
                 Id = Guid.NewGuid().ToString("N"), Point = point,
                 Variant = variant
