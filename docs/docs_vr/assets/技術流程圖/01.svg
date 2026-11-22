@@ -101,18 +101,19 @@
 <text x="1260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Gateway</text>
 <rect x="1600" y="720" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="1760.0" y="750.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">工作人員螢幕 ×1</text>
-<text x="1760.0" y="780.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">管理／Unity 監看</text>
-<text x="1760.0" y="810.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">除錯與錯誤紀錄</text>
+<text x="1760.0" y="780.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Unity 監看／錯誤</text>
+<text x="1760.0" y="810.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">管理頁後續選配</text>
 <rect x="1100" y="980" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1260.0" y="1025.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SQLite 成果／列印工作</text>
 <text x="1260.0" y="1055.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端 outbox</text>
 <rect x="1600" y="980" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
-<text x="1760.0" y="1010.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel：成果頁／API</text>
-<text x="1760.0" y="1040.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Neon：PostgreSQL</text>
+<text x="1760.0" y="1010.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel：三頁網站／API</text>
+<text x="1760.0" y="1040.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Neon：已上傳成果</text>
 <text x="1760.0" y="1070.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">預製音軌／美術素材</text>
 <rect x="1600" y="1220" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
-<text x="1760.0" y="1265.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">離場手機成果頁</text>
-<text x="1760.0" y="1295.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">感謝信／摘要／旋律</text>
+<text x="1760.0" y="1250.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">home／results／about</text>
+<text x="1760.0" y="1280.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">QR 直達個人成果</text>
+<text x="1760.0" y="1310.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">卡片總覽看其他成果</text>
 <rect x="100" y="720" width="320" height="120" rx="15" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="260.0" y="765.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">本機 AEC 回音消除</text>
 <text x="260.0" y="795.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">抑制自身播放聲</text>
@@ -139,6 +140,6 @@
 <text x="1760.0" y="1570.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">SAN 100／空收藏</text>
 <text x="1760.0" y="1600.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">收集 1 群即可到站</text>
 <text x="65" y="60" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="34" fill="#24334b" text-anchor="start">01  Quest 3 VR／PC 系統資料串接</text>
-<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">正式執行：USB Link 傳畫面與追蹤，Gateway 傳管理與成果；無頭戴開發可用同規則的電腦模擬。</text>
+<text x="65" y="104" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="18" fill="#66758b" text-anchor="start">USB Link 傳畫面與追蹤；Gateway 保存與上傳成果，管理頁後續選配。一次一套設備、一位觀眾。</text>
 <text x="65" y="1808" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="17" fill="#758299" text-anchor="start">VR 技術資料／事件流程｜箭頭為資料與事件；參數與驗證見待確認清單</text>
 </svg>

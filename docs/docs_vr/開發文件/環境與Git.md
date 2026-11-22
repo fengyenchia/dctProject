@@ -97,8 +97,8 @@ git lfs install
 | [U3](工作包/U3.md) | `unity/ui-recycle` | 左手移動、右手捕捉、介面、回收與結尾。 |
 | I1 前置 | `shared/result-schema` | shared 的成果格式、素材對照與範例資料。 |
 | [I1](工作包/I1.md) | `gateway/save` | Gateway 連線、本機保存與 ACK。 |
-| [W1](工作包/W1.md) | `web/souvenir` | Next.js 成果頁與聲部播放。 |
-| [W1](工作包/W1.md) | `web/admin` | 工作人員管理頁與前導播放頁。 |
+| [W1](工作包/W1.md) | `web/souvenir` | home／results／about、卡片總覽與個人頁、聲部播放。 |
+| [W1](工作包/W1.md) | `web/admin` | 後續選配，先不做；管理頁與網頁前導播放。 |
 | [I2](工作包/I2.md) | `gateway/upload` | 雲端成果 API、outbox 與背景補傳；包含必要的 web API 修改。 |
 | [I2](工作包/I2.md) | `gateway/print` | 票面排版、QR 與列印。 |
 | [I2](工作包/I2.md) | `unity/session-reset` | 保存／結尾／交票後的下一場重置。 |

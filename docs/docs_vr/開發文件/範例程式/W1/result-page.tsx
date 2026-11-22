@@ -2,6 +2,9 @@ import { loadResult } from "@/lib/api/results/server";
 import { StemPlayer } from "@/components/features/StemPlayer";
 import ResultTools from "@/components/features/ResultTools";
 import ResultIcon from "@/components/features/ResultIcon";
+import Link from "next/link";
+
+export const dynamic = 'force-dynamic';
 
 export default async function ResultPage({
   params,
@@ -15,6 +18,7 @@ export default async function ResultPage({
       <main className="mx-auto max-w-xl p-6">
         <h1>成果尚未就緒或連結無效</h1>
         <p>請稍後重新整理。</p>
+        <Link href="/results">看看其他人的成果</Link>
       </main>
     );
   const urls = result.melody.stem_ids.map(
@@ -29,6 +33,7 @@ export default async function ResultPage({
   return (
     <main className="mx-auto max-w-xl space-y-6 p-6">
       <h1 className="text-2xl font-bold">聲音收藏紀錄</h1>
+      <p className="text-sm text-slate-500">版面示意；以下展示內容由團隊定稿後替換。</p>
       <p>{letter}</p>
       <ul className="grid grid-cols-2 gap-3">
         {result.variants.map((item) => (
@@ -41,6 +46,7 @@ export default async function ResultPage({
       </ul>
       <StemPlayer key={result.result_id} urls={urls} />
       <ResultTools />
+      <Link className="inline-block underline" href="/results">看看其他人的成果</Link>
       <p className="text-sm text-slate-500">
         本場共收藏 {count} 個變體，已完成城市修復。請保存此連結；服務保留期間依團隊公告。
       </p>

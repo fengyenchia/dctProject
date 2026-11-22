@@ -6,3 +6,4 @@ CREATE TABLE IF NOT EXISTS results (
   payload_hash text NOT NULL,
   created_at timestamptz NOT NULL DEFAULT now()
 );
+CREATE INDEX IF NOT EXISTS results_gallery_order ON results (created_at DESC, result_id DESC);

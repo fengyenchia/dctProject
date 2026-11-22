@@ -1,7 +1,7 @@
 import 'server-only';
 import { neon } from '@neondatabase/serverless';
 import { createHash } from 'node:crypto';
-import type { Result } from './types';
+import { GALLERY_PAGE_SIZE, toResultCard, type Result, type ResultGallery } from './types';
 export function isResult(value: unknown, token?: string): value is Result {
   if (!value || typeof value !== 'object') return false;
   const p = value as Result & Record<string, unknown>;
@@ -40,4 +40,14 @@ export async function saveCloudResult(session: string, payload: Result): Promise
 export async function readCloudResult(token: string): Promise<Result | null> {
   const rows = await sql()`SELECT payload FROM results WHERE token=${token} LIMIT 1`;
   return isResult(rows[0]?.payload, token) ? rows[0].payload : null;
+}
+
+export async function readCloudGallery(page: number): Promise<ResultGallery> {
+  const offset = (page - 1) * GALLERY_PAGE_SIZE;
+  const rows = await sql()`SELECT payload FROM results
+    ORDER BY created_at DESC, result_id DESC LIMIT ${GALLERY_PAGE_SIZE + 1} OFFSET ${offset}`;
+  return {
+    items: rows.slice(0, GALLERY_PAGE_SIZE).flatMap(row => isResult(row.payload) ? [toResultCard(row.payload)] : []),
+    page, hasMore: rows.length > GALLERY_PAGE_SIZE, source: 'cloud',
+  };
 }
