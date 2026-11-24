@@ -1,5 +1,4 @@
 import { loadResult } from "@/lib/api/results/server";
-import { StemPlayer } from "@/components/result/StemPlayer";
 import ResultIcon from "@/components/common/ResultIcon";
 import Link from "next/link";
 
@@ -21,10 +20,6 @@ export default async function ResultPage({
         <Link className="text-link" href="/results">看看其他人的成果</Link>
       </main>
     );
-  const urls = result.melody.stem_ids.map(
-    (id) =>
-      `/assets/${encodeURIComponent(result.asset_version)}/stems/${encodeURIComponent(id)}.wav`,
-  );
   const count = result.variants.length;
   // 暫用文案，正式版與 VR 內三個版本共用企劃交付的內容。
   const letter = count === 1 ? "你帶回了第一份聲音。謝謝你為城市修復出力。"
@@ -32,6 +27,7 @@ export default async function ResultPage({
     : "這些聲音讓更多街角得以修復。謝謝你一路探索。";
   return (
     <main className="page-shell page-shell-narrow">
+      <h1 className="title">{result.result_id} 的成果</h1>
       <p className="page-description">{letter}</p>
       <ul className="grid grid-cols-2 gap-3">
         {result.variants.map((item) => (
@@ -42,7 +38,6 @@ export default async function ResultPage({
           </li>
         ))}
       </ul>
-      <StemPlayer key={result.result_id} urls={urls} />
       <p className="page-note">
         本場共收藏 {count} 個變體，已完成城市修復。請保存此連結；服務保留期間依團隊公告。
       </p>

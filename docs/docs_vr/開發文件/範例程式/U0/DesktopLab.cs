@@ -70,7 +70,7 @@ namespace AudioBugs.Tutorial
         internal Behaviour EndingPresenter { get; set; }
         private Vector3 StationPosition => stationAnchor == null ? station : stationAnchor.position;
         private Vector3 ExitPosition => exitAnchor == null
-            ? new Vector3(station.x + 2f, 0f, station.z) : exitAnchor.position;
+            ? Vector3.zero : exitAnchor.position;
 
         private void Start()
         {
@@ -209,7 +209,7 @@ namespace AudioBugs.Tutorial
             }
             if (rules.Phase == GamePhase.ExitRoute) {
                 var offset = Head.position - ExitPosition;
-                if (rules.ArriveAtExit(new Vector2(offset.x, offset.z).magnitude <= .75f)) {
+                if (rules.TickExitRoute(Time.deltaTime, new Vector2(offset.x, offset.z).magnitude <= .75f)) {
                     ReleaseDesktopCursor();
                     if (!useExternalPose && EndingPresenter == null) CompleteEndingVideo();
                 }
@@ -543,9 +543,12 @@ namespace AudioBugs.Tutorial
             if (rules.CanRecycle && !rules.StationVisited)
                 GUILayout.Label("Reach the far end of the street and aim the tip at the station.");
             if (rules.Phase == GamePhase.ExitRoute)
+            {
                 GUILayout.Label(exitMarker != null && exitAnchor == null
-                    ? "Find the cyan disk on the ground to the right of the station."
-                    : "Go to the ending marker near the recycling station.");
+                    ? "Return to the cyan disk at the starting point."
+                    : "Return to the ending marker at the starting point.");
+                GUILayout.Label($"Return within: {Mathf.CeilToInt(GameRules.ExitRouteSecondsLimit - rules.ExitRouteSeconds)}s");
+            }
             if (rules.Phase == GamePhase.ThankYou && !rules.LetterOpened && EndingPresenter == null)
                 GUILayout.Label("You reached the ending.");
             if (rules.Phase == GamePhase.ThankYou && rules.LetterOpened)

@@ -4,6 +4,7 @@
 
 - [RepairSequence.cs](RepairSequence.cs)　回收時依實收量播放粒子，可接正式建物動畫。
 - [CaptureModelPreview.cs](CaptureModelPreview.cs)　成功捕捉後在捕捉器 Raw Image 顯示精細版模型。
+- [ReturnToStartGuide.cs](ReturnToStartGuide.cs)　修復完成播放一次返回起點語音，暫停及新場重置。
 - [EndingSequence.cs](EndingSequence.cs)　結尾定點淡黑、播放美術開信動畫、三版正文與完成事件。
 - [DemoVideoSequence.cs](DemoVideoSequence.cs)　有正式開場與操作示範素材時使用。
 

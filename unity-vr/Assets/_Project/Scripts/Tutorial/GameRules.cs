@@ -28,6 +28,7 @@ namespace AudioBugs.Tutorial
         public const int DefaultSpawnPointCount = 8;
         public const float RainStartsAt = 60f;
         public const float RainEndsAt = 120f;
+        public const float ExitRouteSecondsLimit = 90f;
         private static readonly string[] VariantCodes = { "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3", "B4" };
         private static readonly int[] RegularVariants = { 0, 1, 2, 3, 4, 5, 9 };
         private static readonly int[] RainVariants = { RainVariant };
@@ -49,6 +50,7 @@ namespace AudioBugs.Tutorial
         public bool CanRecycle => collected.Count > 0 && (Phase == GamePhase.Active || Phase == GamePhase.Return);
         public bool LetterOpened { get; private set; }
         public float ExplorationSeconds { get; private set; }
+        public float ExitRouteSeconds { get; private set; }
         public bool IsRaining { get; private set; }
         public int LetterTier => GetLetterTier(collected.Count);
         public int San => Math.Max(0, 100 - collected.Count * 20);
@@ -198,7 +200,20 @@ namespace AudioBugs.Tutorial
         public bool CompleteRepair()
         {
             if (Paused || Phase != GamePhase.Recycling) return false;
+            ExitRouteSeconds = 0f;
             Phase = GamePhase.ExitRoute;
+            return true;
+        }
+
+        public bool TickExitRoute(float delta, bool insideExit)
+        {
+            if (Paused || Phase != GamePhase.ExitRoute || delta < 0f
+                || float.IsNaN(delta) || float.IsInfinity(delta)) return false;
+            if (insideExit) return ArriveAtExit(true);
+            ExitRouteSeconds = Math.Min(ExitRouteSecondsLimit, ExitRouteSeconds + delta);
+            if (ExitRouteSeconds < ExitRouteSecondsLimit) return false;
+            // 已回收並看完修復；逛滿上限時原地淡黑，不搬動角色或重新結算。
+            Phase = GamePhase.EndingVideo;
             return true;
         }
 

@@ -115,8 +115,9 @@
 <polygon points="1260.0,1488 1430,1560.0 1260.0,1632 1090,1560.0" fill="#e8f1fd" stroke="#7099c9" stroke-width="2"/>
 <text x="1260.0" y="1560.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">雲端上傳成功？</text>
 <rect x="1600" y="1500" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
-<text x="1760.0" y="1545.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Neon：成果／聲部配方</text>
-<text x="1760.0" y="1575.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel：三頁網站／音軌</text>
+<text x="1760.0" y="1530.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Neon：收藏成果</text>
+<text x="1760.0" y="1560.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Vercel：圖鑑／感謝信</text>
+<text x="1760.0" y="1590.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">個人頁無聲音</text>
 <rect x="1100" y="1760" width="320" height="120" rx="15" fill="#fdeceb" stroke="#c58b86" stroke-width="2"/>
 <text x="1260.0" y="1805.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保留電腦 outbox</text>
 <text x="1260.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">復線後重試</text>
@@ -125,7 +126,7 @@
 <text x="760.0" y="1835.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">直達本場個人成果頁</text>
 <rect x="1600" y="1760" width="320" height="120" rx="15" fill="#eee7fb" stroke="#9a7ac7" stroke-width="2"/>
 <text x="1760.0" y="1790.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">個人頁 ⇄ 卡片總覽</text>
-<text x="1760.0" y="1820.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">展示內容另定</text>
+<text x="1760.0" y="1820.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">圖鑑與感謝信，無聲音</text>
 <text x="1760.0" y="1850.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">未就緒則提示重試</text>
 <rect x="1600" y="2440" width="320" height="120" rx="15" fill="#e7f4e9" stroke="#69a977" stroke-width="2"/>
 <text x="1760.0" y="2485.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">保存＋結尾＋交票完成</text>

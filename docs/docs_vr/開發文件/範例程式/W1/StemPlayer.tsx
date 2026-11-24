@@ -1,3 +1,4 @@
+// 歷史聲部播放器；11/24 版本的成果頁不使用。
 'use client';
 
 import { useEffect, useRef, useState } from 'react';

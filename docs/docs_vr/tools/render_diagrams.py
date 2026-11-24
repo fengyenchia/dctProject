@@ -110,7 +110,7 @@ if __name__=="__main__":
     specs=json.loads((ROOT/"assets"/"技術流程圖"/"diagram_data.json").read_text(encoding="utf-8"))
     for spec in specs:print(spec["id"],render(spec))
     version=specs[0]["version"]
-    parts=[f"# 音虫 {MODE}｜技術資料與事件流程圖\n\n日期：2026-11-22｜版本：{version}\n\n",
+    parts=[f"# 音虫 {MODE}｜技術資料與事件流程圖\n\n日期：2026-11-24｜版本：{version}\n\n",
         "- 依[技術架構](技術架構.md)與[開發規格](開發規格.md)繪製：技術資料／事件流程，非觀眾任務圖。\n- 從各圖左上起點沿箭頭讀，順序為 **01 → 02 → 03 → 04 → 05**。\n\n",
         notes_markdown([["箭頭", "實線：資料／事件；虛線：重試／持續觀測；雙向：來回通訊。"], ["Unity／Gateway", "Unity：唯一遊戲狀態；Gateway：電腦上的本機串接服務。"], ["群落／SAN", "群落為一隻或一群，整群算一次捕捉；SAN 為遊戲精神值。"], ["outbox／token", "outbox：待上傳佇列；token：唯讀成果網址代碼。"]]),
         notes_markdown(specs[0]["intro"]),

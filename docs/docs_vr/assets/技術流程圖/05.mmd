@@ -11,10 +11,10 @@ flowchart TD
   handoff["完成結尾／取下頭戴／準備收藏票交付"]
   upload["Gateway 背景 HTTPS 上傳／同 result_id 重試"]
   cloudOk{"雲端上傳成功？"}
-  cloud["Neon：成果／聲部配方／Vercel：三頁網站／音軌"]
+  cloud["Neon：收藏成果／Vercel：圖鑑／感謝信／個人頁無聲音"]
   queue["保留電腦 outbox／復線後重試"]
   phone["掃紙票 QR／離場重開／直達本場個人成果頁"]
-  web["個人頁 ⇄ 卡片總覽／展示內容另定／未就緒則提示重試"]
+  web["個人頁 ⇄ 卡片總覽／圖鑑與感謝信，無聲音／未就緒則提示重試"]
   reset["保存＋結尾＋交票完成／重置遊戲，保留成果"]
   ticketImage["Gateway 保存收藏票票面／本場變體組合圖＋清單／同一成果 QR"]
   ticketUsb["Windows 列印佇列 → USB／感熱印表機送紙／裁切"]

@@ -32,7 +32,7 @@ namespace AudioBugs.Tutorial
             if (!ReferenceEquals(displayedRules, rules)) { displayedRules = rules; collectionOpen = false; ClearHover(); }
             var target = lab.CurrentTarget;
             statusText.text = $"SAN {rules.San}\n"
-                + (target == null ? "TARGET --" : $"TARGET {Code(target.Variant)}  {target.Progress:P0}");
+                + (target == null ? "TARGET --" : $"TARGET {Name(target.Variant)} {Code(target.Variant)}  {target.Progress:P0}");
             if (enableCollectionPreview && collectionText != null) UpdateCollection(rules);
             bool recycle = rules.CanRecycle && rules.StationVisited;
             bool showCollection = enableCollectionPreview && collectionPage != null && collectionOpen && !recycle;
@@ -58,6 +58,7 @@ namespace AudioBugs.Tutorial
         }
 
         private static string Code(int variant) => GameRules.VariantCode(variant);
+        private string Name(int variant) => catalog != null ? catalog.Name(variant) : VariantCatalog.DefaultName(variant);
         public void ShowMain() { collectionOpen = false; }
         public void ShowCollection() { if (enableCollectionPreview) collectionOpen = true; }
         public void ConfirmRecycle() { lab.ConfirmRecycle(); }

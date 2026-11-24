@@ -60,7 +60,7 @@ export async function renderTicket(payload: TicketResult, dataDir: string, resul
     <path d="M24 132H552 M24 490H552 M24 950H552" stroke="black" stroke-width="2" stroke-dasharray="8 7"/>
     ${icons}<text x="288" y="530" text-anchor="middle" font-size="26">聲音清單</text>${list}
     <image x="128" y="975" width="320" height="320" href="${qr}"/>
-    <text x="288" y="1325" text-anchor="middle" font-size="22">掃碼聆聽本場旋律</text>
+    <text x="288" y="1325" text-anchor="middle" font-size="22">掃碼查看本場成果</text>
     <text x="288" y="1362" text-anchor="middle" font-size="16">${placeholder ? 'PROTOTYPE ART／測試圖樣' : '聲音收藏票'}</text>
   </g></svg>`;
   const files = { png: join(folder, 'ticket.png'), svg: join(folder, 'ticket.svg'), qrUrl: url.href, layout: 'ticket-v1' };

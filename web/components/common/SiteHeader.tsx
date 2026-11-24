@@ -12,6 +12,7 @@ const navigation = [
   { href: "/", label: "Home" },
   { href: "/results", label: "Results" },
   { href: "/about", label: "About" },
+  { href: "/process", label: "Process" },
   { href: "/display", label: "Display" },
 ];
 
