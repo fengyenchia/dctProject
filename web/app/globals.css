@@ -1,26 +1,272 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #1d1d1d;
+  --foreground: #ffffff;
+  /* 主色：藍 */
+  --primary: #44a0f5;
+  --primary-dark: #0d3b65;
+  --primary-light: #b5dbff;
+
+  /* 主色：灰藍 */
+  --primary2: #425158;
+  --primary2-dark: #252d31;
+  --primary2-light: #88a4b1;
+
+  /* 輔色：紫 */
+  --secondary: #9c8adf;
+  --secondary-dark: #281763;
+  --secondary-light: #ebe6ff;
+
+  /* 輔色：灰紫 */
+  --secondary2: #6c6572;
+  --secondary2-dark: #27212a;
+  --secondary2-light: #afa5b8;
+
+  /* 輔色：粉 */
+  --tertiary: #ffc9d6;
+  --tertiary-dark: #b3284a;
+  --tertiary-light: #fff4f7;
+
+  /* 輔色：灰粉 */
+  --tertiary2: #775b5e;
+  --tertiary2-dark: #2d2122;
+  --tertiary2-light: #c19ca0;
+
+  --page-width: 72rem;
+  --content-width: 44rem;
+  --page-gutter: clamp(1.25rem, 4vw, 3rem);
+  --header-height: 4.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary2: var(--primary2);
+  --color-primary2-dark: var(--primary2-dark);
+  --color-primary2-light: var(--primary2-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary2: var(--secondary2);
+  --color-secondary2-dark: var(--secondary2-dark);
+  --color-secondary2-light: var(--secondary2-light);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-dark: var(--tertiary-dark);
+  --color-tertiary-light: var(--tertiary-light);
+  --color-tertiary2: var(--tertiary2);
+  --color-tertiary2-dark: var(--tertiary2-dark);
+  --color-tertiary2-light: var(--tertiary2-light);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 95% 5%,
+      color-mix(in srgb, var(--primary) 18%, transparent),
+      transparent 85%
+    ),
+    radial-gradient(
+      ellipse 75% 75% at 5% 95%,
+      color-mix(in srgb, var(--secondary) 16%, transparent),
+      transparent 85%
+    ),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100svh;
+  padding-top: var(--header-height);
+  font-family: var(--font-sans);
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 5px;
+}
+
+@layer components {
+  /* 共用導覽：左右等寬，讓文字相對整頁置中 */
+  .site-header {
+    @apply fixed inset-x-0 top-0 z-50 text-foreground backdrop-blur-md;
+  }
+
+  .site-header-inner {
+    @apply grid items-center gap-y-2;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    min-height: var(--header-height);
+    padding-inline: var(--page-gutter);
+  }
+
+  .site-brand {
+    @apply justify-self-start whitespace-nowrap text-foreground;
+  }
+
+  .brand-wordmark {
+    @apply text-2xl font-bold tracking-widest;
+  }
+
+  .site-nav {
+    @apply flex items-center justify-center gap-3 sm:gap-8;
+  }
+
+  .nav-link {
+    @apply relative inline-flex min-h-11 items-center px-1 py-3 text-sm font-medium tracking-wide text-foreground/65 transition-colors hover:text-foreground;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply text-foreground;
+  }
+
+  .nav-indicator {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-0.5 bg-foreground;
+  }
+
+  .site-mobile-toggle {
+    @apply h-11 w-11 cursor-pointer justify-self-end rounded-lg;
+  }
+
+  .sheet-overlay {
+    @apply fixed inset-0 z-50 bg-background/65;
+  }
+
+  .sheet-content {
+    @apply fixed inset-y-0 right-0 z-50 w-1/2 overflow-y-auto bg-background text-foreground outline-none;
+    padding: calc(var(--header-height) + 1.5rem) 1rem 1.5rem;
+  }
+
+  .sheet-close {
+    @apply absolute h-11 w-11 cursor-pointer rounded-lg;
+    top: calc((var(--header-height) - 2.75rem) / 2);
+    right: var(--page-gutter);
+  }
+
+  .mobile-sheet-nav {
+    @apply flex flex-col gap-2;
+  }
+
+  .mobile-sheet-link {
+    @apply flex min-h-11 items-center rounded-lg px-3 py-4 text-base text-foreground/65 transition-colors hover:bg-foreground/5 hover:text-foreground;
+  }
+
+  .mobile-sheet-link[aria-current="page"] {
+    @apply bg-foreground/5 text-foreground;
+  }
+
+  /* 共用版面 */
+  .page-shell {
+    @apply mx-auto w-full space-y-6;
+    max-width: var(--page-width);
+    padding: 1.5rem var(--page-gutter);
+  }
+
+  .page-shell-narrow {
+    max-width: var(--content-width);
+  }
+
+  /* 文字 */
+  .title {
+    @apply text-3xl font-semibold tracking-tight text-foreground sm:text-4xl;
+  }
+  .subtitle {
+    @apply text-xl font-semibold text-foreground;
+  }
+  .text {
+    @apply text-base leading-relaxed text-foreground;
+  }
+
+  .page-description {
+    @apply leading-relaxed text-foreground/75;
+  }
+
+  .page-note {
+    @apply text-sm leading-relaxed text-foreground/60;
+  }
+
+  .content-panel {
+    @apply space-y-3 rounded-xl border border-foreground/20 bg-background p-6 text-foreground;
+  }
+
+  .hero-placeholder {
+    @apply flex min-h-120 items-center justify-center border-y border-foreground/20 px-6 text-center text-foreground;
+  }
+
+  /* 卡片 */
+  .result-grid {
+    @apply grid gap-5 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .result-card {
+    @apply block h-full space-y-4 rounded-xl border border-foreground/20 bg-background p-5 text-foreground transition-colors hover:border-foreground/60 hover:bg-foreground/5;
+  }
+
+  .result-cover {
+    @apply aspect-square w-full overflow-hidden rounded-lg bg-foreground/5;
+  }
+
+  .result-cover-image {
+    @apply h-full w-full object-contain p-4;
+  }
+
+  .result-cover-placeholder {
+    @apply flex h-full w-full items-center justify-center text-foreground/35;
+  }
+
+  .result-number {
+    @apply break-all font-mono text-sm tracking-wide text-foreground;
+  }
+
+  .result-icon-placeholder {
+    @apply flex min-h-28 items-center justify-center rounded-lg border border-dashed border-foreground/25 bg-foreground/5 p-5 text-center text-sm text-foreground/65;
+  }
+
+  .result-icon {
+    @apply mx-auto h-28 w-28 object-contain;
+  }
+
+  /* 按鈕與連結 */
+  .btn-primary {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center rounded-lg border border-foreground bg-foreground px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/85 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center rounded-lg border border-foreground/35 bg-background px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-foreground hover:bg-foreground/5 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .text-link {
+    @apply inline-block text-foreground underline underline-offset-4 transition-colors hover:text-foreground/70;
+  }
+
+  .button-group {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
+  .pagination {
+    @apply flex items-center justify-center gap-6 pt-4 text-sm text-foreground/75;
+  }
+
+  .video-frame {
+    @apply flex min-h-screen items-center justify-center bg-background;
+  }
+
+  .video-content {
+    @apply max-h-screen w-full;
+  }
+}
+
+@media (width < 64rem) {
+  .site-header-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1rem;
+  }
+
+  .brand-wordmark {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
 }

@@ -1,0 +1,61 @@
+{
+  "teamName": "THE UNHEARD",
+  "members": [
+    {
+      "id": "member-01",
+      "name": "周湧秝",
+      "avatar": "",
+      "role": "技術",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    },
+    {
+      "id": "member-02",
+      "name": "馮妍嘉",
+      "avatar": "",
+      "role": "技術",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    },
+    {
+      "id": "member-03",
+      "name": "陳昱銓",
+      "avatar": "",
+      "role": "技術",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    },
+    {
+      "id": "member-04",
+      "name": "黃郁涵",
+      "avatar": "",
+      "role": "PM",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    },
+    {
+      "id": "member-05",
+      "name": "于子淯",
+      "avatar": "",
+      "role": "美術",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    },
+    {
+      "id": "member-06",
+      "name": "陳芃安",
+      "avatar": "",
+      "role": "美術",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    },
+    {
+      "id": "member-07",
+      "name": "徐祺惠",
+      "avatar": "",
+      "role": "美術",
+      "hashtags": ["tag1", "tag2", "tag3"],
+      "responsibilities": ["xxxxx"]
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
+import { loadAudioBuffer } from '@/lib/api/audio';
 
 export function StemPlayer({ urls }: { urls: string[] }) {
   const context = useRef<AudioContext | null>(null);
@@ -31,9 +34,8 @@ export function StemPlayer({ urls }: { urls: string[] }) {
       setState('loading'); setMessage('');
       const controller = new AbortController(); abort.current = controller;
       const buffers = await Promise.all(urls.map(async url => {
-        const response = await fetch(url, { signal: controller.signal });
-        if (!response.ok) throw new Error('缺少聲部素材');
-        return ctx.decodeAudioData(await response.arrayBuffer());
+        const data = await loadAudioBuffer(url, controller.signal);
+        return ctx.decodeAudioData(data);
       }));
       if (controller.signal.aborted) return;
       if (!buffers.length || buffers.some(b => Math.abs(b.duration - buffers[0].duration) > .02)) throw new Error('聲部長度不一致');
@@ -53,9 +55,10 @@ export function StemPlayer({ urls }: { urls: string[] }) {
   }
 
   return <section className="space-y-2">
-    <button className="rounded bg-slate-800 px-5 py-3 text-white disabled:opacity-50" disabled={state === 'loading'} onClick={() => void toggle()}>
+    <Button disabled={state === 'loading'} onClick={() => void toggle()}>
+      {state === 'playing' ? <IconPlayerPause aria-hidden="true" /> : <IconPlayerPlay aria-hidden="true" />}
       {state === 'loading' ? '載入中' : state === 'playing' ? '暫停旋律' : '播放旋律'}
-    </button>
-    {message && <p role="alert">{message}，請確認音檔後重試。</p>}
+    </Button>
+    {message && <p className="page-note" role="alert">{message}，請確認音檔後重試。</p>}
   </section>;
 }

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import AdminPanel from '@/components/features/AdminPanel';
+import AdminPanel from '@/components/admin/AdminPanel';
 export const dynamic = 'force-dynamic';
 export default function AdminPage() {
   if (process.env.ENABLE_LOCAL_ADMIN !== '1') notFound();
