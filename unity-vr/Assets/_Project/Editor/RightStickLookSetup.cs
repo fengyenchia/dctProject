@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using Object = UnityEngine.Object;
 
 namespace AudioBugs.Editor
@@ -38,6 +39,7 @@ namespace AudioBugs.Editor
             rightMove.intValue = 0; // XRInputValueReader.InputSourceMode.Unused
             move.ApplyModifiedPropertiesWithoutUndo();
             PrefabUtility.RecordPrefabInstancePropertyModifications(lab.xrMoveProvider);
+            ConfigureRightController(origin);
             var look = origin.GetComponent<RightStickLook>() ?? origin.gameObject.AddComponent<RightStickLook>();
             look.lab = lab;
             look.xrOrigin = origin;
@@ -53,6 +55,7 @@ namespace AudioBugs.Editor
             EditorSceneManager.MarkSceneDirty(lab.gameObject.scene);
             Require(EditorSceneManager.SaveScene(lab.gameObject.scene), "CaptureLab could not be saved.");
             AssetDatabase.SaveAssets();
+            ValidateInputBindings();
             ValidateRuntimeMathAndGates();
             ValidateCaptureWiring();
             Debug.Log("RIGHT_STICK_LOOK_VALIDATED: CaptureLab wiring, yaw, pitch, pivot, bounds, pause, tracking, UI, neutral rearm and reset.");
@@ -71,14 +74,85 @@ namespace AudioBugs.Editor
             var look = Object.FindFirstObjectByType<RightStickLook>();
             Require(look != null && look.lab != null && look.xrOrigin != null && look.lookAction != null && look.resetAction != null,
                 "Right-stick scene references must all be assigned.");
-            Require(look.lookAction.action.bindings.Any(binding => binding.path == "<XRController>{RightHand}/primary2DAxis"),
+            Require(look.lookAction.action.bindings.Any(binding => binding.path == "<XRController>{RightHand}/{Primary2DAxis}"),
                 "Look must use the right controller's complete Vector2 stick input.");
-            Require(look.resetAction.action.bindings.Any(binding => binding.path == "<XRController>{RightHand}/primary2DAxisClick"),
+            Require(look.resetAction.action.bindings.Any(binding => binding.path == "<XRController>{RightHand}/{Primary2DAxisClick}"),
                 "Reset must use the right stick click.");
             Require(look.xrOrigin.transform.Find("Locomotion/Turn")?.gameObject.activeSelf == false, "Built-in Turn must remain disabled.");
             var move = new SerializedObject(look.lab.xrMoveProvider);
             Require(move.FindProperty("m_RightHandMoveInput.m_InputSourceMode").intValue == 0,
                 "Right stick cannot simultaneously move and turn.");
+            var rightManager = RightControllerManager(look.xrOrigin);
+            var rightSettings = new SerializedObject(rightManager);
+            foreach (var name in LegacyRightActions) Require(rightSettings.FindProperty(name).objectReferenceValue == null,
+                "Legacy right-stick action must not compete with look input: " + name);
+        }
+
+        private static readonly string[] LegacyRightActions = {
+            "m_TeleportMode", "m_TeleportModeCancel", "m_Turn", "m_SnapTurn", "m_Move", "m_UIScroll", "m_TeleportInteractor"
+        };
+
+        private static MonoBehaviour RightControllerManager(XROrigin origin)
+        {
+            var manager = origin.GetComponentsInChildren<MonoBehaviour>(true).SingleOrDefault(item =>
+                item != null && item.GetType().Name == "ControllerInputActionManager" && item.gameObject.name == "Right Controller");
+            Require(manager != null, "Right Controller Input Action Manager was not found.");
+            return manager;
+        }
+
+        private static void ConfigureRightController(XROrigin origin)
+        {
+            var manager = RightControllerManager(origin);
+            var settings = new SerializedObject(manager);
+            if (settings.FindProperty("m_TeleportInteractor").objectReferenceValue is Component ray) {
+                ray.gameObject.SetActive(false);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(ray.gameObject);
+            }
+            foreach (var name in LegacyRightActions) settings.FindProperty(name).objectReferenceValue = null;
+            settings.FindProperty("m_UIScrollingEnabled").boolValue = false;
+            settings.FindProperty("m_NearFarEnableTeleportDuringNearInteraction").boolValue = false;
+            settings.ApplyModifiedPropertiesWithoutUndo();
+            PrefabUtility.RecordPrefabInstancePropertyModifications(manager);
+        }
+
+        public static void ValidateInputBindings()
+        {
+            const string layout = "AudioBugsValidationTouch";
+            const string editModeInput = "RUN_PLAYER_UPDATES_IN_EDIT_MODE";
+            InputDevice device = null;
+            var asset = Object.Instantiate(AssetDatabase.LoadAssetAtPath<InputActionAsset>(InputPath));
+            var originalSettings = InputSystem.settings;
+            bool playerUpdatesWereEnabled = (bool)typeof(InputSettings)
+                .GetMethod("IsFeatureEnabled", BindingFlags.Instance | BindingFlags.NonPublic)
+                .Invoke(originalSettings, new object[] { editModeInput });
+            try {
+                // This feature flag is nonserialized; restore its prior effective value in finally.
+                originalSettings.SetInternalFeatureFlag(editModeInput, true);
+                // Test the standard XR usages without requiring a live OpenXR session/native device layout.
+                // These usages match the installed OculusTouchControllerProfile controls.
+                InputSystem.RegisterLayout("{\"name\":\"" + layout + "\",\"extend\":\"XRController\",\"controls\":[" +
+                    "{\"name\":\"thumbstick\",\"layout\":\"Stick\",\"usages\":[\"Primary2DAxis\"]}," +
+                    "{\"name\":\"thumbstickClicked\",\"layout\":\"Button\",\"usages\":[\"Primary2DAxisClick\"]}]}");
+                device = InputSystem.AddDevice(layout);
+                InputSystem.SetDeviceUsage(device, UnityEngine.InputSystem.CommonUsages.RightHand);
+                asset.devices = new[] { device };
+                asset.Enable();
+                using (UnityEngine.InputSystem.LowLevel.StateEvent.From(device, out var inputEvent)) {
+                    ((Vector2Control)device["thumbstick"]).WriteValueIntoEvent(new Vector2(.8f, .6f), inputEvent);
+                    ((ButtonControl)device["thumbstickClicked"]).WriteValueIntoEvent(1f, inputEvent);
+                    InputSystem.QueueEvent(inputEvent);
+                }
+                // EditMode defaults to Editor updates, which do not drive player actions.
+                InputSystem.Update();
+                var vector = asset.FindAction("View/Look", true).ReadValue<Vector2>();
+                Require(vector.x > .2f && vector.y > .2f, "XR Primary2DAxis usage must resolve both look axes.");
+                Require(asset.FindAction("View/ResetPitch", true).IsPressed(), "XR Primary2DAxisClick usage must resolve ResetPitch.");
+            } finally {
+                asset.Disable(); Object.DestroyImmediate(asset);
+                if (device != null) InputSystem.RemoveDevice(device);
+                InputSystem.RemoveLayout(layout);
+                originalSettings.SetInternalFeatureFlag(editModeInput, playerUpdatesWereEnabled);
+            }
         }
 
         public static void ValidateRuntimeMathAndGates()

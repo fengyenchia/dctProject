@@ -28,7 +28,7 @@
         {
           "name": "",
           "id": "61c3666e-0ae8-4323-a015-759645d233f2",
-          "path": "<XRController>{RightHand}/primary2DAxis",
+          "path": "<XRController>{RightHand}/{Primary2DAxis}",
           "interactions": "",
           "processors": "",
           "groups": "",
@@ -39,7 +39,7 @@
         {
           "name": "",
           "id": "516d8714-f300-4037-b0b1-b2c9fb5ed77d",
-          "path": "<XRController>{RightHand}/primary2DAxisClick",
+          "path": "<XRController>{RightHand}/{Primary2DAxisClick}",
           "interactions": "",
           "processors": "",
           "groups": "",
