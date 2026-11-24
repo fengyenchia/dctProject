@@ -8,7 +8,10 @@ using UnityEngine.Events;
 
 namespace AudioBugs.Tutorial
 {
+    public interface IXrTrackingPoseCompensator { void RefreshTrackingPose(); }
+
     // 桌面教學入口；OnGUI、V 鍵及樣本音色不作為正式觀眾介面。
+    [DefaultExecutionOrder(-300)]
     public sealed class DesktopLab : MonoBehaviour
     {
         private const int LabRoomPoint = 2;
@@ -25,6 +28,7 @@ namespace AudioBugs.Tutorial
         public Transform exitAnchor;
         public Transform trackingOrigin;
         public Behaviour xrMoveProvider;
+        public Behaviour xrLookProvider;
         public GameObject rainEffects;
         public UnityEvent onRainStarted = new UnityEvent();
         public bool showDeveloperPanel = true;
@@ -41,6 +45,7 @@ namespace AudioBugs.Tutorial
         public VariantCatalog catalog;
         public UnityEvent onCalibrationRequested = new UnityEvent();
         public UnityEvent onResetRequested = new UnityEvent();
+        public UnityEvent onSessionReset = new UnityEvent();
         public bool ticketHandoffReady;
         public UnityEvent onCaptured = new UnityEvent();
         [Min(.02f)] public float maskDiameter = .25f;
@@ -159,62 +164,75 @@ namespace AudioBugs.Tutorial
             physicalCentre = centre;
         }
 
-        public bool CanMove => CanInteract && !uiBusy && (rules.Phase == GamePhase.Active ||
+        public bool CanMove => CanInteract && calibrationValid && !uiBusy && (rules.Phase == GamePhase.Active ||
             rules.Phase == GamePhase.Return || rules.Phase == GamePhase.Recycling || rules.Phase == GamePhase.ExitRoute);
 
         private void Update()
         {
-            if (xrMoveProvider != null) xrMoveProvider.enabled = useExternalPose && CanMove;
-            if (useExternalPose && (trackedHead == null || trackedAim == null)) return;
-            if (!useExternalPose) UpdateDesktopLook();
-            UpdateDeveloperControls(Keyboard.current);
-            if (!CanInteract) { CurrentTargetId = null; mask.SetActive(false); SyncViews(); return; }
-            if (capturePreview != null) {
-                capturePreviewRemaining -= Time.deltaTime;
-                if (capturePreviewRemaining <= 0f) ClearCapturePreview();
-            }
-            if (!useExternalPose && CanMove && Keyboard.current != null) MoveDesktop(Keyboard.current);
-            if (automaticDemos && (rules.Phase == GamePhase.Intro || rules.Phase == GamePhase.Tutorial)) {
-                phaseSeconds += Time.deltaTime;
-                if (rules.Phase == GamePhase.Intro && phaseSeconds >= 15f) { rules.CompleteIntro(); phaseSeconds = 0f; }
-                else if (rules.Phase == GamePhase.Tutorial && phaseSeconds >= 16f) { CompleteTutorial(); phaseSeconds = 0f; }
-            }
-            SyncViews();
-            if (rules.Phase == GamePhase.Active) {
-                if (enableVoiceRevealPreview && Keyboard.current != null && Keyboard.current.vKey.wasPressedThisFrame)
-                    TriggerVoiceForDevelopment();
-                CurrentTargetId = FindTargetAndMoveMask();
-                bool wasRaining = rules.IsRaining;
-                string captured = rules.Tick(Time.deltaTime, CurrentTargetId);
-                if (wasRaining != rules.IsRaining) {
-                    if (rainEffects != null) rainEffects.SetActive(rules.IsRaining);
-                    if (rules.IsRaining) onRainStarted.Invoke();
-                    if (!rules.Groups.Any(group => group.Id == CurrentTargetId)) CurrentTargetId = null;
+            (xrLookProvider as IXrTrackingPoseCompensator)?.RefreshTrackingPose();
+            try {
+                if (useExternalPose && (trackedHead == null || trackedAim == null)) return;
+                if (!useExternalPose) UpdateDesktopLook();
+                UpdateDeveloperControls(Keyboard.current);
+                if (!CanInteract) { CurrentTargetId = null; mask.SetActive(false); SyncViews(); return; }
+                if (capturePreview != null) {
+                    capturePreviewRemaining -= Time.deltaTime;
+                    if (capturePreviewRemaining <= 0f) ClearCapturePreview();
                 }
-                if (captured != null) {
-                    ShowCapturePreview(captured);
-                    CurrentTargetId = null;
-                    Debug.Log("CAPTURE_RESULT " + captured + " SAN=" + rules.San);
-                    onCaptured.Invoke();
+                if (!useExternalPose && CanMove && Keyboard.current != null) MoveDesktop(Keyboard.current);
+                if (automaticDemos && (rules.Phase == GamePhase.Intro || rules.Phase == GamePhase.Tutorial)) {
+                    phaseSeconds += Time.deltaTime;
+                    if (rules.Phase == GamePhase.Intro && phaseSeconds >= 15f) { rules.CompleteIntro(); phaseSeconds = 0f; }
+                    else if (rules.Phase == GamePhase.Tutorial && phaseSeconds >= 16f) { CompleteTutorial(); phaseSeconds = 0f; }
                 }
                 SyncViews();
-            } else { CurrentTargetId = null; mask.SetActive(false); }
-            if (rules.CanRecycle) {
-                float headDistance = Vector2.Distance(new Vector2(Head.position.x, Head.position.z), new Vector2(StationPosition.x, StationPosition.z));
-                var tip = trackedTip != null ? trackedTip.position : useExternalPose
-                    ? AimPosition + AimForward * .55f : Head.position + Vector3.down * .55f + Head.forward * .55f;
-                bool tipInside = stationZone == null ? Vector3.Distance(tip, StationPosition) <= .4f
-                    : Vector3.Distance(stationZone.ClosestPoint(tip), tip) <= .001f;
-                rules.AuthorizeStation(poseValid, Inside, headDistance <= 1.1f, tipInside);
-            }
-            if (rules.Phase == GamePhase.ExitRoute) {
-                var offset = Head.position - ExitPosition;
-                if (rules.TickExitRoute(Time.deltaTime, new Vector2(offset.x, offset.z).magnitude <= .75f)) {
-                    ReleaseDesktopCursor();
-                    if (!useExternalPose && EndingPresenter == null) CompleteEndingVideo();
+                if (rules.Phase == GamePhase.Active) {
+                    if (enableVoiceRevealPreview && Keyboard.current != null && Keyboard.current.vKey.wasPressedThisFrame)
+                        TriggerVoiceForDevelopment();
+                    CurrentTargetId = FindTargetAndMoveMask();
+                    bool wasRaining = rules.IsRaining;
+                    string captured = rules.Tick(Time.deltaTime, CurrentTargetId);
+                    if (wasRaining != rules.IsRaining) {
+                        if (rainEffects != null) rainEffects.SetActive(rules.IsRaining);
+                        if (rules.IsRaining) onRainStarted.Invoke();
+                        if (!rules.Groups.Any(group => group.Id == CurrentTargetId)) CurrentTargetId = null;
+                    }
+                    if (captured != null) {
+                        ShowCapturePreview(captured);
+                        CurrentTargetId = null;
+                        Debug.Log("CAPTURE_RESULT " + captured + " SAN=" + rules.San);
+                        onCaptured.Invoke();
+                    }
+                    SyncViews();
+                } else { CurrentTargetId = null; mask.SetActive(false); }
+                if (rules.CanRecycle) {
+                    float headDistance = Vector2.Distance(new Vector2(Head.position.x, Head.position.z), new Vector2(StationPosition.x, StationPosition.z));
+                    var tip = trackedTip != null ? trackedTip.position : useExternalPose
+                        ? AimPosition + AimForward * .55f : Head.position + Vector3.down * .55f + Head.forward * .55f;
+                    bool tipInside = stationZone == null ? Vector3.Distance(tip, StationPosition) <= .4f
+                        : Vector3.Distance(stationZone.ClosestPoint(tip), tip) <= .001f;
+                    rules.AuthorizeStation(poseValid, Inside, headDistance <= 1.1f, tipInside);
                 }
-            }
-            if (exitMarker != null) exitMarker.SetActive(rules.Phase == GamePhase.ExitRoute);
+                if (rules.Phase == GamePhase.ExitRoute) {
+                    var offset = Head.position - ExitPosition;
+                    if (rules.TickExitRoute(Time.deltaTime, new Vector2(offset.x, offset.z).magnitude <= .75f)) {
+                        ReleaseDesktopCursor();
+                        if (!useExternalPose && EndingPresenter == null) CompleteEndingVideo();
+                    }
+                }
+                if (exitMarker != null) exitMarker.SetActive(rules.Phase == GamePhase.ExitRoute);
+            } finally { UpdateXrMovementGate(); }
+        }
+
+        private void UpdateXrMovementGate()
+        {
+            if (xrMoveProvider != null) xrMoveProvider.enabled = isActiveAndEnabled && useExternalPose && CanMove;
+        }
+
+        private void OnDisable()
+        {
+            if (xrMoveProvider != null) xrMoveProvider.enabled = false;
+            ReleaseDesktopCursor();
         }
 
         private void UpdateDeveloperControls(Keyboard keyboard)
@@ -289,8 +307,6 @@ namespace AudioBugs.Tutorial
         {
             if (!focused) ReleaseDesktopCursor();
         }
-
-        private void OnDisable() => ReleaseDesktopCursor();
 
         private void MoveDesktop(Keyboard keyboard)
         {
@@ -491,7 +507,7 @@ namespace AudioBugs.Tutorial
         public void CompleteEndingVideo() { if (CanInteract) rules.CompleteEndingVideo(); }
         public void OpenThankYou() { if (CanInteract) rules.OpenThankYou(); }
         public void FinishThankYou() { if (CanInteract) rules.FinishThankYou(); }
-        public void SetPaused(bool paused) { if (!paused && (!poseValid || !Inside || !calibrationValid)) return; rules.SetPaused(paused); if (mask != null) SyncViews(); }
+        public void SetPaused(bool paused) { if (!paused && (!poseValid || !Inside || !calibrationValid)) return; rules.SetPaused(paused); UpdateXrMovementGate(); if (mask != null) SyncViews(); }
         public bool RestoreEnding(int[] variants) {
             if (rules.Phase != GamePhase.Ready || !rules.RestoreCompleted(variants)) return false;
             SyncViews(); return true;
@@ -503,6 +519,8 @@ namespace AudioBugs.Tutorial
             if (rainEffects != null) rainEffects.SetActive(false);
             if (exitMarker != null) exitMarker.SetActive(false);
             if (mask != null) mask.SetActive(false); SyncViews();
+            onSessionReset.Invoke();
+            UpdateXrMovementGate();
         }
         // 僅由 I2 在「本機保存＋結尾＋交票」全部確認後呼叫。
         public bool ResetForNextSession()
@@ -518,6 +536,8 @@ namespace AudioBugs.Tutorial
             SyncViews();
             foreach (var clip in generatedClips) Destroy(clip);
             generatedClips.Clear();
+            onSessionReset.Invoke();
+            UpdateXrMovementGate();
             return true;
         }
         public void SaveLabResult()
