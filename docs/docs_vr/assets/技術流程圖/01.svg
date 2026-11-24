@@ -81,8 +81,9 @@
 <text x="760.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">Quest Link／OpenXR</text>
 <text x="760.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">PC 輸入與平台整合</text>
 <rect x="1100" y="200" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
-<text x="1260.0" y="245.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">長型虛擬城市／實體活動圈</text>
-<text x="1260.0" y="275.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">原地轉身＋左搖桿移動</text>
+<text x="1260.0" y="230.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">長型虛擬城市／實體活動圈</text>
+<text x="1260.0" y="260.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">左搖桿移動＋右搖桿轉向／俯</text>
+<text x="1260.0" y="290.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">仰</text>
 <rect x="100" y="460" width="320" height="120" rx="15" fill="#e5f5f1" stroke="#459489" stroke-width="2"/>
 <text x="260.0" y="505.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">後續：Quest 3 內建麥克風</text>
 <text x="260.0" y="535.0" dominant-baseline="central" font-family="Microsoft JhengHei, Noto Sans CJK TC, sans-serif" font-size="22" fill="#24334b" text-anchor="middle">經 Link 送入電腦</text>
